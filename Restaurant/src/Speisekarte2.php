@@ -64,31 +64,31 @@
 </div>
 
 
-<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:30px">    <!--Hier fangen die Bilder mit Text an -->
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:30px">    <!--Hier fangen die ..\img mit Text an -->
 
 
   <div class="w3-row-padding w3-padding-16 w3-center" id="food">						<!--Erste Reihe für Hauptgang-->
     <div class="w3-quarter">
-      <img src="Bilder\pasta.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta.jpg" alt="Pasta" style="width:100%">
       <h3>The Perfect Sandwich, A Real NYC Classic</h3>
       <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pizza.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\pizza.jpg" alt="Pizza" style="width:100%">
       <h3>Let Me Tell You About This Steak</h3>
       <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pasta2.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta2.jpg" alt="Pasta" style="width:100%">
       <h3>Cherries, interrupted</h3>
       <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
       <p>What else?</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pizza2.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\pizza2.jpg" alt="Pizza" style="width:100%">
       <h3>Once Again, Robust Wine and Vegetable Pasta</h3>
       <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
@@ -98,25 +98,25 @@
   
  <div class="w3-row-padding w3-padding-16 w3-center">									<!--Zweite Reihe für Hauptgang-->
     <div class="w3-quarter">
-      <img src="Bilder\lachs_neu.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\lachs_neu.jpg" alt="Pizza" style="width:100%">
       <h3>All I Need Is a Popsicle</h3>
       <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pasta.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta.jpg" alt="Pasta" style="width:100%">
       <h3>Salmon For Your Skin</h3>
       <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pizza2.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\pizza2.jpg" alt="Pizza" style="width:100%">
       <h3>The Perfect Sandwich, A Real Classic</h3>
       <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pasta2.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta2.jpg" alt="Pasta" style="width:100%">
       <h3>Le French</h3>
       <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
@@ -129,27 +129,27 @@
 	<h2><b>Dessert</b></h2>	
   </div>
 
-   <div class="w3-row-padding w3-padding-16 w3-center">			<!--Bilder mit Textunterschrift für Desserts-->
+   <div class="w3-row-padding w3-padding-16 w3-center">			<!--..\img mit Textunterschrift für Desserts-->
     <div class="w3-quarter">
-      <img src="Bilder\lachs_neu.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\lachs_neu.jpg" alt="Pizza" style="width:100%">
       <h3>All I Need Is a Popsicle</h3>
       <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pasta.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta.jpg" alt="Pasta" style="width:100%">
       <h3>Salmon For Your Skin</h3>
       <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pizza2.jpg" alt="Pizza" style="width:100%">
+      <img src="..\img\pizza2.jpg" alt="Pizza" style="width:100%">
       <h3>The Perfect Sandwich, A Real Classic</h3>
       <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
     </div>
     <div class="w3-quarter">
-      <img src="Bilder\pasta2.jpg" alt="Pasta" style="width:100%">
+      <img src="..\img\pasta2.jpg" alt="Pasta" style="width:100%">
       <h3>Le French</h3>
       <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
 	  <button class="btn btn-default">Bestellen</button>
