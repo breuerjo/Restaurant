@@ -155,7 +155,7 @@
 	  <button class="btn btn-default">Bestellen</button>
     </div>
   </div> 
-  
+ </div> 
 </body>
 
 
