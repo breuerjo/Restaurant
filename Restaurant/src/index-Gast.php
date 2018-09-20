@@ -62,7 +62,7 @@
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte.php">Hier</a></h2>
         </div>      
       </div>
 
@@ -71,7 +71,7 @@
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte.php">Hier</a></h2>
         </div>      
       </div>
     
@@ -80,7 +80,7 @@
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte.php">Hier</a></h2>
         </div>      
       </div>
     </div>
@@ -106,7 +106,7 @@
     <div class="col-sm-7 text-center">
       <h2>UNSERE SPEISEN</h2><br>
       <h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen Blick in die Speisekarte.</h4><br>
-      <button class="btn btn-default btn-lg"><a href="Speisekarte2.php">Speisekarte</a></button>
+      <button class="btn btn-default btn-lg"><a href="Speisekarte.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
       <img src="..\img\essen2.jpg" width="500" height="300"></img>
@@ -141,7 +141,7 @@
     <div class="col-sm-7 text-center">
       <h2>UNSERE DESSERTS</h2><br>
       <h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen Blick in die Speisekarte.</h4><br>
-      <button class="btn btn-default btn-lg"><a href="Speisekarte2.php">Speisekarte</a></button>
+      <button class="btn btn-default btn-lg"><a href="Speisekarte.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
       <img src="..\img\dessert_Startseite.jpg" width="500" height="300"></img>
