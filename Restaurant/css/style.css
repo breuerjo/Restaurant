@@ -1,0 +1,141 @@
+ body {
+	margin: auto;
+	background-color:#F8DBC9;
+  }
+ 
+#restaurant-name{
+	color: black;
+} 
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+	text-align: left;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.container {
+    padding: 16px;
+}
+
+#Essen{
+	margin-left: 120px;
+	margin-right: 120px;
+	
+}
+#Cocktails{
+	margin-left: 120px;
+	margin-right: 120px;
+}
+
+#Dessert{
+	margin-left:120px;
+	margin-right:120px;
+}
+
+#Anmeldung{
+	margin-left: 500px;
+	margin-right: 60px;
+}
+
+#Login{
+	background-color: #F8DBC9;
+	
+}
+
+#Speisekarte{
+	background-color:#F8DBC9;
+}
+#Speisen{
+	font-size: 50px;
+}
+
+#Speisen-Text{
+	font-size: 20px;
+	font-style: italic;
+}
+
+#Footer_index{
+	background-color: #F9D164;
+	margin-left:120px;
+	margin-right:120px;
+	margin-bottom:10px;
+	height: 60px;
+	text-align: center;
+}
+
+footer{
+	background-color: #F9D164;
+	margin-left:120px;
+	margin-right:120px;
+	height: 60px;
+	text-align: center;
+}
+.navbar{
+	background-color: #F9D164;
+	color: #FFFFFF;
+}
+
+ h4 {
+	  margin-top: 30px;
+      margin: 10px 0 3px 0;
+      letter-spacing: 5px;      
+      font-size: 20px;
+      color: #111;
+  }
+
+  .carousel-inner img {
+
+      width: 70%;
+	  height:80%;
+	  margin: auto;
+	  height: 250px;
+	  color: black;
+  }
+ 
+ #speiseplan{
+	margin:auto;
+	 color:georgian;
+ }
+
+ table {
+	 width: 98%;
+	margin-left: 15px;
+	margin-right: 10px;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th{
+    padding: 15px;
+    text-align: left;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td{
+	padding: 15px;
+    text-align: left;
+	border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table#Mitarbeiterübersicht_Tabelle th{
+	background-color: black;
+	color: white;
+	text-align:center;
+}
+
+ 
