@@ -30,10 +30,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index.html">HOME</a></li>
+        <li><a href="index.php">HOME</a></li>
         <li><a href="#Speisekarte">Unsere Speisen</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
-        <li><a href="Buffet.html">Buffet/Preise</a></li>
+        <li><a href="Kontakt.php">Kontakt</a></li>
+        <li><a href="Buffet.php">Buffet/Preise</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
           <span class="caret"></span></a>
@@ -161,7 +161,7 @@
 
 <footer class="container-fluid bg-4 text-center" width="100%">
 <br>
-  <p><a href="Impressum.html"><b>Impressum</b></a></p> 
+  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
 </footer>
 
 

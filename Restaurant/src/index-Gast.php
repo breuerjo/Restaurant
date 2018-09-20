@@ -30,9 +30,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#Startseite">HOME</a></li>
-        <li><a href="Speisekarte2.html">Unsere Speisen</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
-        <li><a href="Buffet.html">Buffet/Preise</a></li>
+        <li><a href="Speisekarte.php">Unsere Speisen</a></li>
+        <li><a href="Kontakt.php">Kontakt</a></li>
+        <li><a href="Buffet.php">Buffet/Preise</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
           <span class="caret"></span></a>
@@ -58,29 +58,29 @@
     <!--Karoussel-Inhalt-->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="Bilder\restaurantBild.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
+        <img src="..\img\restaurantBild.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.html">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
         </div>      
       </div>
 
       <div class="item">
-        <img src="Bilder\pizza.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
+        <img src="..\img\pizza.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.html">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
         </div>      
       </div>
     
       <div class="item">
-        <img src="Bilder\wein.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
+        <img src="..\img\wein.jpg" alt="Unsere Spezialitäten" width="1200" height="700">
         <div class="carousel-caption">
           <h1>Herzlich Willkommen auf unsere Homepage!</h1>
           <h2>Wir freuen uns über ihren Besuch!</h2>
-		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.html">Hier</a></h2>
+		  <h2>Möchten Sie etwas bestellen? Klicken Sie <a href="Speisekarte2.php">Hier</a></h2>
         </div>      
       </div>
     </div>
@@ -106,10 +106,10 @@
     <div class="col-sm-7 text-center">
       <h2>UNSERE SPEISEN</h2><br>
       <h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen Blick in die Speisekarte.</h4><br>
-      <button class="btn btn-default btn-lg"><a href="Speisekarte2.html">Speisekarte</a></button>
+      <button class="btn btn-default btn-lg"><a href="Speisekarte2.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
-      <img src="Bilder\essen2.jpg" width="500" height="300"></img>
+      <img src="..\img\essen2.jpg" width="500" height="300"></img>
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@
 <div id="Cocktails" class="container-fluid">			<!--auf der Startseite für Cocktails-->
   <div class="row">
      <div class="col-sm-5">
-      <img src="Bilder\cocktails.jpg" width="500" height="300"></img>
+      <img src="..\img\cocktails.jpg" width="500" height="300"></img>
     </div>
     <div class="col-sm-6.5 text-center">
       <h2>UNSERE COCKTAILS</h2><br>
@@ -141,10 +141,10 @@
     <div class="col-sm-7 text-center">
       <h2>UNSERE DESSERTS</h2><br>
       <h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen Blick in die Speisekarte.</h4><br>
-      <button class="btn btn-default btn-lg"><a href="Speisekarte2.html">Speisekarte</a></button>
+      <button class="btn btn-default btn-lg"><a href="Speisekarte2.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
-      <img src="Bilder\dessert_Startseite.jpg" width="500" height="300"></img>
+      <img src="..\img\dessert_Startseite.jpg" width="500" height="300"></img>
     </div>
   </div>
 </div>
@@ -157,7 +157,7 @@
 
 <footer id="Footer_index" class="container-fluid bg-4 text-center">
 <br>
-  <p><a href="Impressum.html"><b>Impressum</b></a></p> 
+  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
 </footer>
 
 

@@ -24,7 +24,7 @@
 <h2><b> Herzlich Willkommen im Restaurant .....</b></h2>
 <h3> Bitte melden Sie sich an oder fahren Sie als Gast fort, um ganz bequem eine Bestellung abzugeben!</h3>
 <br>
-<img src="Bilder\Logo.jpg"></img>
+<img src="..\img\Logo.jpg"></img>
 
 <br>
 <br>
@@ -40,8 +40,8 @@
     <label><b>Passwort</b></label>
     <input type="password" placeholder="Geben Sie das Passwort ein">
 
-    <button class="btn btn-default"><a href="index-Mitarbeiter.html">Einloggen</a></button>
-    <button class="btn btn-default"><a href="index-Gast.html">Als Gast anmelden</a></button>	
+    <button class="btn btn-default"><a href="index-Mitarbeiter.php">Einloggen</a></button>
+    <button class="btn btn-default"><a href="index-Gast.php">Als Gast anmelden</a></button>	
 </div>
 
 </form>

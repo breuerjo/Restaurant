@@ -27,9 +27,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index-Mitarbeiter.html">HOME</a></li>
-        <li><a href="Speisekarte2.html">Unsere Speisen</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
+        <li><a href="index-Mitarbeiter.php">HOME</a></li>
+        <li><a href="Speisekarte.php">Unsere Speisen</a></li>
+        <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="#Mitarbeiterübersicht">Mitarbeiterübersicht</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
@@ -110,7 +110,7 @@
 
 <footer id="Footer_index" class="container-fluid bg-4 text-center">
 <br>
-  <p><a href="Impressum.html"><b>Impressum</b></a></p> 
+  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
 </footer>
 
 
