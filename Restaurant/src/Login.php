@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+<?php 
+include "Funktionen.php";
+?>
 <head>
 
   <title>Login</title>
@@ -21,7 +23,8 @@
 <br>
 <br>
 
-<h2><b> Herzlich Willkommen im Restaurant .....</b></h2>
+
+<h2><b> Herzlich Willkommen im Restaurant <?php echo getRestaurantName(); ?></b></h2>
 <h3> Bitte melden Sie sich an oder fahren Sie als Gast fort, um ganz bequem eine Bestellung abzugeben!</h3>
 <br>
 <img src="..\img\Logo.jpg"></img>
@@ -51,3 +54,5 @@
 
 </body>
 </html>
+
+
