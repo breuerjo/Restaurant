@@ -17,7 +17,7 @@ function getGerichte($kategorie) {
             
         }
         echo    '<div class="w3-quarter">
-                    <img src="..\img\pasta.jpg" alt="Pasta" style="width:100%">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>',$gericht['gericht_beschreibung'],'</p>
 	                <button class="btn btn-default" press="warenkorbHinzufuegen(',$gericht['gericht_id'],')">In den Warenkorb</button>
