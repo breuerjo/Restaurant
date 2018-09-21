@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 <?php 
-include 'Funktionen';
+include 'Funktionen.php';
 ?>
 
 <head>

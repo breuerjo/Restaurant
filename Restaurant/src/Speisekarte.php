@@ -41,6 +41,7 @@ include "Funktionen.php";
 <head>
 
 
+
   <title>Speisekarte</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -52,6 +53,12 @@ include "Funktionen.php";
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
+<script type="text/javascript">
+	function warenkorbHinzufuegen(gericht_id){
+		
+		}
+</script>
+
 </head>
 
 <body id="Speisekarte" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -59,6 +66,7 @@ include "Funktionen.php";
 <?php 
 include 'Navbar.php';
 ?>
+
 
 <br>
 <br>
