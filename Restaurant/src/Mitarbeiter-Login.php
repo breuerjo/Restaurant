@@ -37,15 +37,14 @@ include "Funktionen.php";
 <form class="form-horizontal text-left"><!-- für die Enter Taste: action="action_page.php"-->
 
 <div class="container">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Geben Sie ihren Username oder E-Mail an">
 
-    <label><b>Name</b></label>
-    <input type="text" placeholder="Geben Sie ihren Namen an">
-    
-    <label><b>Tischnummer</b></label>
-    <input type="text" placeholder="Geben Sie ihre Tischnummer an">
+    <label><b>Passwort</b></label>
+    <input type="password" placeholder="Geben Sie das Passwort ein">
 
-    <button class="btn btn-default"><a href="index-Gast.php">Anmelden</a></button>
-    <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
+    <button class="btn btn-default"><a href="index-Mitarbeiter.php">Einloggen</a></button>
+    <button class="btn btn-default"><a href="Login.php">Zur&uumlck</a></button>	
 </div>
 
 </form>
@@ -53,5 +52,3 @@ include "Funktionen.php";
 
 </body>
 </html>
-
-
