@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 21. Sep 2018 um 17:49
--- Server-Version: 10.1.35-MariaDB
--- PHP-Version: 7.2.9
+-- Generation Time: Sep 23, 2018 at 01:38 AM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,28 +19,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `restaurant_db`
+-- Database: `restaurant_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `bestellung`
+-- Table structure for table `bestellung`
 --
 
 CREATE TABLE `bestellung` (
   `bestellung_id` int(5) NOT NULL,
   `restaurant_id` int(5) NOT NULL DEFAULT '1',
-  `bestellung_gast_name` varchar(50) NOT NULL,
-  `bestellung_datum` date NOT NULL,
-  `bestellung_tisch_id` int(5) NOT NULL,
-  `bestellung_erledigt` tinyint(1) NOT NULL DEFAULT '0'
+  `bestellung_datum` datetime NOT NULL,
+  `bestellung_erledigt` tinyint(1) NOT NULL DEFAULT '0',
+  `gast_id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bestellung`
+--
+
+INSERT INTO `bestellung` (`bestellung_id`, `restaurant_id`, `bestellung_datum`, `bestellung_erledigt`, `gast_id`) VALUES
+(2, 1, '2018-09-22 01:32:30', 0, 0),
+(3, 1, '2018-09-22 01:36:41', 0, 0),
+(4, 1, '2018-09-22 01:51:03', 0, 0),
+(5, 1, '2018-09-22 01:54:24', 0, 0),
+(6, 1, '2018-09-22 01:54:44', 0, 0),
+(7, 1, '2018-09-22 01:57:59', 0, 0),
+(8, 1, '2018-09-22 01:58:47', 0, 0),
+(9, 1, '2018-09-22 01:59:11', 0, 0),
+(10, 1, '2018-09-23 01:15:02', 0, 2),
+(11, 1, '2018-09-23 01:27:47', 0, 2),
+(12, 1, '2018-09-23 01:32:18', 0, 2),
+(13, 1, '2018-09-23 01:32:19', 0, 2),
+(14, 1, '2018-09-23 01:32:19', 0, 2),
+(15, 1, '2018-09-23 01:32:19', 0, 2),
+(16, 1, '2018-09-23 01:32:19', 0, 2),
+(17, 1, '2018-09-23 01:32:19', 0, 2),
+(18, 1, '2018-09-23 01:32:19', 0, 2),
+(19, 1, '2018-09-23 01:32:20', 0, 2),
+(20, 1, '2018-09-23 01:32:20', 0, 2),
+(21, 1, '2018-09-23 01:32:20', 0, 2);
 
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `bestellung_gerichte`
+-- Table structure for table `bestellung_gerichte`
 --
 
 CREATE TABLE `bestellung_gerichte` (
@@ -49,10 +74,44 @@ CREATE TABLE `bestellung_gerichte` (
   `gericht_id` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `bestellung_gerichte`
+--
+
+INSERT INTO `bestellung_gerichte` (`bestellung_gerichte_id`, `bestellung_id`, `gericht_id`) VALUES
+(20, 9, 1),
+(21, 9, 1),
+(22, 9, 2),
+(23, 9, 2),
+(24, 10, 26),
+(25, 10, 27),
+(26, 10, 28),
+(27, 10, 24);
+
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `gericht`
+-- Table structure for table `gaeste`
+--
+
+CREATE TABLE `gaeste` (
+  `id` int(5) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `tisch` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gaeste`
+--
+
+INSERT INTO `gaeste` (`id`, `name`, `tisch`) VALUES
+(1, 'PAGINAsohn', 55),
+(2, 'PAGINAsohn', 55);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gericht`
 --
 
 CREATE TABLE `gericht` (
@@ -66,7 +125,7 @@ CREATE TABLE `gericht` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `gericht`
+-- Dumping data for table `gericht`
 --
 
 INSERT INTO `gericht` (`gericht_id`, `restaurant_id`, `gericht_bezeichnung`, `gericht_preis`, `gericht_beschreibung`, `gericht_bildadresse`, `gericht_kategorie`) VALUES
@@ -114,7 +173,7 @@ INSERT INTO `gericht` (`gericht_id`, `restaurant_id`, `gericht_bezeichnung`, `ge
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `mitarbeiter`
+-- Table structure for table `mitarbeiter`
 --
 
 CREATE TABLE `mitarbeiter` (
@@ -127,7 +186,7 @@ CREATE TABLE `mitarbeiter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `mitarbeiter`
+-- Dumping data for table `mitarbeiter`
 --
 
 INSERT INTO `mitarbeiter` (`mitarbeiter_id`, `restaurant_id`, `mitarbeiter_benutzername`, `mitarbeiter_passwort`, `mitarbeiter_name`, `mitarbeiter_beruf`) VALUES
@@ -141,7 +200,7 @@ INSERT INTO `mitarbeiter` (`mitarbeiter_id`, `restaurant_id`, `mitarbeiter_benut
 -- --------------------------------------------------------
 
 --
--- Tabellenstruktur für Tabelle `restaurant`
+-- Table structure for table `restaurant`
 --
 
 CREATE TABLE `restaurant` (
@@ -150,73 +209,109 @@ CREATE TABLE `restaurant` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Daten für Tabelle `restaurant`
+-- Dumping data for table `restaurant`
 --
 
 INSERT INTO `restaurant` (`restaurant_id`, `restaurant_name`) VALUES
 (1, 'Bella España');
 
+-- --------------------------------------------------------
+
 --
--- Indizes der exportierten Tabellen
+-- Table structure for table `warenkorb`
+--
+
+CREATE TABLE `warenkorb` (
+  `id` int(5) NOT NULL,
+  `gericht_id` int(5) NOT NULL,
+  `gast_id` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indizes für die Tabelle `bestellung`
+-- Indexes for table `bestellung`
 --
 ALTER TABLE `bestellung`
   ADD PRIMARY KEY (`bestellung_id`);
 
 --
--- Indizes für die Tabelle `bestellung_gerichte`
+-- Indexes for table `bestellung_gerichte`
 --
 ALTER TABLE `bestellung_gerichte`
   ADD PRIMARY KEY (`bestellung_gerichte_id`);
 
 --
--- Indizes für die Tabelle `gericht`
+-- Indexes for table `gaeste`
+--
+ALTER TABLE `gaeste`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gericht`
 --
 ALTER TABLE `gericht`
   ADD PRIMARY KEY (`gericht_id`);
 
 --
--- Indizes für die Tabelle `mitarbeiter`
+-- Indexes for table `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
   ADD PRIMARY KEY (`mitarbeiter_id`);
 
 --
--- Indizes für die Tabelle `restaurant`
+-- Indexes for table `restaurant`
 --
 ALTER TABLE `restaurant`
   ADD PRIMARY KEY (`restaurant_id`);
 
 --
--- AUTO_INCREMENT für exportierte Tabellen
+-- Indexes for table `warenkorb`
+--
+ALTER TABLE `warenkorb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT für Tabelle `bestellung`
+-- AUTO_INCREMENT for table `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT für Tabelle `bestellung_gerichte`
+-- AUTO_INCREMENT for table `bestellung_gerichte`
 --
 ALTER TABLE `bestellung_gerichte`
-  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT für Tabelle `gericht`
+-- AUTO_INCREMENT for table `gaeste`
+--
+ALTER TABLE `gaeste`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `gericht`
 --
 ALTER TABLE `gericht`
   MODIFY `gericht_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
--- AUTO_INCREMENT für Tabelle `mitarbeiter`
+-- AUTO_INCREMENT for table `mitarbeiter`
 --
 ALTER TABLE `mitarbeiter`
   MODIFY `mitarbeiter_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `warenkorb`
+--
+ALTER TABLE `warenkorb`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -2,6 +2,13 @@
 <html>
 <?php 
 include "Funktionen.php";
+
+/*
+
+
+Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen tisch angeben
+
+*/
 ?>
 <head>
 
@@ -16,6 +23,32 @@ include "Funktionen.php";
  </head>
 
 <body id="Login">
+
+
+<input id="tisch" value="0"/>
+<input id="name" value="PAGINA"/>
+<button id="checkin">hier gehts zur speisekarte php</button>
+
+    <script type="text/javascript">
+        function getTisch(){
+            return isNaN(document.getElementById('tisch').value) ? 0 : document.getElementById('tisch').value;
+        }
+        function getName(){
+            return document.getElementById('name').value;
+        }
+        document.getElementById("checkin").addEventListener("click", function(){
+            jQuery.ajax({
+                url: "NeuerKunde.php",
+                 type: "POST",
+                 data: "tisch=" + getTisch() + "&name=" + getName(),
+                 success: function(res){
+                    window.location.href = 'Speisekarte.php?kunde=' + res;
+                 }
+             });
+            
+        });
+    </script>
+
 
 
 <div class="container text-center">

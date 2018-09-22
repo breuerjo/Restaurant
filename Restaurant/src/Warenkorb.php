@@ -22,13 +22,80 @@ include 'Funktionen.php';
 
 <body id="Warenkorb" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<?php 
-include 'Navbar.php';
-?>
+  <?php 
+    
+    header("Content-Type: text/html; charset=utf-8");
+    function getKundenId(){
+      if( isset($_GET['kunde']) ){
+          return $_GET['kunde'];
+      }
+      //else er hat was falsch gemacht
+      return 0;  
+  }
+        function printAngebote(){   //also die aus dem warenkorb
+    
+    
+    
+            $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+             
+            $statement = $pdo->prepare("SELECT gericht.* FROM gericht INNER JOIN warenkorb on warenkorb.gericht_id = gericht.gericht_id AND warenkorb.gast_id = :kunde");
+            $statement->execute(array(':kunde' => getKundenId()));   
+            while($row = $statement->fetch()) {
+                print_r($row);    //gibt vorläufig mal alles aus 
+                echo '<Button onclick="deleteElement(',$row['gericht_id'],', ',getKundenId(),')">Element ausm warenkorb</Button>';
+            }    
+        }
+    
+        function printPreis(){    //wieviel unser wk kostet
+        
+    
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+             
+        $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM gericht INNER JOIN warenkorb on gericht.gericht_id = warenkorb.gericht_id AND warenkorb.gast_id = :kunde");
+        $statement->execute(array(':kunde' => getKundenId()));   
+        $row = $statement->fetch();
+        $sum = $row[0];
+        echo $sum;
+    
+    }
+        ?>
+    
+    
+    <script type="text/javascript">
+    function deleteElement(id, kunde){
+        jQuery.ajax({
+            url: "Abbestellen.php",
+            type: "POST",
+            data: "gericht=" + id + "&kunde=" + kunde,
+            success: function(){
+                
+        location.reload();
+            }
+        });
+    }
+    
+    function bezahlen(kunde){
+        jQuery.ajax({
+            url: "Bezahlen.php",
+            type: "POST",
+            data: "kunde=" + kunde, 
+            success: function(res){
+              if(res == -1){
+                return; //keine items
+              }
+                window.location.href = 'Beleg.php?bestellung=' + res;
+            }
+        });
+        
+    }
+    </script>
 
 <br>
 <br>
+<?php printAngebote();printPreis();?>
+<Button onclick="bezahlen(<?php echo getKundenId();?>)">Bezahlen oder entgültig bestellen</Button>
 
+<!-- hier soll dann auch ein link hin um wieder ne neue bestellung aufzugeben-->
 </body>
 
 

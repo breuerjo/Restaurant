@@ -17,6 +17,19 @@
 
 <?php 
 include 'Navbar.php';
+//holen wir uns mal einfach alle mitarbeiter
+
+
+function getMitarbeiter($restaurant = 1) {
+  $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+  $statement = $pdo->prepare("SELECT * FROM `mitarbeiter` WHERE restaurant_id = :rst");
+  $statement->execute(array(":rst" => $restaurant));
+
+  while($mitarbeiter = $statement->fetch()) {     //fetch gibt mir immer ein Ergebnis
+      //hier kann der tim dann seine bezaubernde tabelle draus machen
+      print_r($mitarbeiter);
+  }
+}
 ?>
 
 <br>
@@ -77,7 +90,7 @@ include 'Navbar.php';
 <br>
 <br>
 <br>
-
+<?php getMitarbeiter(); ?>
 
 
 

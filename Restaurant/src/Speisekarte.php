@@ -1,46 +1,7 @@
 <!DOCTYPE html>
 <html>
-<?php 
-function getGerichte($kategorie) {
-    $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT * FROM `gericht` WHERE `gericht_kategorie` = :kategorie");
-    $statement->execute(array(":kategorie" => $kategorie));
-    $counter=0;
-    while($gericht = $statement->fetch()) {     //fetch gibt mir immer ein Ergebnis
-
-        if($counter %4 ==0 && $counter != 0){
-            echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
-            
-        }
-        else if($counter %4 ==0 && $counter == 0){
-            echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
-            
-        }
-        echo    '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
-                    <h3>',$gericht['gericht_bezeichnung'],'</h3>
-                    <p>',$gericht['gericht_beschreibung'],'</p>
-	                <button class="btn btn-default" press="warenkorbHinzufuegen(',$gericht['gericht_id'],')">In den Warenkorb</button>
-                    </div>';
-        
-        if($counter %4 ==0 ){
-            
-            
-        }
-        $counter++;
-    }
-    echo  '</div>';
-    // gibt ein Zusammengesetzten String zur�ck
-    //bei echo braucht man nach jedem String ein ","
-}
-
-
-include "Funktionen.php";
-?>
 
 <head>
-
-
 
   <title>Speisekarte</title>
   <meta charset="utf-8">
@@ -53,50 +14,68 @@ include "Funktionen.php";
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
-<script type="text/javascript">
-    this.warenkorb = [];
-    this.tisch = 2;
-    this.gast = "PAGINA";
-    this.restaurant = 1;
-
-	function warenkorbHinzu(gericht_id){
-        this.warenkorb.push(gericht_id);
-	}
-
-    function warenkorbEnt(gericht_id){
-        for (var i = 0; i < this.warenkorb.length; i++) {
-            if(this.warenkorb[i] === gericht_id){
-                this.warenkorb.splice(i,1);
-                break;
-            }
-        }
-	}
-
-    function bestellen(){
-        jQuery.ajax({
-            url: "Bestellen.php",
-            type: "POST",
-            data:{
-                warenkorb: this.warenkorb,
-                restaurant: this.restaurant,
-                gast: this.gast,
-                tisch: this.tisch
-            }
-        });
-
-    }
 </script>
 
 </head>
 
 <body id="Speisekarte" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+    
 
+   <?php 
+    
+    header("Content-Type: text/html; charset=utf-8");
 
-<?php 
-include 'Navbar.php';
-?>
+    function getKundenId(){
+        if( isset($_GET['kunde']) ){
+            return $_GET['kunde'];
+        }
+        //else er hat was falsch gemacht
+        return 0;  
+    }
+    function getGerichte($kategorie) {
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        $statement = $pdo->prepare("SELECT * FROM `gericht` WHERE `gericht_kategorie` = :kategorie");
+        $statement->execute(array(":kategorie" => $kategorie));
+        $counter=0;
+        while($gericht = $statement->fetch()) {     //fetch gibt mir immer ein Ergebnis
+    
+            if($counter %4 ==0 && $counter != 0){
+                echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
+                
+            }
+            else if($counter %4 ==0 && $counter == 0){
+                echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
+                
+            }
+            echo    '<div class="w3-quarter">
+                        <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                        <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                        <p>',$gericht['gericht_beschreibung'],'</p>
+                        <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
+                        </div>';
+            $counter++;
+        }
+        echo  '</div>';
+    }
+    
+    
+    include "Funktionen.php";
+    include 'Navbar.php';
+    ?>
 
+<script type="text/javascript">
+function warenkorbHinzu(gericht_id, kunde_id){
+    jQuery.ajax({
+        url: "Bestellen_Script.php",
+        type: "POST",
+        data: "gericht=" + gericht_id + "&kunde=" + kunde_id,
+        success: function(){
+            //hier könnte man noch auf dem ui anzeigen, was wv hinzugefügt wurde
+        }
+    });
+}
+</script>
 
 <br>
 <br>
@@ -136,10 +115,8 @@ include 'Navbar.php';
   	</div>
 	<?php getGerichte("Pizza"); ?>
     
-    <Button onclick="bestellen()">Bestellen</Button>
-<Button onclick="warenkorbHinzu(1)">wk 1</Button>
-<Button onclick="warenkorbHinzu(2)">wk 2</Button>
-<Button onclick="warenkorbEnt(2)">wk weg 2</Button>
+
+<a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button>zum warenkorb geheh</Button></a>
    
  </div> 
 </body>
