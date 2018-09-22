@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
+
 </script>
 
 </head>
@@ -63,6 +64,7 @@
     include "Funktionen.php";
     include 'Navbar.php';
     ?>
+
 
 <script type="text/javascript">
 function warenkorbHinzu(gericht_id, kunde_id){
@@ -116,8 +118,9 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<?php getGerichte("Pizza"); ?>
     
 
+
 <a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button>zum warenkorb geheh</Button></a>
-   
+
  </div> 
 </body>
 

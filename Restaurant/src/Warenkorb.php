@@ -18,6 +18,7 @@ include 'Funktionen.php';
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
+<script type="text/javascript" src="WarenkorbFunktionen.js"></script>
 </head>
 
 <body id="Warenkorb" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -98,6 +99,32 @@ include 'Funktionen.php';
 <!-- hier soll dann auch ein link hin um wieder ne neue bestellung aufzugeben-->
 </body>
 
+
+<div id="warenkorb" class="container-fluid text-center">
+<?php 
+//hier muss umwandlung js array => php
+    $warenkorb = array(20, 12, 5, 2, 8);
+    //$warenkorb = getWarenkorb();
+    $counter = 0;
+    foreach ($warenkorb as $gericht){
+        echo    '<div class="w3-quarter">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                    <p>',$gericht['gericht_beschreibung'],'</p>
+	                <button class="w3-button w3-red" onclick="warenkorbHinzu(',$gericht['gericht_id'],')">Entfernen</button>
+                    </div>';
+        $counter++;
+    }
+    while($counter % 4 != 0){
+        echo '<div class="w3-quarter"></div>';
+        $counter++;
+    }
+?>
+
+	<div>
+		<button class="w3-button w3-blue" onclick="bestellen()">Bestellen</button>
+	</div>
+</div>
 
 <footer class="container-fluid bg-4 text-center" width="100%">
 <br>
