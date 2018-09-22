@@ -31,22 +31,32 @@ include 'Navbar.php';
 <br>
 
 </body>
+
+
+<div id="warenkorb" class="container-fluid text-center">
 <?php 
 //hier muss umwandlung js array => php
-    $warenkorb = getWarenkorb();
-
+    $warenkorb = array(20, 12, 5, 2, 8);
+    //$warenkorb = getWarenkorb();
+    $counter = 0;
     foreach ($warenkorb as $gericht){
         echo    '<div class="w3-quarter">
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>',$gericht['gericht_beschreibung'],'</p>
-	                <button class="w3-button w3-red" onclick="warenkorbEntf(',$gericht['gericht_id'],')">In den Warenkorb</button>
+	                <button class="w3-button w3-red" onclick="warenkorbHinzu(',$gericht['gericht_id'],')">Entfernen</button>
                     </div>';
-}
+        $counter++;
+    }
+    while($counter % 4 != 0){
+        echo '<div class="w3-quarter"></div>';
+        $counter++;
+    }
 ?>
 
-<div>
-	<button class="w3-button w3-blue" onclick="bestellen()">Bestellen</button>
+	<div>
+		<button class="w3-button w3-blue" onclick="bestellen()">Bestellen</button>
+	</div>
 </div>
 
 <footer class="container-fluid bg-4 text-center" width="100%">
