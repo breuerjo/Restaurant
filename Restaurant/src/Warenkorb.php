@@ -33,7 +33,7 @@ include 'Funktionen.php';
       }
       //else er hat was falsch gemacht
       return 0;  
-  }
+    }
         function printAngebote(){   //also die aus dem warenkorb
     
 

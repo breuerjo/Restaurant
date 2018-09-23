@@ -7,7 +7,7 @@ include 'Funktionen.php';
 <head>
 
 
-  <title>Bestellungen</title>
+  <title>Bestellung-Details</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,19 +21,27 @@ include 'Funktionen.php';
 
 </head>
 
-<body id="Bestellungen" data-spy="scroll" data-target=".navbar" data-offset="50">
+<body id="Bestellung-Details" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
 include 'Navbar.php';
 
-function printBestellungen($erledigt){
+function getBestellungId(){
+    if( isset($_GET['bestellung_id']) ){
+        return $_GET['bestellung_id'];
+    }
+    //else keine Bestelluns-ID in der URL
+    return 0;
+}
+
+function printBestellungDetails(){
+    $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_erledigt` = :erledigt");
-    $statement->execute(array(":erledigt" => $erledigt));
+    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_id` = :bestellung_id");
+    $statement->execute(array(":bestellung_id" => $bestellung_id));
     $counter=0;
     
     while($bestellung = $statement->fetch()) {
-        $bestellung_id = $bestellung['bestellung_id'];
         if($counter %4 ==0 && $counter != 0){
             echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
         }
@@ -44,7 +52,7 @@ function printBestellungen($erledigt){
                     <h3>',$bestellung['bestellung_id'],'</h3>
                     <p>',$bestellung['name'],'</p>
                     <p>',$bestellung['bestellung_datum'],'</p>
-                    <a href="BestellungDetails.php?bestellung_id=12><Button class="w3-button w3-blue">Zu der Bestellung</Button></a>
+	                <button class="w3-button w3-green" onclick="">Zu der Bestellung</button>
                     </div>';
         $counter++;
         
@@ -58,18 +66,13 @@ function printBestellungen($erledigt){
 <div id="bestellungen" class="container-fluid text-center w3-margin">
 
 <div class="w3-row-padding w3-padding-16 w3-center w3-margin">
-	<h1>Offene Bestellungen:</h1>
+	<h1>Bestellung-Details:</h1>
 </div>
+
 <?php 
-    printBestellungen(0);
+    printBestellungDetails(0);
 ?>
 
-<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
-	<h1>Erledigte Bestellungen:</h1>
-</div>
-<?php 
-    printBestellungen(1);
-?>
 
 <!--  HIER BESTELLUNGENÜBERSICHT ANZEIGEN -->
 
