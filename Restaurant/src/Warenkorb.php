@@ -24,6 +24,8 @@ include 'Funktionen.php';
 <body id="Warenkorb" data-spy="scroll" data-target=".navbar" data-offset="50">
 
   <?php 
+  
+    include 'Navbar.php';
     
     header("Content-Type: text/html; charset=utf-8");
     function getKundenId(){
@@ -35,16 +37,38 @@ include 'Funktionen.php';
   }
         function printAngebote(){   //also die aus dem warenkorb
     
-    
-    
+
             $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
              
             $statement = $pdo->prepare("SELECT gericht.* FROM gericht INNER JOIN warenkorb on warenkorb.gericht_id = gericht.gericht_id AND warenkorb.gast_id = :kunde");
-            $statement->execute(array(':kunde' => getKundenId()));   
-            while($row = $statement->fetch()) {
-                print_r($row);    //gibt vorläufig mal alles aus 
-                echo '<Button onclick="deleteElement(',$row['gericht_id'],', ',getKundenId(),')">Element ausm warenkorb</Button>';
-            }    
+            $statement->execute(array(':kunde' => getKundenId()));  
+            $counter=0;
+            while($gericht = $statement->fetch()) {
+                //print_r($row);    //gibt vorläufig mal alles aus 
+                //echo '<Button onclick="deleteElement(',$row['gericht_id'],', ',getKundenId(),')">Element ausm warenkorb</Button>';
+                
+                if($counter %4 ==0 && $counter != 0){
+                    echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
+                    
+                }
+                else if($counter %4 ==0 && $counter == 0){
+                    echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
+                    
+                }
+                
+                echo    '<div class="w3-quarter">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                    <p>',$gericht['gericht_beschreibung'],'</p>
+	                <button class="w3-button w3-red" onclick="deleteElement(',$gericht['gericht_id'],', ',getKundenId(),')"">Entfernen</button>
+                    </div>';
+                $counter++;
+            
+            }
+            if($counter % 4 != 0){  //Reihe beenden 
+                echo  '</div>';
+
+            }
         }
     
         function printPreis(){    //wieviel unser wk kostet
@@ -93,38 +117,22 @@ include 'Funktionen.php';
 
 <br>
 <br>
-<?php printAngebote();printPreis();?>
-<Button onclick="bezahlen(<?php echo getKundenId();?>)">Bezahlen oder entgültig bestellen</Button>
+<div id="warenkorb" class="container-fluid text-center">
+
+<?php printAngebote();?>
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
+    <Button class="w3-button w3-blue" onclick="bezahlen(<?php echo getKundenId();?>)">Bezahlen oder entg&uumlltig bestellen</Button>
+</div>
+
+
 
 <!-- hier soll dann auch ein link hin um wieder ne neue bestellung aufzugeben-->
+
+</div>
 </body>
 
-
-<div id="warenkorb" class="container-fluid text-center">
-<?php 
-//hier muss umwandlung js array => php
-    $warenkorb = array(20, 12, 5, 2, 8);
-    //$warenkorb = getWarenkorb();
-    $counter = 0;
-    foreach ($warenkorb as $gericht){
-        echo    '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
-                    <h3>',$gericht['gericht_bezeichnung'],'</h3>
-                    <p>',$gericht['gericht_beschreibung'],'</p>
-	                <button class="w3-button w3-red" onclick="warenkorbHinzu(',$gericht['gericht_id'],')">Entfernen</button>
-                    </div>';
-        $counter++;
-    }
-    while($counter % 4 != 0){
-        echo '<div class="w3-quarter"></div>';
-        $counter++;
-    }
-?>
-
-	<div>
-		<button class="w3-button w3-blue" onclick="bestellen()">Bestellen</button>
-	</div>
-</div>
 
 <footer class="container-fluid bg-4 text-center" width="100%">
 <br>
