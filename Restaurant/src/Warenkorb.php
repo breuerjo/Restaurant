@@ -18,7 +18,6 @@ include 'Funktionen.php';
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
-<script type="text/javascript" src="WarenkorbFunktionen.js"></script>
 </head>
 
 <body id="Warenkorb" data-spy="scroll" data-target=".navbar" data-offset="50">

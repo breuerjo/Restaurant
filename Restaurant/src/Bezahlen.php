@@ -2,8 +2,6 @@
 $kunde = $_POST['kunde'];
 
 
-
-
 $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
 
 //erstmal schauen ob der was bestellt hat vlt
