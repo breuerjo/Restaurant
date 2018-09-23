@@ -118,9 +118,10 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<?php getGerichte("Pizza"); ?>
     
 
-
-<a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button>zum warenkorb geheh</Button></a>
-
+	<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top" >
+		<a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>
+	</div>
+	
  </div> 
 </body>
 

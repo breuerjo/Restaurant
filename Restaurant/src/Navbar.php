@@ -17,6 +17,7 @@
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
         <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="Buffet.php">Buffet/Preise</a></li>
+        <li><a href="Bestellungen.php">Bestellungen</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
           <span class="caret"></span></a>
