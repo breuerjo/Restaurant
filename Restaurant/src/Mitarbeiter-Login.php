@@ -5,7 +5,7 @@ include "Funktionen.php";
 ?>
 <head>
 
-  <title>Gast-Login</title>
+  <title>Mitarbeiter-Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -34,20 +34,21 @@ include "Funktionen.php";
 
 </div>
 
-<form class="form-horizontal text-left"><!-- für die Enter Taste: action="action_page.php"-->
 
-<div class="container">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Geben Sie ihren Username oder E-Mail an">
-
-    <label><b>Passwort</b></label>
-    <input type="password" placeholder="Geben Sie das Passwort ein">
-
-    <button class="btn btn-default"><a href="index-Mitarbeiter.php">Einloggen</a></button>
-    <button class="btn btn-default"><a href="Login.php">Zur&uumlck</a></button>	
-</div>
-
+<form class="form-horizontal text-left" method="POST" action="EinloggenMitarbeiter.php"> 
+	Benutzername: 
+	<br>
+	<input type="text" name="user" size="40">
+	<br> 
+	Passwort: 
+	<br>
+	<input type="password" name="pass" size="40">
+	<br> 
+	<input id="button" type="submit" name="submit" value="Log-In">
+	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button> 
 </form>
+
+
 
 
 </body>
