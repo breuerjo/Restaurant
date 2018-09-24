@@ -28,7 +28,7 @@ include 'Navbar.php';
 
 function printBestellungen($erledigt){
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_erledigt` = :erledigt");
+    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `tisch`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_erledigt` = :erledigt");
     $statement->execute(array(":erledigt" => $erledigt));
     $counter=0;
     
@@ -41,10 +41,11 @@ function printBestellungen($erledigt){
             echo  '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
         }
         echo    '<div class="w3-quarter">
-                    <h3>',$bestellung['bestellung_id'],'</h3>
-                    <p>',$bestellung['name'],'</p>
+                    <h3>ID: ',$bestellung['bestellung_id'],'</h3>
+                    <p>Gastname: ',$bestellung['name'],'</p>
+                     <p>Tisch-Nummer: ',$bestellung['tisch'],'</p>
                     <p>',$bestellung['bestellung_datum'],'</p>
-                    <a href="BestellungDetails.php?bestellung_id=12><Button class="w3-button w3-blue">Zu der Bestellung</Button></a>
+                    <a href="BestellungDetails.php?bestellung_id=', $bestellung_id,'"><Button class="w3-button w3-blue">Zu der Bestellung</Button></a>
                     </div>';
         $counter++;
         
