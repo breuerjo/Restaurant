@@ -53,6 +53,7 @@
                         <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                         <h3>',$gericht['gericht_bezeichnung'],'</h3>
                         <p>',$gericht['gericht_beschreibung'],'</p>
+                        <p>',$gericht['gericht_preis'],'&euro;</p>
                         <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
                         </div>';
             $counter++;
@@ -116,6 +117,18 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<h2><b>Pizza</b></h2>	
   	</div>
 	<?php getGerichte("Pizza"); ?>
+	
+	<div class="text-center">										
+	<br><br>
+	<h2><b>Desserts</b></h2>	
+  	</div>
+	<?php getGerichte("Dessert"); ?>
+	
+	<div class="text-center">										
+	<br><br>
+	<h2><b>Getr&auml;nke</b></h2>	
+  	</div>
+	<?php getGerichte("Getraenk"); ?>
     
 
 	<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top" >

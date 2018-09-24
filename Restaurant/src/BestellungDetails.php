@@ -41,16 +41,19 @@ function printBestellungDetails(){
     $statement->execute(array(":bestellung_id" => $bestellung_id));
     $bestellung = $statement->fetch();
     echo        '<h3>ID: ',$bestellung['bestellung_id'],'</h3>
-                    <p>Gastname: ',$bestellung['name'],'</p>
-                     <p>Tisch-Nummer: ',$bestellung['tisch'],'</p>
-                    <p>',$bestellung['bestellung_datum'],'</p>';
+                    <h3>Gastname: ',$bestellung['name'],'</h3>
+                     <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
+                    <h3>',$bestellung['bestellung_datum'],'</h3>
+                    <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
+                    <br><br>
+                    <h1>Gerichte: </h1>';
     
 }
 
 function printBestellungGerichte(){
     $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `gericht_bildadresse`, `gericht_bezeichnung` FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id on bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id");
+    $statement = $pdo->prepare("SELECT `gericht_bildadresse`, `gericht_preis`, `gericht_bezeichnung`, `gericht_kategorie` FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id");
     $statement->execute(array(":bestellung_id" => $bestellung_id));
     $gericht = $statement->fetch();
     $counter=0;
@@ -68,7 +71,9 @@ function printBestellungGerichte(){
         
         echo    '<div class="w3-quarter">
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <h2>',$gericht['gericht_kategorie'],'</h2>
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                    <p>Preis: ',$gericht['gericht_preis'],'€</p>
                     <p>Menge: </p>
                     </div>';
         $counter++;
@@ -80,6 +85,17 @@ function printBestellungGerichte(){
     }
     
 }
+
+    function printPreis(){    //der Bestellung
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        
+        $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM gericht INNER JOIN bestellung_gerichte on gericht.gericht_id = bestellung_gerichte.gericht_id INNER JOIN bestellung on bestellung_gerichte.bestellung_id = bestellung.bestellung_id WHERE bestellung.bestellung_id = :id");
+        $statement->execute(array(':id' => getBestellungId()));
+        $row = $statement->fetch();
+        $sum = $row[0];
+        echo $sum;
+        
+    }
 ?>
 <div id="bestellungen" class="container-fluid text-center w3-margin">
 
@@ -89,6 +105,7 @@ function printBestellungGerichte(){
 
 <?php 
     printBestellungDetails(0);
+    
     printBestellungGerichte();
 ?>
 

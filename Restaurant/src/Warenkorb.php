@@ -59,6 +59,7 @@ include 'Funktionen.php';
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>',$gericht['gericht_beschreibung'],'</p>
+                    <p>',$gericht['gericht_preis'],'&euro;</p>
 	                <button class="w3-button w3-red" onclick="deleteElement(',$gericht['gericht_id'],', ',getKundenId(),')"">Entfernen</button>
                     </div>';
                 $counter++;
