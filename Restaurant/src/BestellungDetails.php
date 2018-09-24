@@ -73,7 +73,7 @@ function printBestellungGerichte(){
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                     <h2>',$gericht['gericht_kategorie'],'</h2>
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
-                    <p>Preis: ',$gericht['gericht_preis'],'€</p>
+                    <p>Preis: ',$gericht['gericht_preis'],'&euro;</p>
                     <p>Menge: </p>
                     </div>';
         $counter++;
