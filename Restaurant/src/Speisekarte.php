@@ -122,13 +122,17 @@ function warenkorbHinzu(gericht_id, kunde_id){
 		<a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>
 	</div>
 	
+	<br>
+	<br>
+	<br>
+	
  </div> 
 </body>
 
 
-<footer class="container-fluid bg-4 text-center" width="100%">
-<br>
-  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
+<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+  	<div class="col-md-4 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div> 
+  	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
 </footer>
 
 

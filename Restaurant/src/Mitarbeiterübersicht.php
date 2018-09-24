@@ -23,27 +23,50 @@ include 'Navbar.php';
 
 
 function getMitarbeiter($restaurant = 1) {
+  $counter=0;  
   $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
   $statement = $pdo->prepare("SELECT * FROM `mitarbeiter` WHERE restaurant_id = :rst");
   $statement->execute(array(":rst" => $restaurant));
 
   while($mitarbeiter = $statement->fetch()) {     //fetch gibt mir immer ein Ergebnis
-      //hier kann der tim dann seine bezaubernde tabelle draus machen
-      print_r($mitarbeiter);
+      
+      if($counter %4 ==0 && $counter != 0){
+          echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
+          
+      }
+      else if($counter %4 ==0 && $counter == 0){
+          echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
+          
+      }
+      echo    '<div class="w3-quarter">
+                 
+                        <h3>',$mitarbeiter['mitarbeiter_name'],'</h3>
+                        <p>',$mitarbeiter['mitarbeiter_beruf'],'</p>
+                        </div>';
+      $counter++;
   }
-}
+  echo  '</div>';
+      
+      
+      //hier kann der tim dann seine bezaubernde tabelle draus machen
+      //print_r($mitarbeiter);
+  }
 ?>
 
 <br>
 <br>
 
 
-<div id="Mitarbeiter" class="container-fluid text-center">
+
+<!--  <div id="Mitarbeiter" class="container-fluid text-center">
 <br>
 	<h1 id="TablleMitarbeiter"><b>MitarbeiterÃ¼bersicht</b></h1>
 </div>
 <br>
 <br>
+
+      getMitarbeiter(1);
+
 
 <table id="MitarbeiterÃ¼bersicht_Tabelle">
   <tr>
@@ -86,7 +109,7 @@ function getMitarbeiter($restaurant = 1) {
     <td>Doe</td>
     <td>80</td>
   </tr>
-</table>
+</table> -->
 
 
 <br>
@@ -97,12 +120,30 @@ function getMitarbeiter($restaurant = 1) {
 
 
 
-<footer id="Footer_index" class="container-fluid bg-4 text-center">
+<!--  <footer id="Footer_index" class="container-fluid bg-4 text-center navbar-fixed-bottom">
 <br>
   <p><a href="Impressum.php"><b>Impressum</b></a></p> 
 </footer>
 
 
+ Christinas Version
+<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <div class="navbar-text pull-left">
+                <p>© 2018 Restaurant Plöck</p>
+            </div>
+            <div class="navbar-text pull-right">
+                <a href="impressum.html">Impressum</a>      
+            </div>
+        </div>
+    </div>-->
+
 
 </body>
+
+<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+  	<div class="col-md-4 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div> 
+  	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
+</footer>
+
 </html>

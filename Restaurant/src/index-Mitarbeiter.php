@@ -132,11 +132,11 @@ include 'Navbar.php';
 <br>
 <br>
 
-<footer id="Footer_index" class="container-fluid bg-4 text-center">
-<br>
-  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
-</footer>
-
 
 </body>
+
+<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+  	<div class="col-md-4 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div> 
+  	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
+</footer>
 </html>

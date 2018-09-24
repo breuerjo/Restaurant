@@ -71,16 +71,19 @@ input[type=text], input[type=password] {
 	text-align: center;
 }
 
+
 footer{
+	position: absolute;
+	bottom: 0;
 	background-color: #F9D164;
-	margin-left:120px;
-	margin-right:120px;
+	width:100%;
 	height: 60px;
 	text-align: center;
 }
+
+
 .navbar{
 	background-color: #F9D164;
-	color: #FFFFFF;
 }
 
  h4 {
