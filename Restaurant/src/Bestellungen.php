@@ -49,7 +49,7 @@ function printBestellungen($erledigt){
                     </div>';
         $counter++;
         
-    }
+    } 
     if($counter % 4 != 0){  //Reihe beenden
         echo  '</div>';
         
