@@ -40,7 +40,7 @@
           </ul>
         </li>
         <li><a href="Warenkorb.php">Warenkorb</a></li>
-        <li><a href="Login.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>
+        <li><a href="Logout.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>
        </ul>
     </div>
   </div>

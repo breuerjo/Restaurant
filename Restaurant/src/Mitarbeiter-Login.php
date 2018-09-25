@@ -27,7 +27,7 @@ include "Funktionen.php";
 <h2><b> Herzlich Willkommen im Restaurant <?php echo getRestaurantName(); ?></b></h2>
 <h3> Bitte melden Sie sich an oder fahren Sie als Gast fort, um ganz bequem eine Bestellung abzugeben!</h3>
 <br>
-<img src="..\img\Logo.jpg"></img>
+<img src="..\img\Logo.jpg" width="30%"></img>
 
 <br>
 <br>
@@ -44,7 +44,7 @@ include "Funktionen.php";
 	<br>
 	<input type="password" name="pass" size="40">
 	<br> 
-	<input id="button" type="submit" name="submit" value="Log-In">
+	<input id="button" type="submit" name="login" value="Log-In">
 	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button> 
 </form>
 
