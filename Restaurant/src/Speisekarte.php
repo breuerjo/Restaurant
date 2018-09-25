@@ -57,13 +57,25 @@
                 echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
                 
             }
-            echo    '<div class="w3-quarter">
-                        <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
-                        <h3>',$gericht['gericht_bezeichnung'],'</h3>
-                        <p>',$gericht['gericht_beschreibung'],'</p>
-                        <p>',$gericht['gericht_preis'],'&euro;</p>
-                        <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
-                        </div>';
+            //Wenn Mitarbeiter => Button für Warenkorb entfernen
+            if(!isset($_SESSION['mitarbeiter_benutzername'])) {
+                 echo    '<div class="w3-quarter">
+                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                            <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                            <p>',$gericht['gericht_beschreibung'],'</p>
+                            <p>',$gericht['gericht_preis'],'&euro;</p>
+                            <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
+                            </div>';
+            }
+            else{
+                echo    '<div class="w3-quarter">
+                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                            <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                            <p>',$gericht['gericht_beschreibung'],'</p>
+                            <p>',$gericht['gericht_preis'],'&euro;</p>
+                            </div>';
+            }
+               
             $counter++;
         }
         echo  '</div>';
@@ -137,7 +149,15 @@ function warenkorbHinzu(gericht_id, kunde_id){
     
 
 	<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top" >
-		<a href="Warenkorb.php?kunde=<?php echo getKundenId();?>"><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>
+	<?php 
+	
+		if(!isset($_SESSION['mitarbeiter_benutzername'])) {
+			echo '<a href="Warenkorb.php?kunde=',getKundenId() ,' "><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
+		}
+		else{
+		    echo '<a href="NeuesGericht.php"><Button class="w3-button w3-blue">Neues Gericht hinzuf&uuml;gen</Button></a>';
+		}
+	?>	
 	</div>
 	
 	<br>

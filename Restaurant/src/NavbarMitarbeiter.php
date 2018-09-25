@@ -39,7 +39,7 @@
             <li><a href="#">Konfirmation/Kommunion</a></li> 
           </ul>
         </li>
-        <li><a href="Warenkorb.php">Warenkorb</a></li>
+        <!-- <a href="Warenkorb.php">Warenkorb</a></li>--><li>
         <li><a href="Logout.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>
        </ul>
     </div>
