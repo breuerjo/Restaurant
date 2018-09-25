@@ -153,4 +153,5 @@ function getMitarbeiter($restaurant = 1) {
   	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
 </footer>
 
+
 </html>
