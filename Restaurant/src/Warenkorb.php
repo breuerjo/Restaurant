@@ -23,7 +23,8 @@
   
   include "Funktionen.php";
   
-  if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+  session_start();
+  if(isset($_SESSION['mitarbeiter_benutzername'])) {
       include 'NavbarMitarbeiter.php';
   }
   else{
