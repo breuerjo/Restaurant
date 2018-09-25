@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
+
+<head>
 <?php 
 include "Funktionen.php";
-?>
-<head>
 
+if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+    include 'NavbarMitarbeiter.php';
+}
+else{
+    include 'Navbar.php';
+}
+?>
   <title>HOMEPAGE <?php echo getRestaurantName();?></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,9 +27,7 @@ include "Funktionen.php";
   
 <body id="Startseite" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-<?php 
-include 'Navbar.php';
-?>
+
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Wie sollen sich die Slides bewegen -->

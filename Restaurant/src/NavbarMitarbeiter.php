@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 
+<script type="text/javascript">
+    
+    function logout(){
+        jQuery.ajax({
+            url: "Logout.php",
+            type: "POST", 
+        });
+        
+    }
+    </script>
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,7 +28,8 @@
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
         <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="Buffet.php">Buffet/Preise</a></li>
-        <!--  <a href="Bestellungen.php">Bestellungen</a></li>--><li>
+        <li><a href="Bestellungen.php">Bestellungen</a></li>
+        <li><a href="Mitarbeiter&uuml;bersicht.php">Mitarbeiter&uuml;bersicht</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
           <span class="caret"></span></a>
@@ -28,6 +40,7 @@
           </ul>
         </li>
         <li><a href="Warenkorb.php">Warenkorb</a></li>
+        <li><a href="Login.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>
        </ul>
     </div>
   </div>

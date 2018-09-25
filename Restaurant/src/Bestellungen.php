@@ -1,8 +1,6 @@
 <!DOCTYPE>
 <html>
-<?php 
-include 'Funktionen.php';
-?>
+
 
 <head>
 
@@ -24,7 +22,14 @@ include 'Funktionen.php';
 <body id="Bestellungen" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
-include 'Navbar.php';
+include 'Funktionen.php';
+
+if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+    include 'NavbarMitarbeiter.php';
+}
+else{
+    include 'Navbar.php';
+}
 
 function printBestellungen($erledigt){
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');

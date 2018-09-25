@@ -15,8 +15,6 @@
  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
 
 
-</script>
-
 </head>
 
 <body id="Speisekarte" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -24,6 +22,15 @@
     
 
    <?php 
+   
+   include "Funktionen.php";
+   
+   if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+       include 'NavbarMitarbeiter.php';
+   }
+   else{
+       include 'Navbar.php';
+   }
     
     header("Content-Type: text/html; charset=utf-8");
 
@@ -61,9 +68,6 @@
         echo  '</div>';
     }
     
-    
-    include "Funktionen.php";
-    include 'Navbar.php';
     ?>
 
 

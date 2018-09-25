@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php 
-include "Funktionen.php";
-?>
+
 <head>
 
   <title>HOMEPAGE <?php echo getRestaurantName();?></title>
@@ -21,7 +19,14 @@ include "Funktionen.php";
 <body id="Startseite" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
-include 'Navbar.php';
+include "Funktionen.php";
+
+if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+    include 'NavbarMitarbeiter.php';
+}
+else{
+    include 'Navbar.php';
+}
 ?>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

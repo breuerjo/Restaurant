@@ -60,7 +60,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 <h2><b> Herzlich Willkommen im Restaurant <?php echo getRestaurantName(); ?></b></h2>
 <h3> Bitte melden Sie sich an oder fahren Sie als Gast fort, um ganz bequem eine Bestellung abzugeben!</h3>
 <br>
-<img src="..\img\Logo.jpg"></img>
+<img src="..\img\Logo.jpg" width="40%" height="25%"></img>
 
 <br>
 <br>

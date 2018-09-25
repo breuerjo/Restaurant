@@ -16,8 +16,15 @@
 <body id="Mitarbeiterübersicht" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
-include 'Funktionen.php';
-include 'Navbar.php';
+include "Funktionen.php";
+
+if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+    include 'NavbarMitarbeiter.php';
+}
+else{
+    include 'Navbar.php';
+
+}
 
 //holen wir uns mal einfach alle mitarbeiter
 

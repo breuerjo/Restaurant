@@ -1,8 +1,5 @@
 <!DOCTYPE>
 <html>
-<?php 
-include 'Funktionen.php';
-?>
 
 <head>
 
@@ -24,7 +21,14 @@ include 'Funktionen.php';
 
   <?php 
   
-    include 'Navbar.php';
+  include "Funktionen.php";
+  
+  if( isset($_COOKIE["mitarbeiter_benutzername"]) AND isset($_COOKIE["mitarbeiter_passwort"]) ){
+      include 'NavbarMitarbeiter.php';
+  }
+  else{
+      include 'Navbar.php';
+  }
     
     header("Content-Type: text/html; charset=utf-8");
     function getKundenId(){
