@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 24. Sep 2018 um 21:25
+-- Erstellungszeit: 25. Sep 2018 um 20:33
 -- Server-Version: 10.1.35-MariaDB
 -- PHP-Version: 7.2.9
 
@@ -124,7 +124,16 @@ CREATE TABLE `gaeste` (
 INSERT INTO `gaeste` (`id`, `name`, `tisch`) VALUES
 (1, 'PAGINAsohn', 55),
 (2, 'PAGINAsohn', 55),
-(3, 'TimCookBoss', 44);
+(3, 'TimCookBoss', 44),
+(4, 'TIMIBOY', 2),
+(5, 'PAGINAxxxx', 21),
+(6, 'PAGINA', 0),
+(7, 'sdsd', 125),
+(8, 'PAGINA', 0),
+(9, 'PAGINAssss', 1112),
+(10, 'PAGINA', 0),
+(11, 'PAGINA', 0),
+(12, 'PAGINA', 0);
 
 -- --------------------------------------------------------
 
@@ -198,7 +207,10 @@ INSERT INTO `gericht` (`gericht_id`, `restaurant_id`, `gericht_bezeichnung`, `ge
 (49, 0, 'Welde Pils', '3.00', '0,3l', '..\\img\\Welde_Pils.jpg', 'Getraenk'),
 (50, 0, 'Paulaner Hefeweizen', '3.50', '0,5l', '..\\img\\Paulaner_Hefe.jpg', 'Getraenk'),
 (51, 0, 'Rotwein', '3.50', '0,25l', '..\\img\\Rotwein.jpg', 'Getraenk'),
-(52, 0, 'Grappa', '4.50', '2cl', '..\\img\\Grappa.jpg', 'Getraenk');
+(52, 0, 'Grappa', '4.50', '2cl', '..\\img\\Grappa.jpg', 'Getraenk'),
+(53, 1, 'Sprite', '2.50', '0,3l', '..\\img\\Sprite.jpg', 'Getraenk'),
+(54, 1, 'Coca Cola Light', '2.50', '0,3l', '..\\img\\Coca_Cola_Light.jpg', 'Getraenk'),
+(55, 1, 'Orangensaft', '3.50', '0,5l', '..\\img\\Orangensaft.jpg', 'Getraenk');
 
 -- --------------------------------------------------------
 
@@ -267,7 +279,8 @@ INSERT INTO `warenkorb` (`id`, `gericht_id`, `gast_id`) VALUES
 (17, 10, 3),
 (18, 20, 3),
 (19, 28, 3),
-(29, 2, 0);
+(35, 50, 0),
+(36, 51, 0);
 
 --
 -- Indizes der exportierten Tabellen
@@ -335,13 +348,13 @@ ALTER TABLE `bestellung_gerichte`
 -- AUTO_INCREMENT für Tabelle `gaeste`
 --
 ALTER TABLE `gaeste`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
 --
 ALTER TABLE `gericht`
-  MODIFY `gericht_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `gericht_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT für Tabelle `mitarbeiter`
@@ -353,7 +366,7 @@ ALTER TABLE `mitarbeiter`
 -- AUTO_INCREMENT für Tabelle `warenkorb`
 --
 ALTER TABLE `warenkorb`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
