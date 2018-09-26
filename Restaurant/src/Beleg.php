@@ -82,9 +82,9 @@
     <h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
 </div>
 <div class="w3-row-padding w3-padding-16 w3-center">
-	<canvas width="100px" height="100px" id="canvas1" onclick="bewerten(<?php echo $_GET['bestellung'];?>, 1)"></canvas>
-	<canvas width="100px" height="100px" id="canvas2" onclick="bewerten(<?php echo $_GET['bestellung'];?>, 2)"></canvas>
-	<canvas width="100px" height="100px" id="canvas3" onclick="bewerten(<?php echo $_GET['bestellung'];?>, 3)"></canvas>
+	<canvas width="100px" height="100px" id="canvas1" ></canvas>
+	<canvas width="100px" height="100px" id="canvas2" ></canvas>
+	<canvas width="100px" height="100px" id="canvas3" ></canvas>
 </div>
 <br><br><br><br>
 
@@ -105,6 +105,29 @@ canvas2.onmousemove = function(e) {
 };
 canvas3.onmousemove = function(e) {
 	drawSmiley(canvas3, '#86c386', true, 3);
+};
+
+canvas1.onclick = function(e) {
+	bewerten(<?php echo $_GET['bestellung'];?>, 1)
+	drawSmiley(canvas1, '#ff6262', true, 1);
+	canvas1.onmouseleave = null;
+
+	canvas2.parentNode.removeChild(canvas2);
+	canvas3.parentNode.removeChild(canvas3);
+};
+canvas2.onclick = function(e) {
+	bewerten(<?php echo $_GET['bestellung'];?>, 2)
+	drawSmiley(canvas2, '#ffd486', true, 2);
+	canvas2.onmouseleave = null;
+	canvas1.parentNode.removeChild(canvas1);
+	canvas3.parentNode.removeChild(canvas3);
+};
+canvas3.onclick = function(e) {
+	bewerten(<?php echo $_GET['bestellung'];?>, 3)
+	drawSmiley(canvas3, '#86c386', true, 3);
+	canvas3.onmouseleave = null;
+	canvas2.parentNode.removeChild(canvas2);
+	canvas1.parentNode.removeChild(canvas1);
 };
 
 canvas1.onmouseleave = function(){
