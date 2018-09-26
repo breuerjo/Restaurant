@@ -38,112 +38,38 @@ function getMitarbeiter($restaurant = 1) {
   while($mitarbeiter = $statement->fetch()) {     //fetch gibt mir immer ein Ergebnis
       
       if($counter %4 ==0 && $counter != 0){
-          echo  '</div><div class="w3-row-padding w3-padding-16 w3-center">';
+          echo  '<div class="w3-container w3-padding-64 w3-center" id="Wir">';
           
       }
       else if($counter %4 ==0 && $counter == 0){
-          echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
+          echo  '<div class="w3-container w3-padding-64 w3-center w3-margin-top" id="Wir">';
           
       }
       echo    '<div class="w3-quarter">
-                 
+                        <img src=',$mitarbeiter['mitarbeiter_bildadresse'],' alt="Bild" style="width:45%" class="w3-circle w3-hover-opacity">
                         <h3>',$mitarbeiter['mitarbeiter_name'],'</h3>
-                        <p>',$mitarbeiter['mitarbeiter_beruf'],'</p>
+                        <p>',$mitarbeiter['mitarbeiter_beruf'],'</p><br><br>
                         </div>';
       $counter++;
   }
   echo  '</div>';
       
       
-      //hier kann der tim dann seine bezaubernde tabelle draus machen
       //print_r($mitarbeiter);
   }
 ?>
 
 <br>
 <br>
-
-
-
-<!--  <div id="Mitarbeiter" class="container-fluid text-center">
+<div id="Wir" class="container-fluid text-center">
 <br>
-	<h1 id="TablleMitarbeiter"><b>MitarbeiterÃ¼bersicht</b></h1>
+	<h1 id="WirWir"><b>Das sind wir!</b></h1>
+	<br>
+	<p id="Speisen-Text">Wir sind alles miese Motherfucker.</p>
+		
 </div>
 <br>
-<br>
-
-      getMitarbeiter(1);
-
-
-<table id="MitarbeiterÃ¼bersicht_Tabelle">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-  <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
-    <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
-    <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
-    <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
-    <tr>
-    <td>John</td>
-    <td>Doe</td>
-    <td>80</td>
-  </tr>
-</table> -->
-
-
-<br>
-<br>
-<br>
 <?php getMitarbeiter(); ?>
-
-
-
-
-<!--  <footer id="Footer_index" class="container-fluid bg-4 text-center navbar-fixed-bottom">
-<br>
-  <p><a href="Impressum.php"><b>Impressum</b></a></p> 
-</footer>
-
-
- Christinas Version
-<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
-        <div class="container">
-            <div class="navbar-text pull-left">
-                <p>© 2018 Restaurant Plöck</p>
-            </div>
-            <div class="navbar-text pull-right">
-                <a href="impressum.html">Impressum</a>      
-            </div>
-        </div>
-    </div>-->
 
 
 </body>

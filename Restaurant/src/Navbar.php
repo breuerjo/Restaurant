@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a id="restaurant-name" class="navbar-brand" href="#Speisekarte"><b><?php echo getRestaurantName(); ?></b></a>
+      <a id="restaurant-name" class="navbar-brand" href="Startseite.php"><b><?php echo getRestaurantName(); ?></b></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">

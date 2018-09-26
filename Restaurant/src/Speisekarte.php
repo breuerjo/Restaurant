@@ -19,7 +19,7 @@
 
 <body id="Speisekarte" data-spy="scroll" data-target=".navbar" data-offset="50">
 
-    
+
 
    <?php 
    
@@ -60,7 +60,7 @@
             //Wenn Mitarbeiter => Button für Warenkorb entfernen
             if(!isset($_SESSION['mitarbeiter_benutzername'])) {
                  echo    '<div class="w3-quarter">
-                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
                             <h3>',$gericht['gericht_bezeichnung'],'</h3>
                             <p>',$gericht['gericht_beschreibung'],'</p>
                             <p>',$gericht['gericht_preis'],'&euro;</p>
