@@ -25,6 +25,31 @@ if(isset($_SESSION['mitarbeiter_benutzername'])) {
 else{
     include 'Navbar.php';
 }
+
+function printImage(){
+    $my_img = imagecreate( 235, 80 );
+    $background = imagecolorallocate( $my_img, 255, 255, 255 );
+    $text_colour = imagecolorallocate( $my_img, 0, 0, 0 );
+    $line_colour = imagecolorallocate( $my_img, 255, 0, 0 );
+    imagestring( $my_img, 4, 30, 25, "bella.espana@gmail.de", $text_colour );
+    imagesetthickness ( $my_img, 5 );
+    imageline( $my_img, 30, 45, 196, 45, $line_colour );
+    
+    imageline( $my_img, 0, 5, 235, 5, $line_colour );//oben
+    imageline( $my_img, 5, 0, 5, 80, $line_colour );//links
+    imageline( $my_img, 230, 0, 230, 80, $line_colour );//unten
+    imageline( $my_img, 0, 75, 230, 75, $line_colour );//rechts
+    
+    //header( "Content-type: image/png" );
+    //Bild ausgeben
+    imagepng( $my_img, "email-image.png" );
+    
+    echo "<img src='email-image.png'>";
+    
+    //Bilddaten zurücksetzen
+    imagedestroy( $my_img );
+}
+
 ?>
 
 <br>
@@ -45,10 +70,11 @@ else{
 		Kontakt:<br>
 		Telefon: 089/1234567-8<br>
 		Telefax: 089/1234567-9<br>
-		E-Mail: mail@mustermann.de<br>
+		E-Mail: <br><br>
+		<?php printImage();?>
+		<br><br>
 		Website: www.mustermann.de<br>
-		<br>
-		<br>
+		
 		<br>
 		Bei redaktionellen Inhalten:<br>
 		<br>
