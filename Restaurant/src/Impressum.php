@@ -28,10 +28,10 @@ else{
 
 function printImage(){
     $my_img = imagecreate( 235, 80 );
-    $background = imagecolorallocate( $my_img, 255, 255, 255 );
+    $background = imagecolorallocate( $my_img, 161, 237, 184 );
     $text_colour = imagecolorallocate( $my_img, 0, 0, 0 );
-    $line_colour = imagecolorallocate( $my_img, 255, 0, 0 );
-    imagestring( $my_img, 4, 30, 25, "bella.espana@gmail.de", $text_colour );
+    $line_colour = imagecolorallocate( $my_img, 235, 236, 235 );
+    imagestring( $my_img, 4, 30, 25, "bella.espana@example", $text_colour );
     imagesetthickness ( $my_img, 5 );
     imageline( $my_img, 30, 45, 196, 45, $line_colour );
     
@@ -92,23 +92,6 @@ function printImage(){
   	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
 </footer>
 
-
-
-
-<!--<h1>Fick dich Jonas</h1>
-
-<div id="Test">
-<h2>Das ist ein Test</h2>
-<button type="button" onclick="loadDoc()">Hallo</button>
-</div>
-
-<script>
-function loadDoc() {
-
-      document.getElementById("Test").innerHTML = "Test";
-}
-</script>
--->
 
 
 </body>
