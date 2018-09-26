@@ -43,14 +43,18 @@ function getBestellungId(){
 function printBestellungDetails(){
     $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `tisch`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_id` = :bestellung_id");
+    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `tisch`,`bestellung_bewertung`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_id` = :bestellung_id");
     $statement->execute(array(":bestellung_id" => $bestellung_id));
     $bestellung = $statement->fetch();
+    
     echo        '<h3>ID: ',$bestellung['bestellung_id'],'</h3>
                     <h3>Gastname: ',$bestellung['name'],'</h3>
                      <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
                     <h3>',$bestellung['bestellung_datum'],'</h3>
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
+                    <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button>
+                    <br>
+                    <canvas width="100px" height="100px" id="canvas1" ></canvas>
                     <br><br>
                     <h1>Gerichte: </h1>';
     
@@ -120,6 +124,63 @@ function printBestellungGerichte(){
 
 
 </div>
+
+<script type="text/javascript">
+function zeigeSmiley(bewertung){
+	var canvas1 = document.getElementById("canvas1");
+
+	if(bewertung===1){
+		drawSmiley(canvas1, '#ff6262', true, bewertung);
+	}
+	else if(bewertung===2){
+		drawSmiley(canvas1, '#ffd486', true, bewertung);
+	}
+	else if(bewertung===3){
+		drawSmiley(canvas1, '#86c386', true, bewertung);
+	}
+	else{
+		drawSmiley(canvas1, '#000000', false, bewertung);
+	}
+  		
+}
+function drawSmiley(canvas, color, filled, emotion){
+	var ctx = canvas.getContext("2d");
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.strokeStyle= color;
+	ctx.beginPath();
+	ctx.arc(50, 50, 40, 0, 2 * Math.PI);
+	
+	ctx.fillStyle = color + '00';
+	if(filled){
+		ctx.fillStyle = color + '55';
+	}
+	ctx.fill();
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(50,50,40,0,2*Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(60,30,5,0,2*Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	ctx.arc(40,30,5,0,2*Math.PI);
+	ctx.stroke();
+	ctx.beginPath();
+	if(emotion===1){
+		ctx.arc(50, 75, 20, 1* Math.PI, 2 * Math.PI);
+	}
+	else if(emotion===3){
+		ctx.arc(50, 50, 20, 2* Math.PI, 1 * Math.PI);
+	}
+	else if(emotion===2){
+		ctx.moveTo(25, 60);
+		ctx.lineTo(75,60);
+	}
+	
+	ctx.stroke();
+}
+
+</script>
 </body>
 
 
