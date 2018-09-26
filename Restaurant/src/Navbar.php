@@ -13,7 +13,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="index-Gast.php">HOME</a></li>
+        <li><a href="Startseite.php">HOME</a></li>
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
         <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="Buffet.php">Buffet/Preise</a></li>

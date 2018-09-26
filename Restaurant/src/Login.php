@@ -77,7 +77,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
     <label><b>Tischnummer</b></label>
     <input type="text" placeholder="Geben Sie ihre Tischnummer an">
 
-    <button class="btn btn-default"><a href="index-Gast.php">Anmelden</a></button>
+    <button class="btn btn-default"><a href="Startseite.php">Anmelden</a></button>
     <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
 </div>
 

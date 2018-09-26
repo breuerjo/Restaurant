@@ -73,14 +73,22 @@ input[type=text], input[type=password] {
 
 
 footer{
-	position: absolute;
-	bottom: 0;
+	position: fixed;
+	bottom: 0 !important;
 	background-color: #F9D164;
 	width:100%;
 	height: 60px;
 	text-align: center;
 }
 
+#footer1{
+	position: fixed;
+	bottom: 0 !important;
+	background-color: #F9D164;
+	width:100%;
+	height: 60px;
+	text-align: center;
+}
 
 .navbar{
 	background-color: #F9D164;
