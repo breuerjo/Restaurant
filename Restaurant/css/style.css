@@ -1,6 +1,6 @@
  body {
 	margin: auto;
-	background-color:#F8DBC9;
+	background-color: #EBECEB;
   }
  
 #restaurant-name{
@@ -46,12 +46,12 @@ input[type=text], input[type=password] {
 }
 
 #Login{
-	background-color: #F8DBC9;
+	background-color: #EBECEB;
 	
 }
 
 #Speisekarte{
-	background-color:#F8DBC9;
+	background-color: #EBECEB;
 }
 #Speisen{
 	font-size: 50px;
@@ -63,11 +63,11 @@ input[type=text], input[type=password] {
 }
 
 #Footer_index{
-	background-color: #F9D164;
+	background-color: #A1EDB8;
 	margin-left:120px;
 	margin-right:120px;
 	margin-bottom:10px;
-	height: 60px;
+	height: 50px;
 	text-align: center;
 }
 
@@ -75,23 +75,23 @@ input[type=text], input[type=password] {
 footer{
 	position: fixed;
 	bottom: 0 !important;
-	background-color: #F9D164;
+	background-color: #A1EDB8;
 	width:100%;
-	height: 60px;
+	height: 50px;
 	text-align: center;
 }
 
 #footer1{
 	position: fixed;
 	bottom: 0 !important;
-	background-color: #F9D164;
+	background-color: #A1EDB8;
 	width:100%;
-	height: 60px;
+	height: 50px;
 	text-align: center;
 }
 
 .navbar{
-	background-color: #F9D164;
+	background-color: #A1EDB8;
 }
 
  h4 {
