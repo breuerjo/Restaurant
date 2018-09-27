@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 25. Sep 2018 um 20:33
+-- Erstellungszeit: 27. Sep 2018 um 22:29
 -- Server-Version: 10.1.35-MariaDB
 -- PHP-Version: 7.2.9
 
@@ -33,38 +33,43 @@ CREATE TABLE `bestellung` (
   `restaurant_id` int(5) NOT NULL DEFAULT '1',
   `bestellung_datum` datetime NOT NULL,
   `bestellung_erledigt` tinyint(1) NOT NULL DEFAULT '0',
-  `gast_id` int(5) NOT NULL
+  `gast_id` int(5) NOT NULL,
+  `bestellung_bewertung` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `bestellung`
 --
 
-INSERT INTO `bestellung` (`bestellung_id`, `restaurant_id`, `bestellung_datum`, `bestellung_erledigt`, `gast_id`) VALUES
-(2, 1, '2018-09-22 01:32:30', 0, 0),
-(3, 1, '2018-09-22 01:36:41', 0, 0),
-(4, 1, '2018-09-22 01:51:03', 0, 0),
-(5, 1, '2018-09-22 01:54:24', 0, 0),
-(6, 1, '2018-09-22 01:54:44', 0, 0),
-(7, 1, '2018-09-22 01:57:59', 0, 0),
-(8, 1, '2018-09-22 01:58:47', 0, 0),
-(9, 1, '2018-09-22 01:59:11', 0, 0),
-(10, 1, '2018-09-23 01:15:02', 1, 2),
-(11, 1, '2018-09-23 01:27:47', 0, 2),
-(12, 1, '2018-09-23 01:32:18', 0, 2),
-(13, 1, '2018-09-23 01:32:19', 0, 2),
-(14, 1, '2018-09-23 01:32:19', 0, 2),
-(15, 1, '2018-09-23 01:32:19', 0, 2),
-(16, 1, '2018-09-23 01:32:19', 0, 2),
-(17, 1, '2018-09-23 01:32:19', 0, 2),
-(18, 1, '2018-09-23 01:32:19', 1, 2),
-(19, 1, '2018-09-23 01:32:20', 0, 2),
-(20, 1, '2018-09-23 01:32:20', 0, 2),
-(21, 1, '2018-09-23 01:32:20', 0, 2),
-(22, 1, '2018-09-23 08:25:32', 0, 0),
-(23, 1, '2018-09-23 08:37:48', 0, 0),
-(24, 1, '2018-09-23 09:32:29', 1, 0),
-(25, 1, '2018-09-24 12:15:11', 0, 0);
+INSERT INTO `bestellung` (`bestellung_id`, `restaurant_id`, `bestellung_datum`, `bestellung_erledigt`, `gast_id`, `bestellung_bewertung`) VALUES
+(2, 1, '2018-09-22 01:32:30', 0, 0, NULL),
+(3, 1, '2018-09-22 01:36:41', 0, 0, NULL),
+(4, 1, '2018-09-22 01:51:03', 0, 0, NULL),
+(5, 1, '2018-09-22 01:54:24', 0, 0, NULL),
+(6, 1, '2018-09-22 01:54:44', 0, 0, NULL),
+(7, 1, '2018-09-22 01:57:59', 0, 0, NULL),
+(8, 1, '2018-09-22 01:58:47', 0, 0, NULL),
+(9, 1, '2018-09-22 01:59:11', 0, 0, NULL),
+(10, 1, '2018-09-23 01:15:02', 1, 2, NULL),
+(11, 1, '2018-09-23 01:27:47', 0, 2, NULL),
+(12, 1, '2018-09-23 01:32:18', 0, 2, NULL),
+(13, 1, '2018-09-23 01:32:19', 0, 2, NULL),
+(14, 1, '2018-09-23 01:32:19', 0, 2, NULL),
+(15, 1, '2018-09-23 01:32:19', 0, 2, NULL),
+(16, 1, '2018-09-23 01:32:19', 0, 2, NULL),
+(17, 1, '2018-09-23 01:32:19', 0, 2, NULL),
+(18, 1, '2018-09-23 01:32:19', 1, 2, NULL),
+(19, 1, '2018-09-23 01:32:20', 0, 2, NULL),
+(20, 1, '2018-09-23 01:32:20', 0, 2, NULL),
+(21, 1, '2018-09-23 01:32:20', 0, 2, NULL),
+(22, 1, '2018-09-23 08:25:32', 0, 0, NULL),
+(23, 1, '2018-09-23 08:37:48', 0, 0, NULL),
+(24, 1, '2018-09-23 09:32:29', 1, 0, NULL),
+(25, 1, '2018-09-24 12:15:11', 0, 0, 1),
+(26, 1, '2018-09-26 11:48:17', 0, 0, 2),
+(27, 1, '2018-09-26 15:24:22', 0, 18, 3),
+(28, 1, '2018-09-26 20:06:40', 0, 19, 2),
+(29, 1, '2018-09-26 20:07:57', 0, 20, 1);
 
 -- --------------------------------------------------------
 
@@ -103,7 +108,15 @@ INSERT INTO `bestellung_gerichte` (`bestellung_gerichte_id`, `bestellung_id`, `g
 (37, 24, 10),
 (38, 24, 16),
 (39, 24, 28),
-(40, 25, 2);
+(40, 25, 2),
+(41, 26, 51),
+(42, 27, 6),
+(43, 27, 11),
+(44, 27, 13),
+(45, 28, 7),
+(46, 28, 6),
+(47, 28, 5),
+(48, 29, 3);
 
 -- --------------------------------------------------------
 
@@ -133,7 +146,15 @@ INSERT INTO `gaeste` (`id`, `name`, `tisch`) VALUES
 (9, 'PAGINAssss', 1112),
 (10, 'PAGINA', 0),
 (11, 'PAGINA', 0),
-(12, 'PAGINA', 0);
+(12, 'PAGINA', 0),
+(13, 'PAGINA', 0),
+(14, 'PAGINA', 0),
+(15, 'PAGINA', 0),
+(16, 'PAGINA', 0),
+(17, 'PAGINA', 0),
+(18, 'TIMI', 69),
+(19, 'BewertungTest', 45),
+(20, 'BewertungTest2', 45);
 
 -- --------------------------------------------------------
 
@@ -224,20 +245,21 @@ CREATE TABLE `mitarbeiter` (
   `mitarbeiter_benutzername` varchar(50) NOT NULL,
   `mitarbeiter_passwort` varchar(50) NOT NULL,
   `mitarbeiter_name` varchar(100) NOT NULL,
-  `mitarbeiter_beruf` varchar(100) NOT NULL
+  `mitarbeiter_beruf` varchar(100) NOT NULL,
+  `mitarbeiter_bildadresse` varchar(50) NOT NULL DEFAULT '..\\img\\Logo.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `mitarbeiter`
 --
 
-INSERT INTO `mitarbeiter` (`mitarbeiter_id`, `restaurant_id`, `mitarbeiter_benutzername`, `mitarbeiter_passwort`, `mitarbeiter_name`, `mitarbeiter_beruf`) VALUES
-(1, 1, 'russo_f', '123', 'Francesco Russo', 'Inhaber'),
-(2, 1, 'ferrari_a', 'qwe', 'Alessandro Ferrari', 'Koch'),
-(3, 1, 'morelli_g', 'qwe', 'Giovanni Morelli', 'Koch'),
-(4, 1, 'negri_g', 'qwe', 'Giulia Negri', 'Kellner'),
-(5, 1, 'amore_a', 'qwe', 'Alessia Amore', 'Kellner'),
-(6, 1, 'caputo_m', 'qwe', 'Matilde Caputo', 'Kellner');
+INSERT INTO `mitarbeiter` (`mitarbeiter_id`, `restaurant_id`, `mitarbeiter_benutzername`, `mitarbeiter_passwort`, `mitarbeiter_name`, `mitarbeiter_beruf`, `mitarbeiter_bildadresse`) VALUES
+(1, 1, 'russo_f', '123', 'Francesco Russo', 'Inhaber', '..\\img\\Russo.jpg'),
+(2, 1, 'ferrari_a', 'qwe', 'Alessandro Ferrari', 'Koch', '..\\img\\Ferrari.jpg'),
+(3, 1, 'morelli_g', 'qwe', 'Giovanni Morelli', 'Koch', '..\\img\\Morelli.jpg'),
+(4, 1, 'negri_g', 'qwe', 'Giulia Negri', 'Kellner', '..\\img\\Negri.jpg'),
+(5, 1, 'amore_a', 'qwe', 'Alessia Amore', 'Kellner', '..\\img\\Amore.jpg'),
+(6, 1, 'caputo_m', 'qwe', 'Matilde Caputo', 'Kellner', '..\\img\\Caputo.jpg');
 
 -- --------------------------------------------------------
 
@@ -279,8 +301,13 @@ INSERT INTO `warenkorb` (`id`, `gericht_id`, `gast_id`) VALUES
 (17, 10, 3),
 (18, 20, 3),
 (19, 28, 3),
-(35, 50, 0),
-(36, 51, 0);
+(20, 6, 18),
+(21, 11, 18),
+(22, 13, 18),
+(23, 7, 19),
+(24, 6, 19),
+(25, 5, 19),
+(26, 3, 20);
 
 --
 -- Indizes der exportierten Tabellen
@@ -336,19 +363,19 @@ ALTER TABLE `warenkorb`
 -- AUTO_INCREMENT für Tabelle `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT für Tabelle `bestellung_gerichte`
 --
 ALTER TABLE `bestellung_gerichte`
-  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT für Tabelle `gaeste`
 --
 ALTER TABLE `gaeste`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
@@ -366,7 +393,7 @@ ALTER TABLE `mitarbeiter`
 -- AUTO_INCREMENT für Tabelle `warenkorb`
 --
 ALTER TABLE `warenkorb`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
