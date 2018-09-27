@@ -24,13 +24,7 @@ include 'Funktionen.php';
 <body id="Bestellung-Details" data-spy="scroll" data-target=".navbar" data-offset="50" class="w3-margin-top">
 
 <?php 
-session_start();
-if(isset($_SESSION['mitarbeiter_benutzername'])) {
-    include 'NavbarMitarbeiter.php';
-}
-else{
-    include 'Navbar.php';
-}
+getNavbar();
 
 function getBestellungId(){
     if( isset($_GET['bestellung_id']) ){

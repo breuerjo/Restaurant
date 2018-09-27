@@ -21,24 +21,12 @@
 
   <?php 
   
-  include "Funktionen.php";
-  
-  session_start();
-  if(isset($_SESSION['mitarbeiter_benutzername'])) {
-      include 'NavbarMitarbeiter.php';
-  }
-  else{
-      include 'Navbar.php';
-  }
+    include "Funktionen.php";
     
     header("Content-Type: text/html; charset=utf-8");
-    function getKundenId(){
-      if( isset($_GET['kunde']) ){
-          return $_GET['kunde'];
-      }
-      //else er hat was falsch gemacht
-      return 0;  
-    }
+    
+    getNavbar(getKundenId());
+    
         function printAngebote(){   //also die aus dem warenkorb
     
 

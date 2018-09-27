@@ -1,13 +1,8 @@
 <?php
-$kunde = $_POST['kunde'];
+include 'Funktionen.php';
+$kunde = postParameter('kunde');
 
 
-$pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-
-//erstmal schauen ob der was bestellt hat vlt
-
-
-//hier soll jz mal alles aus dem wk in die bestellung gepackt werden
 $statement = $pdo->prepare("INSERT INTO bestellung (gast_id, bestellung_datum) VALUES (:g, NOW());");
 $statement2 = $pdo->prepare("SELECT LAST_INSERT_ID();");
 

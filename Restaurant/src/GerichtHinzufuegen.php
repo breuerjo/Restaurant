@@ -21,14 +21,7 @@
 <?php 
 
 include "Funktionen.php";
-
-session_start();
-if(isset($_SESSION['mitarbeiter_benutzername'])) {
-    include 'NavbarMitarbeiter.php';
-}
-else{
-    include 'Navbar.php';
-}
+getNavbar();
 
 function neuesGerichtHinzufuegen(){
     $bezeichnung = $_POST['bezeichnung'];

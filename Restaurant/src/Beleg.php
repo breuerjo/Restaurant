@@ -26,30 +26,22 @@
 
     function printAngebote(){
 
-        $best = $_GET['bestellung'];
-        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        $best = urlParameter('bestellung');
         
         //Bestellung-Infos holen
-        $statement = $pdo->prepare("SELECT * FROM bestellung WHERE bestellung_id = :bestellung");
-        $statement->execute(array(':bestellung' => $best));   
-        $bestellung = $statement->fetch();  
-
+        $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(':bestellung' => $best))[0];
         //holen vom Namen und Tisch der Bestellung
-        $statement3 = $pdo->prepare("SELECT * FROM gaeste WHERE id = :kunde");
-        $statement3->execute(array(':kunde' => $bestellung['gast_id']));   
-        $gast = $statement3->fetch();
-
+        $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(':kunde' => $bestellung['gast_id']))[0];
         //dann holen wir alle gerichte
-        $statement2 = $pdo->prepare("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung");
-        $statement2->execute(array(':bestellung' => $best));  
-        
+        $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(':bestellung' => $best));  
       
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
                 <h1>Name: ',$gast['name'],'</h1>
               <h3>Tisch-Nummer: ',$gast['tisch'],'</h3></div>';
         
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
-        while($gericht = $statement2->fetch()) {
+
+        foreach($gerichte as $gericht) {
             echo  '<div class="w3-quarter">
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>

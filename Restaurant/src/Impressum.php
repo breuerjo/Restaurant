@@ -18,13 +18,7 @@
 <?php 
 include "Funktionen.php";
 
-session_start();
-if(isset($_SESSION['mitarbeiter_benutzername'])) {
-    include 'NavbarMitarbeiter.php';
-}
-else{
-    include 'Navbar.php';
-}
+getNavbar();
 
 function printImage(){
     $my_img = imagecreate( 235, 80 );

@@ -4,14 +4,7 @@
 <head>
 <?php 
 include "Funktionen.php";
-
-session_start();
-if(isset($_SESSION['mitarbeiter_benutzername'])) {
-    include 'NavbarMitarbeiter.php';
-}
-else{
-    include 'Navbar.php';
-}
+getNavbar(getKundenId());
 ?>
   <title>HOMEPAGE <?php echo getRestaurantName();?></title>
   <meta charset="utf-8">

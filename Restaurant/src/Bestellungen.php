@@ -23,13 +23,7 @@
 
 <?php 
 include 'Funktionen.php';
-session_start();
-if(isset($_SESSION['mitarbeiter_benutzername'])) {
-    include 'NavbarMitarbeiter.php';
-}
-else{
-    include 'Navbar.php';
-}
+getNavbar();
 
 function printBestellungen($erledigt){
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
