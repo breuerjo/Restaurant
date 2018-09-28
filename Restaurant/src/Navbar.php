@@ -1,8 +1,6 @@
 <?php function getNavbarKunde($KundenId){
 
     ?>
-<!DOCTYPE html>
-<html>
 
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
@@ -35,14 +33,13 @@
     </div>
   </div>
 </nav>
-</html>
+
 <?php } 
 
 
 function getNavbarMitarbeiter(){
 ?>
-<!DOCTYPE html>
-<html>
+
 
 <script type="text/javascript">
     
@@ -88,6 +85,6 @@ function getNavbarMitarbeiter(){
     </div>
   </div>
 </nav>
-</html>
+
 <?php 
 }?>
