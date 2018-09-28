@@ -8,11 +8,15 @@
         return $name;
     }
     
-    function dbQuery($query, $array){
+    function dbQuery($query, $array = array()){
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
         $statement = $pdo->prepare($query);
         $statement->execute($array);
         return $statement->fetchAll();
+    }
+    
+    function getPDO(){
+        return new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
     }
         
     function urlParameter($name){
