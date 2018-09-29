@@ -49,10 +49,11 @@
                 }
                 
                 echo    '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>',$gericht['gericht_beschreibung'],'</p>
                     <p>',$gericht['gericht_preis'],'&euro;</p>
+                    <p>',"Zubereitungsdauer: ",$gericht['gericht_dauer']," min",'</p>
 	                <button class="w3-button w3-red" onclick="deleteElement(',$gericht['gericht_id'],', ',getKundenId(),')"">Entfernen</button>
                     </div>';
                 $counter++;
@@ -76,6 +77,19 @@
         echo $sum;
     
     }
+    
+        function printDauer(){          //wie lang dauern die gerichte zusammen
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        
+        $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM gericht INNER JOIN warenkorb ON gericht.gericht_id = warenkorb.gericht_id WHERE warenkorb.gast_id = :kunde");
+        $statement->execute(array(':kunde' => getKundenId()));
+        $row = $statement->fetch();
+        $sum = $row[0];
+        echo $sum;
+        
+    }
+    
         ?>
     
     
@@ -115,6 +129,7 @@
 <?php printAngebote();?>
 
 <div class="w3-row-padding w3-padding-16 w3-center">
+    <h3>Gesamtdauer: <?php printDauer();?> Miunten</h3>
     <h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
     <Button class="w3-button w3-blue" onclick="bezahlen(<?php echo getKundenId();?>)">Bezahlen oder entg&uumlltig bestellen</Button>
 </div>

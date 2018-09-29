@@ -43,7 +43,7 @@
 
         foreach($gerichte as $gericht) {
             echo  '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>',$gericht['gericht_beschreibung'],'</p>
                     <p>',$gericht['gericht_preis'],'&euro;</p>
@@ -53,6 +53,21 @@
         echo '</div>';
     }
 
+    function printDauer(){
+        
+        $bestelllung = $_GET['bestellung'];
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        
+        $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
+        $statement->execute(array(':bestellung' => $bestelllung));
+        $row = $statement->fetch();
+        $sum = $row[0];
+        echo $sum;
+        
+    }
+    
+    
     function printPreis(){
     
     $bestelllung = $_GET['bestellung'];
@@ -68,9 +83,12 @@
 }
 ?>
 
-
 <div class="w3-row-padding w3-padding-16 w3-center">
 	<?php printAngebote(); ?>
+    <h3>Gesamtdauer: <?php printDauer();?> Miunten</h3>
+         <div class="laden">
+                  <div id="ladebalken"><div id="time">Fertig in: <?php printDauer();?> Minuten</div></div>
+         </div>
     <h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
 </div>
 <div class="w3-row-padding w3-padding-16 w3-center">
@@ -82,6 +100,25 @@
 
 
 </body>
+
+<!-- FÜR DEN LADEBALKEN -->
+<script type="text/javascript">
+
+var sekunden = <?php printDauer();?>; // Balken ist genau richtig an Dauer eines Gerichts angepasst => eine Sekunde = eine Minute real life
+
+function zaehleDauer() {			//eine Sekunde entspricht einer Minute real life
+    if (p <99.9) {
+        p = p + 0.1;
+        document.getElementById('ladebalken').style.width = p.toFixed(1) + "%";
+        document.getElementById('time').innerHTML = "Ihr Essen zu "+p.toFixed(1) + "% fertig!";
+    } else {
+        window.clearInterval(intervalZaehle);
+    }
+}
+var p = 0;
+var intervalZaehle = window.setInterval('zaehleDauer()', sekunden );
+</script>
+
 
 <script type="text/javascript">
 

@@ -150,3 +150,23 @@ table#Mitarbeiterübersicht_Tabelle th{
 }
 
  
+.laden{
+	margin: auto;
+    width: 350px; /* Laenge des Balkens */
+    hight: 20px;  /* Hoehe des Balkens */
+    border: 1px solid black;
+}
+#ladebalken{
+    width: 250px; /* Laenge des Balkens */
+    hight: 20px;  /* Hoehe des Balkens */
+    border-right: 1px solid black;
+    background: #A1EDB8 /* Balkenfarbe */
+}
+
+
+#time{
+    width: 350px;
+	text-align: center;
+    color: black;
+	font: normal 1.0em;
+}

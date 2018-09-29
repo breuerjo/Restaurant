@@ -54,15 +54,17 @@
                             <h3>',$gericht['gericht_bezeichnung'],'</h3>
                             <p>',$gericht['gericht_beschreibung'],'</p>
                             <p>',$gericht['gericht_preis'],'&euro;</p>
+                            <p>',"Zubereitungsdauer: ",$gericht['gericht_dauer']," min",'</p>
                             <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
                             </div>';
             }
             else{
                 echo    '<div class="w3-quarter">
-                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                            <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height = "200px">
                             <h3>',$gericht['gericht_bezeichnung'],'</h3>
                             <p>',$gericht['gericht_beschreibung'],'</p>
                             <p>',$gericht['gericht_preis'],'&euro;</p>
+                            <p>',"Zubereitungsdauer: ",$gericht['gericht_dauer']," min",'</p>
                             </div>';
             }
                
@@ -72,7 +74,6 @@
     }
     
     ?>
-
 
 <script type="text/javascript">
 function warenkorbHinzu(gericht_id, kunde_id){
@@ -124,6 +125,18 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<h2><b>Pizza</b></h2>	
   	</div>
 	<?php getGerichte("Pizza"); ?>
+	
+	<div class="text-center">										
+	<br><br>
+	<h2><b>Fleisch</b></h2>	
+  	</div>
+	<?php getGerichte("Fleisch"); ?>
+	
+	<div class="text-center">										
+	<br><br>
+	<h2><b>Fisch</b></h2>	
+  	</div>
+	<?php getGerichte("Fisch"); ?>
 	
 	<div class="text-center">										
 	<br><br>
