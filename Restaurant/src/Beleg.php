@@ -104,11 +104,11 @@
 <!-- FÜR DEN LADEBALKEN -->
 <script type="text/javascript">
 
-var sekunden = <?php printDauer();?>; // Balken ist genau richtig an Dauer eines Gerichts angepasst => eine Sekunde = eine Minute real life
+var sekunden = <?php printDauer();?>; // Balken ist genau richtig an Dauer eines Gerichts angepasst => zwei Prozent = eine Minute real life
 
-function zaehleDauer() {			//eine Sekunde entspricht einer Minute real life
-    if (p <99.9) {
-        p = p + 0.1;
+function zaehleDauer() {			//zwei Prozent entsprechen einer Minute real life
+    if (p <99.95) {
+        p = p + 0.05;				//0.1 => ein Prozent = eine Sekunde
         document.getElementById('ladebalken').style.width = p.toFixed(1) + "%";
         document.getElementById('time').innerHTML = "Ihr Essen zu "+p.toFixed(1) + "% fertig!";
     } else {
