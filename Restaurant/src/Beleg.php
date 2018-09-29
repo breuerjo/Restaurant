@@ -110,7 +110,7 @@ function zaehleDauer() {			//zwei Prozent entsprechen einer Minute real life
     if (p <99.95) {
         p = p + 0.05;				//0.1 => ein Prozent = eine Sekunde
         document.getElementById('ladebalken').style.width = p.toFixed(1) + "%";
-        document.getElementById('time').innerHTML = "Ihr Essen zu "+p.toFixed(1) + "% fertig!";
+        document.getElementById('time').innerHTML = "Ihr Essen ist zu "+p.toFixed(1) + "% fertig!";
     } else {
         window.clearInterval(intervalZaehle);
     }
