@@ -173,7 +173,7 @@ function warenkorbHinzu(gericht_id, kunde_id){
 
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
   	<div class="col-md-4 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div> 
-  	<div class="col-md-4 navbar-text pull-right"><p><a href="Impressum.php"><b>Datenschutz</b></a></p></div>
+  	<div class="col-md-4 navbar-text pull-right"><p><a href="Kontakt.php"><b>Kontakt</b></a></p></div>
 </footer>
 
 

@@ -16,7 +16,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Startseite.php">HOME</a></li>
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
-        <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="Buffet.php">Buffet/Preise</a></li>
         <!--  <a href="Bestellungen.php">Bestellungen</a></li>--><li>
         <li class="dropdown">
@@ -66,7 +65,6 @@ function getNavbarMitarbeiter(){
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Startseite.php">HOME</a></li>
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
-        <li><a href="Kontakt.php">Kontakt</a></li>
         <li><a href="Buffet.php">Buffet/Preise</a></li>
         <li><a href="Bestellungen.php">Bestellungen</a></li>
         <li><a href="Mitarbeiter&uuml;bersicht.php">Mitarbeiter&uuml;bersicht</a></li>
