@@ -24,8 +24,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 
 <body id="Login">
 
-
-<input id="tisch" value="0"/>
+ <input id="tisch" value="0"/>
 <input id="name" value="PAGINA"/>
 <button id="checkin">hier gehts zur speisekarte php</button>
 
@@ -48,9 +47,6 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
             
         });
     </script>
-
-
-
 <div class="container text-center">
 	
 <br>
@@ -66,22 +62,24 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 <br>
 
 </div>
-
+ 
 <form class="form-horizontal text-left"><!-- für die Enter Taste: action="action_page.php"-->
 
 <div class="container">
-
-    <label><b>Name</b></label>
-    <input type="text" placeholder="Geben Sie ihren Namen an">
-    
+   
     <label><b>Tischnummer</b></label>
-    <input type="text" placeholder="Geben Sie ihre Tischnummer an">
-
-    <button class="btn btn-default"><a href="Startseite.php">Anmelden</a></button>
+    <input type="text" placeholder="Geben Sie ihre Tischnummer an"/>
+   
+    <label><b>Name</b></label>
+    <input type="text" placeholder="Geben Sie ihren Namen an"/>
+   
+    <button class="btn btn-default"><a href="Speisekarte.php">Anmelden</a></button>
     <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
+    
 </div>
-
+   
 </form>
+
 
 
 </body>

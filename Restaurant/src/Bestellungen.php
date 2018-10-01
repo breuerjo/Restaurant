@@ -56,16 +56,20 @@ function printBestellungen($erledigt){
 }
 ?>
 <div id="bestellungen" class="container-fluid text-center w3-margin">
+<br>
+<br>
 
 <div class="w3-row-padding w3-padding-16 w3-center w3-margin">
-	<h1>Offene Bestellungen:</h1>
+	<h1><b>Offene Bestellungen</b></h1>
 </div>
 <?php 
     printBestellungen(0);
 ?>
 
 <div class="w3-row-padding w3-padding-16 w3-center w3-margin">
-	<h1>Erledigte Bestellungen:</h1>
+	<br>
+	<br>
+	<h1><b>Erledigte Bestellungen</b></h1>
 </div>
 <?php 
     printBestellungen(1);
@@ -75,6 +79,10 @@ function printBestellungen($erledigt){
 
 
 </div>
+
+<br>
+<br>
+<br>
 </body>
 
 
