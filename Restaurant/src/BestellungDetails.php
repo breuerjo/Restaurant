@@ -46,7 +46,8 @@ function printBestellungDetails(){
                      <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
                     <h3>',$bestellung['bestellung_datum'],'</h3>
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
-                    <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button>
+                    <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button><br><br>
+                    <Button class="w3-button w3-blue" onclick="BestellungAbgeschlossen(',$bestellung['bestellung_id'],')">Bestellung erledigt</Button>
                     <br>
                     <canvas width="100px" height="100px" id="canvas1" ></canvas>
                     <br><br>
@@ -74,7 +75,7 @@ function printBestellungGerichte(){
         }
         
         echo    '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%">
+                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
                     <h2>',$gericht['gericht_kategorie'],'</h2>
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>Preis: ',$gericht['gericht_preis'],'&euro;</p>
@@ -100,10 +101,13 @@ function printBestellungGerichte(){
         echo $sum;
         
     }
+    
 ?>
 <div id="bestellungen" class="container-fluid text-center w3-margin">
 
 <div class="w3-row-padding w3-padding-16 w3-center w3-margin">
+	<br>
+	<br>
 	<h1>Bestellung-Details:</h1>
 </div>
 
@@ -116,10 +120,20 @@ function printBestellungGerichte(){
 
 <!--  HIER BESTELLUNGENÜBERSICHT ANZEIGEN -->
 
-
+<br>
+<br>
 </div>
 
 <script type="text/javascript">
+function BestellungAbgeschlossen(bestellung_id){
+	jQuery.ajax({
+		url:"Bestellung_entfernen.php",
+		typ:"POST",
+		data: "bestellung_id=" + bestellung_id,
+	});   
+	
+}
+
 function zeigeSmiley(bewertung){
 	var canvas1 = document.getElementById("canvas1");
 
