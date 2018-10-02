@@ -36,7 +36,20 @@ include "Funktionen.php";
 
 
 <form class="form-horizontal text-left" method="POST" action="EinloggenMitarbeiter.php"> 
-	Benutzername: 
+	
+	<div class="container">
+   
+    <label><b>Benutzername</b></label>
+   <input type="text" name="user" size="40" placeholder="Geben Sie bitte Ihren Benutzername ein">
+   
+    <label><b>Passwort</b></label>
+   	<input type="password" name="pass" size="40" placeholder="Geben Sie bitte Ihr Passwort ein">
+   
+    <input id="button" type="submit" name="login" value="Log-In">
+	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button>
+	</div>
+	
+<!-- 	Benutzername: 
 	<br>
 	<input type="text" name="user" size="40">
 	<br> 
@@ -45,7 +58,8 @@ include "Funktionen.php";
 	<input type="password" name="pass" size="40">
 	<br> 
 	<input id="button" type="submit" name="login" value="Log-In">
-	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button> 
+	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button>  
+	-->
 </form>
 
 

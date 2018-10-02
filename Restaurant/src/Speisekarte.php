@@ -95,7 +95,7 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<h1 id="Speisen"><b>Unsere Speisen</b></h1>
 	<br>
 	<p id="Speisen-Text">Hier finden Sie eine Vielzahl der Speisen, die wir derzeit für Sie im Angebot haben. Bei Fragen wenden Sie 
-		sich bitte an das Personal.<br> Viel Vergnügen wünscht ihnen...!</p>
+		sich bitte an das Personal.<br> Viel Vergnügen wünscht ihnen <?php echo getRestaurantName()?>!</p>
 		
 </div>
 
