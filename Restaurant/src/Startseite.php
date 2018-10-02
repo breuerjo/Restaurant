@@ -85,7 +85,7 @@ getNavbar(getKundenId());
       <button class="btn btn-default btn-lg"><a href="Speisekarte.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
-      <img src="..\img\essen2.jpg" width="500" height="300"></img>
+      <img src="..\img\essen2.jpg" width="100%" height="300"></img>
     </div>
   </div>
 </div>
@@ -97,9 +97,9 @@ getNavbar(getKundenId());
 <div id="Cocktails" class="container-fluid">			<!--auf der Startseite für Cocktails-->
   <div class="row">
      <div class="col-sm-5">
-      <img src="..\img\cocktails.jpg" width="500" height="300"></img>
+      <img src="..\img\cocktails.jpg" width="100%" height="300"></img>
     </div>
-    <div class="col-sm-6.5 text-center">
+    <div class="col-sm-7 text-center">
       <h2>UNSERE COCKTAILS</h2><br>
       <h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur Zutaten aus unserer Region. 
 			Überzeugen Sie sich selbst durch einen Blick in die Speisekarte.</h4><br>
@@ -120,7 +120,7 @@ getNavbar(getKundenId());
       <button class="btn btn-default btn-lg"><a href="Speisekarte.php">Speisekarte</a></button>
     </div>
     <div class="col-sm-5">
-      <img src="..\img\dessert_Startseite.jpg" width="500" height="300"></img>
+      <img src="..\img\dessert_Startseite.jpg" width="100%" height="300"></img>
     </div>
   </div>
 </div>
