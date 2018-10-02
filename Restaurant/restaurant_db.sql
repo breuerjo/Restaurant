@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 01. Okt 2018 um 14:50
+-- Erstellungszeit: 02. Okt 2018 um 15:22
 -- Server-Version: 10.1.35-MariaDB
 -- PHP-Version: 7.2.9
 
@@ -69,7 +69,8 @@ INSERT INTO `bestellung` (`bestellung_id`, `restaurant_id`, `bestellung_datum`, 
 (26, 1, '2018-09-26 11:48:17', 0, 0, 2),
 (27, 1, '2018-09-26 15:24:22', 0, 18, 3),
 (28, 1, '2018-09-26 20:06:40', 0, 19, 2),
-(29, 1, '2018-09-26 20:07:57', 0, 20, 1);
+(29, 1, '2018-09-26 20:07:57', 0, 20, 1),
+(30, 1, '2018-10-02 10:42:14', 0, 24, 3);
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,15 @@ INSERT INTO `bestellung_gerichte` (`bestellung_gerichte_id`, `bestellung_id`, `g
 (45, 28, 7),
 (46, 28, 6),
 (47, 28, 5),
-(48, 29, 3);
+(48, 29, 3),
+(49, 30, 6),
+(50, 30, 5),
+(51, 30, 7),
+(52, 30, 29),
+(53, 30, 34),
+(54, 30, 32),
+(55, 30, 44),
+(56, 30, 54);
 
 -- --------------------------------------------------------
 
@@ -154,7 +163,11 @@ INSERT INTO `gaeste` (`id`, `name`, `tisch`) VALUES
 (17, 'PAGINA', 0),
 (18, 'TIMI', 69),
 (19, 'BewertungTest', 45),
-(20, 'BewertungTest2', 45);
+(20, 'BewertungTest2', 45),
+(21, 'PAGINA', 0),
+(22, 'PAGINA', 0),
+(23, 'PAGINA', 0),
+(24, 'test123', 48);
 
 -- --------------------------------------------------------
 
@@ -209,8 +222,8 @@ INSERT INTO `gericht` (`gericht_id`, `restaurant_id`, `gericht_bezeichnung`, `ge
 (29, 0, 'RUMPSTEAK (200 GRAMM)', '24.80', 'mit hausgemachter Kräuterbutter, hausgemachtem\r\nKnoblauchbrot & gemischtem Salat', '..\\img\\Rumpsteak_Rucola.jpg', 'Fleisch', 25),
 (30, 0, 'TAGLIATA (RUMPSTEAK IN SCHEIBEN) ', '23.80', 'auf Rucola mit Balsamico & original Parmigiano Reggiano\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nKnoblauchbrot & gemischtem Salat', '..\\img\\Rumpsteak_Knoblauchbutter.jpg', 'Fleisch', 24),
 (31, 0, 'PETTO DI POLLO RIPIENO', '19.80', 'Hähnchenbrust gefüllt mit getrockneten Tomaten und Feta\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nKnoblauchbrot & gemischtem Salat', '..\\img\\Hähnchenbrust.jpg', 'Fleisch', 22),
-(32, 0, 'LACHSSTEAK KNOBLAUCHÖL', '20.80', 'Hähnchenbrust gefüllt mit getrockneten Tomaten und Feta\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nKnoblauchbrot & gemischtem Salat', '..\\img\\Lachssteak_Knoblauch.jpg', 'Fisch', 27),
-(33, 0, 'LACHSSTEAK TOMATEN-SAHNE-SAUCE', '21.80', 'Hähnchenbrust gefüllt mit getrockneten Tomaten und Feta\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nmit hausgemachtem Knoblauchbrot & gemischtem Salat\r\nKnoblauchbrot & gemischtem Salat', '..\\img\\Lachssteak_Tomatensoße.jpg', 'Fisch', 26),
+(32, 0, 'LACHSSTEAK KNOBLAUCHÖL', '20.80', 'Lachssteak verfeinert mit Knoblauchöl', '..\\img\\Lachssteak_Knoblauch.jpg', 'Fisch', 27),
+(33, 0, 'LACHSSTEAK TOMATEN-SAHNE-SAUCE', '21.80', 'Lachssteak in saftiger Tomaten-Sahne-Sauce', '..\\img\\Lachssteak_Tomatensoße.jpg', 'Fisch', 26),
 (34, 0, '6 BLACK TIGER RIESENGARNELEN', '24.80', 'mit Knoblauchbrot & gemischtem Salat', '..\\img\\Riesengarnelen.jpg', 'Fisch', 33),
 (35, 0, 'KLEINES SCHOKOMOUSSE ', '5.80', 'mit Sahne', '..\\img\\Schokomousse.jpg', 'Dessert', 8),
 (36, 0, 'HAUSGEMACHTES TIRAMISU', '6.80', 'Lecker!', '..\\img\\Tiramisu.jpg', 'Dessert', 4),
@@ -308,7 +321,15 @@ INSERT INTO `warenkorb` (`id`, `gericht_id`, `gast_id`) VALUES
 (23, 7, 19),
 (24, 6, 19),
 (25, 5, 19),
-(26, 3, 20);
+(26, 3, 20),
+(27, 6, 24),
+(28, 5, 24),
+(29, 7, 24),
+(30, 29, 24),
+(31, 34, 24),
+(32, 32, 24),
+(33, 44, 24),
+(34, 54, 24);
 
 --
 -- Indizes der exportierten Tabellen
@@ -364,19 +385,19 @@ ALTER TABLE `warenkorb`
 -- AUTO_INCREMENT für Tabelle `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT für Tabelle `bestellung_gerichte`
 --
 ALTER TABLE `bestellung_gerichte`
-  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT für Tabelle `gaeste`
 --
 ALTER TABLE `gaeste`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
@@ -394,7 +415,7 @@ ALTER TABLE `mitarbeiter`
 -- AUTO_INCREMENT für Tabelle `warenkorb`
 --
 ALTER TABLE `warenkorb`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
