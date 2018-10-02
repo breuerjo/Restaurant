@@ -24,8 +24,8 @@ include "Funktionen.php";
 <br>
 
 
-<h2><b> Herzlich Willkommen im Restaurant <?php echo getRestaurantName(); ?></b></h2>
-<h3> Bitte melden Sie sich an oder fahren Sie als Gast fort, um ganz bequem eine Bestellung abzugeben!</h3>
+<h2><b>Restaurant <?php echo getRestaurantName(); ?></b></h2>
+<h3> Bitte melden Sie sich mit ihrem Benutzername an!</h3>
 <br>
 <img src="..\img\Logo.jpg" width="30%"></img>
 
