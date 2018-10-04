@@ -32,6 +32,7 @@
         $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(':bestellung' => $best))[0];
         //holen vom Namen und Tisch der Bestellung
         $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(':kunde' => $bestellung['gast_id']))[0];
+        //$gast = $_COOKIE['gast'];
         //dann holen wir alle gerichte
         $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(':bestellung' => $best));  
       
@@ -242,11 +243,21 @@ function bewerten(bestellung_id, bew){
   });
 }
 </script>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
   	<div class="col-md-4 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div> 
   	<div class="col-md-4 navbar-text pull-right"><p><a href="Kontakt.php"><b>Kontakt</b></a></p></div>
 </footer>
 
+
+<?php 
+//Wenn Kunde bestellt hat => ausloggen und cookie löschen
+
+unset($_COOKIE['gast']);
+
+session_destroy();
+
+
+?>
 
 </html>
