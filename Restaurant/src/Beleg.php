@@ -20,7 +20,14 @@
     
     include 'Funktionen.php';
     
+    //Wenn Kunde bestellt hat => ausloggen und cookie löschen
     session_start();
+    echo $_COOKIE['gast'];
+    unset($_COOKIE['gast']);
+    echo $_COOKIE['gast'];
+    session_destroy();
+
+    
     
 //header("Content-Type: text/html; charset=utf-8");
 
@@ -250,14 +257,5 @@ function bewerten(bestellung_id, bew){
 </footer>
 
 
-<?php 
-//Wenn Kunde bestellt hat => ausloggen und cookie löschen
-
-unset($_COOKIE['gast']);
-
-session_destroy();
-
-
-?>
 
 </html>

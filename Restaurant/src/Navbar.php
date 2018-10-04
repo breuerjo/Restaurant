@@ -26,8 +26,9 @@
             <li><a href="#">Geburtstag</a></li>
             <li><a href="#">Konfirmation/Kommunion</a></li> 
           </ul>
-        </li>-->
-        <li><a href="Warenkorb.php?kunde=<?php echo $KundenId; ?>">Warenkorb</a></li>
+        </li>
+        -->
+        <li><a href="Warenkorb.php">Warenkorb</a></li>
        </ul>
     </div>
   </div>

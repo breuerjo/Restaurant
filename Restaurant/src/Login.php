@@ -75,7 +75,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
     <label><b>Name</b></label>
     <input id="name" value="PAGINA" type="text" placeholder="Geben Sie ihren Namen an"/>
    
-    <button id="checkin" class="btn btn-default"><a href="Speisekarte.php">Anmelden</a></button>
+    <button id="checkin" class="btn btn-default">Anmelden</button>
     <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
     
 </div>
@@ -93,9 +93,10 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
                 url: "NeuerKunde.php",
                  type: "POST",
                  data: "tisch=" + getTisch() + "&name=" + getName(),
-                 success: function(res){
-                    window.location.href = 'Speisekarte.php?kunde=' + res;
-                 }
+	                 success: function(res){
+	                	 window.location.href = 'Speisekarte.php';
+                     //window.location.href = 'Speisekarte.php?kunde=' + res;
+                  }
              });
             
         });

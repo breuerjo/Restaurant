@@ -47,7 +47,7 @@
                 echo  '<div class="w3-row-padding w3-padding-16 w3-center">';
                 
             }
-            //Wenn Mitarbeiter => Button für Warenkorb entfernen
+            
             if(!isset($_SESSION['mitarbeiter_benutzername'])) {
                  echo    '<div class="w3-quarter">
                             <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
@@ -58,6 +58,7 @@
                             <button class="btn btn-default" onclick="warenkorbHinzu(', $gericht['gericht_id'], ', ', getKundenId(), ')">In den Warenkorb</button>
                             </div>';
             }
+            //Wenn Mitarbeiter
             else{
                 echo    '<div class="w3-quarter">
                             <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height = "200px">
@@ -155,7 +156,8 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<?php 
 	
 		if(!isset($_SESSION['mitarbeiter_benutzername'])) {
-			echo '<a href="Warenkorb.php?kunde=',getKundenId() ,' "><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
+			//echo '<a href="Warenkorb.php?kunde=',getKundenId() ,' "><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
+		    echo '<a href="Warenkorb.php"><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
 		}
 		else{
 		    echo '<a href="NeuesGericht.php"><Button class="w3-button w3-blue">Neues Gericht hinzuf&uuml;gen</Button></a>';

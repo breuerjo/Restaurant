@@ -28,10 +28,11 @@
     }
     
     function getKundenId(){
-        if( isset($_GET['kunde'])){
-            return $_GET['kunde'];
-        }
-        return 0;
+//         if( isset($_GET['kunde'])){
+//             return $_GET['kunde'];
+//         }
+        
+        return $_COOKIE['gast'];
     }
     
     function getNavbar(){
