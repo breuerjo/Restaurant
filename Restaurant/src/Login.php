@@ -23,7 +23,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
  </head>
 
 <body id="Login">
-
+<!--  
  <input id="tisch" value="0"/>
 <input id="name" value="PAGINA"/>
 <button id="checkin">hier gehts zur speisekarte php</button>
@@ -47,6 +47,8 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
             
         });
     </script>
+-->    
+    
 <div class="container text-center">
 	
 <br>
@@ -68,18 +70,36 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 <div class="container">
    
     <label><b>Tischnummer</b></label>
-    <input type="text" placeholder="Geben Sie ihre Tischnummer an"/>
+    <input id="tisch" type="text"  value="0" placeholder="Geben Sie ihre Tischnummer an"/>
    
     <label><b>Name</b></label>
-    <input type="text" placeholder="Geben Sie ihren Namen an"/>
+    <input id="name" value="PAGINA" type="text" placeholder="Geben Sie ihren Namen an"/>
    
-    <button class="btn btn-default"><a href="Speisekarte.php">Anmelden</a></button>
+    <button id="checkin" class="btn btn-default"><a href="Speisekarte.php">Anmelden</a></button>
     <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
     
 </div>
    
 </form>
-
+ <script type="text/javascript">
+        function getTisch(){
+            return isNaN(document.getElementById('tisch').value) ? 0 : document.getElementById('tisch').value;
+        }
+        function getName(){
+            return document.getElementById('name').value;
+        }
+        document.getElementById("checkin").addEventListener("click", function(){
+            jQuery.ajax({
+                url: "NeuerKunde.php",
+                 type: "POST",
+                 data: "tisch=" + getTisch() + "&name=" + getName(),
+                 success: function(res){
+                    window.location.href = 'Speisekarte.php?kunde=' + res;
+                 }
+             });
+            
+        });
+    </script>
 
 
 </body>
