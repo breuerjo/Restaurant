@@ -22,9 +22,9 @@
     
     //Wenn Kunde bestellt hat => ausloggen und cookie löschen
     session_start();
-    echo $_COOKIE['gast'];
+    //echo $_COOKIE['gast'];
     unset($_COOKIE['gast']);
-    echo $_COOKIE['gast'];
+    //echo $_COOKIE['gast'];
     session_destroy();
 
     
@@ -250,7 +250,7 @@ function bewerten(bestellung_id, bew){
   });
 }
 </script>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br>
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
   	<div class="col-md-2 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div>
   	<div id="testDiv" class="col-md-7 navbar-text pull-left"><p><b></b></p></div> 
