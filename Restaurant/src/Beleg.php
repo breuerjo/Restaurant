@@ -45,7 +45,8 @@
       
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
                 <h1>Name: ',$gast['name'],'</h1>
-              <h3>Tisch-Nummer: ',$gast['tisch'],'</h3></div>';
+              <h3>Raum-Nummer: ',$gast['raum_id'],'</h3>
+                <h3>Tisch-Nummer: ',$gast['tisch'],'</h3></div>';
         
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
 

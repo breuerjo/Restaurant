@@ -45,11 +45,38 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 
 <div class="container">
    
-    <label><b>Tischnummer:</b></label>
-    <input id="tisch" type="text"  value="0" placeholder="Geben Sie Ihre Tischnummer an"/>
-    
-    <label><b>Raum:</b></label>
-    <input id="raum" value="1" type="text" placeholder="Geben Sie Ihren Raum an"/>
+<!--     <label><b>Raum:</b></label> -->
+<!--     <input id="raum" value="1" type="text" placeholder="Geben Sie Ihren Raum an"/> -->
+	<label><b>Raum:</b></label><br>
+    <select name="raum" id="raum">
+              <option>1</option>
+           </select> <br>
+   
+<!--     <label><b>Tischnummer:</b></label> -->
+<!--     <input id="tisch" type="text"  value="0" placeholder="Geben Sie Ihre Tischnummer an"/> -->
+    <label><b>Tisch:</b></label><br>
+      <select name="tisch" id="tisch">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+          <option>18</option>
+          <option>19</option>
+          <option>20</option>
+       </select> <br>
     
     <label><b>Name:</b></label>
     <input id="name" value="Test" type="text" placeholder="Geben Sie Ihren Namen an"/>
@@ -70,7 +97,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
             return document.getElementById('name').value;
         }
         function getRaum(){
-        	return isNaN(document.getElementById('raum').value) ? 1 : document.getElementById('tisch').value;
+        	return isNaN(document.getElementById('raum').value) ? 1 : document.getElementById('raum').value;
         }
         document.getElementById("checkin").addEventListener("click", function(){
             jQuery.ajax({

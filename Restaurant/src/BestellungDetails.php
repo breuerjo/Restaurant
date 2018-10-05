@@ -37,12 +37,13 @@ function getBestellungId(){
 function printBestellungDetails(){
     $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `bestellung_id`, `name`, `tisch`,`bestellung_bewertung`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_id` = :bestellung_id");
+    $statement = $pdo->prepare("SELECT `bestellung_id`, `raum_id`, `name`, `tisch`,`bestellung_bewertung`, `bestellung_datum`, `bestellung_erledigt` FROM `bestellung` INNER JOIN gaeste on gaeste.id = bestellung.gast_id WHERE `bestellung_id` = :bestellung_id");
     $statement->execute(array(":bestellung_id" => $bestellung_id));
     $bestellung = $statement->fetch();
     
     echo        '<h3>ID: ',$bestellung['bestellung_id'],'</h3>
                     <h3>Gastname: ',$bestellung['name'],'</h3>
+                    <h3>Raum-Nummer: ',$bestellung['raum_id'],'</h3>
                     <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
                     
 '.(($bestellung['tisch']==1)?'<div>
@@ -1172,9 +1173,9 @@ function printBestellungDetails(){
     </div>':"").'
                     <h3>',$bestellung['bestellung_datum'],'</h3>
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
-                    <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button><br><br>
                     <Button class="w3-button w3-blue" onclick="BestellungAbgeschlossen(',$bestellung['bestellung_id'],')">Bestellung erledigt</Button>
-                    <br>
+                    <br><br>
+                    <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button><br>
                     <canvas width="100px" height="100px" id="canvas1" ></canvas>
                     <br><br>
                     <h1><b>Gerichte</b> </h1>';
@@ -1207,7 +1208,6 @@ function printBestellungGerichte(){
                     <h2>',$gericht['gericht_kategorie'],'</h2>
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
                     <p>Preis: ',$gericht['gericht_preis'],'&euro;</p>
-                    <p>Menge: </p>
                     </div>';
         $counter++;
         

@@ -58,7 +58,6 @@ function getMitarbeiter($restaurant = 1) {
 <br>
 	<h1 id="WirWir"><b>Das sind wir!</b></h1>
 	<br>
-	<p id="Speisen-Text">Wir sind alles miese Motherfucker.</p>
 		
 </div>
 <br>
