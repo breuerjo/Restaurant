@@ -180,7 +180,7 @@ function warenkorbHinzu(gericht_id, kunde_id){
 </footer>
 
 <script>
-$.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker',
+$.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	dataType: 'html',
 	success: function(response)
 	{ $('#testDiv').html(response); }
