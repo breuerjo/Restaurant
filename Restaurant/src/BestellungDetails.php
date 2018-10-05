@@ -43,7 +43,1133 @@ function printBestellungDetails(){
     
     echo        '<h3>ID: ',$bestellung['bestellung_id'],'</h3>
                     <h3>Gastname: ',$bestellung['name'],'</h3>
-                     <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
+                    <h3>Tisch-Nummer: ',$bestellung['tisch'],'</h3>
+                    
+'.(($bestellung['tisch']==1)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==2)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==3)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==4)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==5)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==6)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==7)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:yellow"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==8)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==9)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==10)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==11)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==12)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==13)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+'.(($bestellung['tisch']==14)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:yellow"/>
+      <text fill="black" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==15)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==16)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==17)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==18)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==19)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+      <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
+
+
+'.(($bestellung['tisch']==20)?'<div>
+        <svg width="500" height="500">
+      <rect x="50" y="20" rx="0" ry="0" width="400" height="400"
+      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+                        
+       <rect x="60" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="60">Nr. 1</text>
+      <rect x="60" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="120">Nr. 2</text>
+      <rect x="60" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="180">Nr. 3</text>
+      <rect x="60" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="75" y="240">Nr. 4</text>
+                        
+      <rect x="140" y="30" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="60">Nr. 5</text>
+      <rect x="140" y="90" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="120">Nr. 6</text>
+      <rect x="140" y="150" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="180">Nr. 7</text>
+      <rect x="140" y="210" width="70" height="50" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="155" y="240">Nr. 8</text>
+                        
+      <rect x="230" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="90">Nr. 9</text>
+      <rect x="300" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="90">Nr. 10</text>
+      <rect x="370" y="30" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="90">Nr. 11</text>
+                        
+      <rect x="230" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="233" y="210">Nr. 12</text>
+      <rect x="300" y="150" width="50" height="110" style="fill:black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="303" y="210">Nr. 13</text>
+      <rect x="370" y="150" width="50" height="110" style="black"/>
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="372" y="210">Nr. 14</text>
+                        
+                        
+      <circle cx="250" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="315">Nr. 15</text>
+      <circle cx="250" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="227" y="385">Nr. 16</text>
+      <circle cx="320" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="315">Nr. 17</text>
+      <circle cx="320" cy="380" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="297" y="385">Nr. 18</text>
+      <circle cx="390" cy="310" r="30" fill="black" />
+      <text fill="#ffffff" font-size="15" font-family="Verdana" x="367" y="315">Nr. 19</text>
+      <circle cx="390" cy="380" r="30" fill="yellow" />
+      <text fill="black" font-size="15" font-family="Verdana" x="367" y="385">Nr. 20</text>
+                        
+      <rect x="52" y="328" width="150" height="90" style="fill:white"/>
+      <text fill="black" font-size="30" font-family="Verdana" x="90" y="380">BAR</text>
+    </svg>
+    </div>':"").'
                     <h3>',$bestellung['bestellung_datum'],'</h3>
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
                     <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button><br><br>
@@ -51,9 +1177,11 @@ function printBestellungDetails(){
                     <br>
                     <canvas width="100px" height="100px" id="canvas1" ></canvas>
                     <br><br>
-                    <h1>Gerichte: </h1>';
+                    <h1><b>Gerichte</b> </h1>';
     
 }
+
+
 
 function printBestellungGerichte(){
     $bestellung_id = getBestellungId();
@@ -103,13 +1231,16 @@ function printBestellungGerichte(){
     }
     
 ?>
+
+
 <div id="bestellungen" class="container-fluid text-center w3-margin">
 
 <div class="w3-row-padding w3-padding-16 w3-center w3-margin">
 	<br>
 	<br>
-	<h1>Bestellung-Details:</h1>
+	<h1><b>Bestellung-Details</b></h1>
 </div>
+
 
 <?php 
     printBestellungDetails(0);
