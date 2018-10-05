@@ -79,6 +79,11 @@ function getNavbarMitarbeiter(){
           </ul>
         </li>-->
         <!-- <a href="Warenkorb.php">Warenkorb</a></li>--><li>
+        <?php 
+        if($_SESSION['mitarbeiter_benutzername'] === "russo_f"){
+            echo '<li><a href="http://localhost/RestaurantJava/InhaberInhalt.jsp">Inhaber-Infos</a></li>';
+        }
+        ?>
         <li><a href="Logout.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>
        </ul>
     </div>
