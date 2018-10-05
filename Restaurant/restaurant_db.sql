@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 05. Okt 2018 um 12:42
+-- Erstellungszeit: 05. Okt 2018 um 18:57
 -- Server-Version: 10.1.35-MariaDB
 -- PHP-Version: 7.2.9
 
@@ -90,7 +90,17 @@ INSERT INTO `bestellung` (`bestellung_id`, `restaurant_id`, `bestellung_datum`, 
 (47, 1, '2018-10-04 16:20:35', 0, 55, NULL),
 (48, 1, '2018-10-05 11:32:44', 0, 60, NULL),
 (49, 1, '2018-10-05 11:32:51', 0, 60, 3),
-(50, 1, '2018-10-05 11:34:07', 0, 60, NULL);
+(50, 1, '2018-10-05 11:34:07', 1, 60, NULL),
+(51, 1, '2018-10-05 18:01:06', 1, 69, 3),
+(52, 1, '2018-10-05 18:13:45', 0, 70, NULL),
+(53, 1, '2018-10-05 18:15:49', 0, 71, NULL),
+(54, 1, '2018-10-05 18:19:51', 0, 75, NULL),
+(55, 1, '2018-10-05 18:25:12', 1, 77, 2),
+(56, 1, '2018-10-05 18:34:36', 0, 77, NULL),
+(57, 1, '2018-10-05 18:35:52', 0, 79, 3),
+(58, 1, '2018-10-05 18:38:10', 0, 79, NULL),
+(59, 1, '2018-10-05 18:39:02', 0, 79, NULL),
+(60, 1, '2018-10-05 18:44:11', 0, 80, NULL);
 
 -- --------------------------------------------------------
 
@@ -194,7 +204,28 @@ INSERT INTO `bestellung_gerichte` (`bestellung_gerichte_id`, `bestellung_id`, `g
 (102, 47, 53),
 (103, 47, 55),
 (104, 49, 54),
-(105, 50, 54);
+(105, 50, 54),
+(106, 51, 6),
+(107, 51, 16),
+(108, 51, 28),
+(109, 52, 4),
+(110, 53, 2),
+(111, 54, 3),
+(112, 54, 2),
+(113, 55, 3),
+(114, 56, 3),
+(115, 56, 3),
+(116, 57, 3),
+(117, 57, 2),
+(118, 57, 4),
+(119, 58, 3),
+(120, 58, 2),
+(121, 58, 4),
+(122, 59, 3),
+(123, 59, 2),
+(124, 59, 4),
+(125, 60, 1),
+(126, 60, 3);
 
 -- --------------------------------------------------------
 
@@ -282,7 +313,19 @@ INSERT INTO `gaeste` (`id`, `name`, `tisch`, `raum_id`, `datum`) VALUES
 (65, 'Test', 12, 0, '0000-00-00 00:00:00'),
 (66, 'Test', 0, 0, '0000-00-00 00:00:00'),
 (67, 'Test', 0, 0, '0000-00-00 00:00:00'),
-(68, 'TestRaum', 12, 12, '2018-10-05 12:34:39');
+(68, 'TestRaum', 12, 12, '2018-10-05 12:34:39'),
+(69, 'TestGast', 12, 12, '2018-10-05 18:00:54'),
+(70, 'Testt', 12, 12, '2018-10-05 18:13:36'),
+(71, 'Test', 84, 84, '2018-10-05 18:15:46'),
+(72, 'Testgf', 17, 1, '2018-10-05 18:17:43'),
+(73, 'Test', 19, 1, '2018-10-05 18:18:36'),
+(74, 'Test', 20, 1, '2018-10-05 18:19:26'),
+(75, 'Test', 20, 1, '2018-10-05 18:19:46'),
+(76, 'Test', 18, 1, '2018-10-05 18:24:27'),
+(77, 'Test', 10, 1, '2018-10-05 18:25:03'),
+(78, 'Test', 19, 1, '2018-10-05 18:35:34'),
+(79, 'Test', 17, 1, '2018-10-05 18:35:44'),
+(80, 'Test', 14, 1, '2018-10-05 18:42:40');
 
 -- --------------------------------------------------------
 
@@ -477,7 +520,21 @@ INSERT INTO `warenkorb` (`id`, `gericht_id`, `gast_id`) VALUES
 (80, 54, 55),
 (81, 53, 55),
 (82, 55, 55),
-(86, 54, 60);
+(86, 54, 60),
+(87, 6, 69),
+(88, 16, 69),
+(89, 28, 69),
+(90, 4, 70),
+(91, 2, 71),
+(92, 3, 75),
+(93, 2, 75),
+(94, 3, 77),
+(95, 3, 77),
+(96, 3, 79),
+(97, 2, 79),
+(98, 4, 79),
+(99, 1, 80),
+(100, 3, 80);
 
 --
 -- Indizes der exportierten Tabellen
@@ -533,19 +590,19 @@ ALTER TABLE `warenkorb`
 -- AUTO_INCREMENT für Tabelle `bestellung`
 --
 ALTER TABLE `bestellung`
-  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `bestellung_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT für Tabelle `bestellung_gerichte`
 --
 ALTER TABLE `bestellung_gerichte`
-  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `bestellung_gerichte_id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=127;
 
 --
 -- AUTO_INCREMENT für Tabelle `gaeste`
 --
 ALTER TABLE `gaeste`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT für Tabelle `gericht`
@@ -563,7 +620,7 @@ ALTER TABLE `mitarbeiter`
 -- AUTO_INCREMENT für Tabelle `warenkorb`
 --
 ALTER TABLE `warenkorb`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
