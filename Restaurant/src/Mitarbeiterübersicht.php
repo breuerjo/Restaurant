@@ -16,6 +16,7 @@
 <body id="Mitarbeiterübersicht" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
+include 'Sicherheit.php';
 include "Funktionen.php";
 getNavbar();
 

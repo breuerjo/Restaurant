@@ -22,7 +22,7 @@
 
 
    <?php 
-   
+   include 'Sicherheit.php';
    include "Funktionen.php";
    getNavbar();
     

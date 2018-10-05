@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <html>
 <?php 
+include 'Sicherheit.php';
 include 'Funktionen.php';
 ?>
 

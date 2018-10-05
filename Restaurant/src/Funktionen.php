@@ -1,4 +1,5 @@
 <?php 
+
     function getRestaurantName() {
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
         $statement = $pdo->prepare("SELECT restaurant_name FROM restaurant WHERE restaurant_id = 1");
@@ -31,8 +32,8 @@
 //         if( isset($_GET['kunde'])){
 //             return $_GET['kunde'];
 //         }
-        
         return $_COOKIE['gast'];
+        //return $_SESSION['gast'];
     }
     
     function getNavbar(){

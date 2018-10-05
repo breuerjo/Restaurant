@@ -15,7 +15,7 @@ $statement2->execute(array());
 
 $gast_id = $statement2->fetch()[0];
 
-//$_SESSION['gast'] = $gast_id;
+$_SESSION['gast'] = $gast_id;
 setcookie('gast', $gast_id, time() + (3600), "/"); // 60 Minuten
 
 echo $gast_id;
