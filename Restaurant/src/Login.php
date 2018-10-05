@@ -23,31 +23,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
  </head>
 
 <body id="Login">
-<!--  
- <input id="tisch" value="0"/>
-<input id="name" value="PAGINA"/>
-<button id="checkin">hier gehts zur speisekarte php</button>
-
-    <script type="text/javascript">
-        function getTisch(){
-            return isNaN(document.getElementById('tisch').value) ? 0 : document.getElementById('tisch').value;
-        }
-        function getName(){
-            return document.getElementById('name').value;
-        }
-        document.getElementById("checkin").addEventListener("click", function(){
-            jQuery.ajax({
-                url: "NeuerKunde.php",
-                 type: "POST",
-                 data: "tisch=" + getTisch() + "&name=" + getName(),
-                 success: function(res){
-                    window.location.href = 'Speisekarte.php?kunde=' + res;
-                 }
-             });
-            
-        });
-    </script>
--->    
+ 
     
 <div class="container text-center">
 	
@@ -69,11 +45,16 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 
 <div class="container">
    
-    <label><b>Tischnummer</b></label>
-    <input id="tisch" type="text"  value="0" placeholder="Geben Sie ihre Tischnummer an"/>
-   
-    <label><b>Name</b></label>
-    <input id="name" value="PAGINA" type="text" placeholder="Geben Sie ihren Namen an"/>
+    <label><b>Tischnummer:</b></label>
+    <input id="tisch" type="text"  value="0" placeholder="Geben Sie Ihre Tischnummer an"/>
+    
+    <label><b>Raum:</b></label>
+    <input id="raum" value="1" type="text" placeholder="Geben Sie Ihren Raum an"/>
+    
+    <label><b>Name:</b></label>
+    <input id="name" value="Test" type="text" placeholder="Geben Sie Ihren Namen an"/>
+    
+    
    
     <button id="checkin" class="btn btn-default">Anmelden</button>
     <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
@@ -88,11 +69,14 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
         function getName(){
             return document.getElementById('name').value;
         }
+        function getRaum(){
+        	return isNaN(document.getElementById('raum').value) ? 1 : document.getElementById('tisch').value;
+        }
         document.getElementById("checkin").addEventListener("click", function(){
             jQuery.ajax({
                 url: "NeuerKunde.php",
                  type: "POST",
-                 data: "tisch=" + getTisch() + "&name=" + getName(),
+                 data: "tisch=" + getTisch() + "&name=" + getName() + "&raum=" + getRaum(),
 	                 success: function(res){
 	                	 window.location.href = 'Speisekarte.php';
                      //window.location.href = 'Speisekarte.php?kunde=' + res;
@@ -101,7 +85,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
             
         });
     </script>
-
+<br><br><br><br><br><br><br>
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
   	<div class="col-md-2 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div>
   	<div id="testDiv" class="col-md-7 navbar-text pull-left"><p><b></b></p></div> 
