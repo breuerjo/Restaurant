@@ -107,7 +107,7 @@ function printBestellungDetails(){
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
                     <Button class="w3-button w3-green" onclick="BestellungAbgeschlossen(',$bestellung['bestellung_id'],')">Bestellung erledigt</Button>
                     <br><br>
-                     <Button class="w3-button w3-red" onclick="BestellungLoeschen(',$bestellung['bestellung_id'],')">Bestellung löschen</Button>
+                     <Button class="w3-button w3-red" onclick="BestellungLoeschen(',$bestellung['bestellung_id'],')">Bestellung l&ouml;schen</Button>
                     <br><br>
                     <canvas width="100px" height="100px" id="canvas1" ></canvas>
                     <br><br>
