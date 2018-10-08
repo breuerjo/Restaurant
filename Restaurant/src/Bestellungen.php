@@ -66,7 +66,7 @@ function printBestellungen($erledigt)
                      <p>Tisch-Nummer: ', $bestellung['tisch'], '</p>
                     <p>', $bestellung['bestellung_datum'], '</p>
                     <a href="BestellungDetails.php?bestellung_id=', $bestellung_id, '"><Button class="w3-button w3-blue">Zu der Bestellung</Button></a>
-                    <Button class="w3-button w3-blue" onclick="loeschen(', $bestellung_id, ')">Löschen</Button>
+                    <Button class="w3-button w3-red" onclick="loeschen(', $bestellung_id, ')">L&ouml;schen</Button>
                     </div>';
         $counter ++;
     }
