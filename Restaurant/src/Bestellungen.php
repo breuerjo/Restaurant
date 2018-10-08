@@ -24,6 +24,19 @@
 
 <body id="Bestellungen" data-spy="scroll" data-target=".navbar"
 	data-offset="50">
+	<script>
+    function loeschen(id){
+        jQuery.ajax({
+            url: "Bestellung_loeschen.php",
+            type: "POST",
+            data: "bestellung_id=" + id,
+            success: function(){
+                
+        location.reload();
+            }
+        });
+    }
+	</script>
 
 <?php
 session_start();
@@ -53,6 +66,7 @@ function printBestellungen($erledigt)
                      <p>Tisch-Nummer: ', $bestellung['tisch'], '</p>
                     <p>', $bestellung['bestellung_datum'], '</p>
                     <a href="BestellungDetails.php?bestellung_id=', $bestellung_id, '"><Button class="w3-button w3-blue">Zu der Bestellung</Button></a>
+                    <Button class="w3-button w3-blue" onclick="loeschen(', $bestellung_id, ')">Löschen</Button>
                     </div>';
         $counter ++;
     }
