@@ -1174,7 +1174,9 @@ function printBestellungDetails(){
     </div>':"").'
                     <h3>',$bestellung['bestellung_datum'],'</h3>
                     <h3>Gesamtpreis: ', printPreis(),'&euro;</h3>
-                    <Button class="w3-button w3-blue" onclick="BestellungAbgeschlossen(',$bestellung['bestellung_id'],')">Bestellung erledigt</Button>
+                    <Button class="w3-button w3-green" onclick="BestellungAbgeschlossen(',$bestellung['bestellung_id'],')">Bestellung erledigt</Button>
+                    <br><br>
+                     <Button class="w3-button w3-red" onclick="BestellungLoeschen(',$bestellung['bestellung_id'],')">Bestellung löschen</Button>
                     <br><br>
                     <Button class="w3-button w3-blue" onclick="zeigeSmiley(',$bestellung['bestellung_bewertung'],')">Bewertung anzeigen!</Button><br>
                     <canvas width="100px" height="100px" id="canvas1" ></canvas>
@@ -1188,7 +1190,7 @@ function printBestellungDetails(){
 function printBestellungGerichte(){
     $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT `gericht_bildadresse`, `gericht_preis`, `gericht_bezeichnung`, `gericht_kategorie` FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id");
+    $statement = $pdo->prepare("SELECT * FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id");
     $statement->execute(array(":bestellung_id" => $bestellung_id));
     $gericht = $statement->fetch();
     $counter=0;
@@ -1208,6 +1210,7 @@ function printBestellungGerichte(){
                     <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
                     <h2>',$gericht['gericht_kategorie'],'</h2>
                     <h3>',$gericht['gericht_bezeichnung'],'</h3>
+                    <h3>',$gericht['gericht_dauer'],'</h3>
                     <p>Preis: ',$gericht['gericht_preis'],'&euro;</p>
                     </div>';
         $counter++;
@@ -1259,11 +1262,19 @@ function printBestellungGerichte(){
 <script type="text/javascript">
 function BestellungAbgeschlossen(bestellung_id){
 	jQuery.ajax({
-		url:"Bestellung_entfernen.php",
+		url:"Bestellung_erledigt.php",
 		typ:"POST",
 		data: "bestellung_id=" + bestellung_id,
 	});   
 	
+}
+
+function BestellungLoeschen(bestellung_id){
+	jQuery.ajax({
+		url:"Bestellung_loeschen.php",
+		typ:"POST",
+		data: "bestellung_id=" + bestellung_id,
+	}); 
 }
 
 function zeigeSmiley(bewertung){
