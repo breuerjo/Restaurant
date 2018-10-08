@@ -3,12 +3,6 @@
 <?php 
 include "Funktionen.php";
 
-/*
-
-
-Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen tisch angeben
-
-*/
 ?>
 <head>
 
@@ -79,7 +73,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
        </select> <br>
     
     <label><b>Name:</b></label>
-    <input id="name" value="Test" type="text" placeholder="Geben Sie Ihren Namen an"/>
+    <input id="name" name="name" value="Test" type="text" placeholder="Geben Sie Ihren Namen an"/>
     
     
    
@@ -104,8 +98,8 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
                 url: "NeuerKunde.php",
                  type: "POST",
                  data: "tisch=" + getTisch() + "&name=" + getName() + "&raum=" + getRaum(),
-	                 success: function(res){
-	                	 window.location.href = 'Speisekarte.php';
+	                 success: function(){
+	                	 window.location.href = '../restaurant/src/Speisekarte.php';
                      //window.location.href = 'Speisekarte.php?kunde=' + res;
                   }
              });
