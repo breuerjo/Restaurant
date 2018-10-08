@@ -49,14 +49,14 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
 <!--     <input id="raum" value="1" type="text" placeholder="Geben Sie Ihren Raum an"/> -->
 	<label><b>Raum:</b></label><br>
     <select name="raum" id="raum">
-              <option>1</option>
+              <option selected>1</option>
            </select> <br>
    
 <!--     <label><b>Tischnummer:</b></label> -->
 <!--     <input id="tisch" type="text"  value="0" placeholder="Geben Sie Ihre Tischnummer an"/> -->
     <label><b>Tisch:</b></label><br>
       <select name="tisch" id="tisch">
-          <option>1</option>
+          <option selected>1</option>
           <option>2</option>
           <option>3</option>
           <option>4</option>
@@ -84,7 +84,7 @@ Also hier oder in einem File dergleichen soll der kunde seinen namen und seinen 
     
    
     <button id="checkin" class="btn btn-default">Anmelden</button>
-    <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeit-Login</a></button>	
+    <button class="btn btn-default"><a href="Mitarbeiter-Login.php">Mitarbeiter-Login</a></button>	
     
 </div>
    

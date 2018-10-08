@@ -49,17 +49,6 @@ include "Funktionen.php";
 	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button>
 	</div>
 	
-<!-- 	Benutzername: 
-	<br>
-	<input type="text" name="user" size="40">
-	<br> 
-	Passwort: 
-	<br>
-	<input type="password" name="pass" size="40">
-	<br> 
-	<input id="button" type="submit" name="login" value="Log-In">
-	<button class="btn btn-default"><a href="Login.php">Zur&uuml;ck</a></button>  
-	-->
 </form>
 
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
