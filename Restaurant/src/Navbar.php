@@ -16,18 +16,6 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="Startseite.php">HOME</a></li>
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
-       <!--  <li><a href="Buffet.php">Buffet/Preise</a></li>--> 
-        <!--  <a href="Bestellungen.php">Bestellungen</a></li>--><li>
-        <!--  <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Hochzeit</a></li>
-            <li><a href="#">Geburtstag</a></li>
-            <li><a href="#">Konfirmation/Kommunion</a></li> 
-          </ul>
-        </li>
-        -->
         <li><a href="Warenkorb.php">Warenkorb</a></li>
        </ul>
     </div>
@@ -69,16 +57,7 @@ function getNavbarMitarbeiter(){
         <!--  <li><a href="Buffet.php">Buffet/Preise</a></li>-->
         <li><a href="Bestellungen.php">Bestellungen</a></li>
         <li><a href="Mitarbeiter&uuml;bersicht.php">Mitarbeiter&uuml;bersicht</a></li>
-        <!--  <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">besondere Events
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Hochzeit</a></li>
-            <li><a href="#">Geburtstag</a></li>
-            <li><a href="#">Konfirmation/Kommunion</a></li> 
-          </ul>
-        </li>-->
-        <!-- <a href="Warenkorb.php">Warenkorb</a></li>--><li>
+        <li>
         <?php 
         if($_SESSION['mitarbeiter_benutzername'] === "russo_f"){
             echo '<li><a href="http://localhost/RestaurantJava/InhaberInhalt.jsp">Inhaber-Infos</a></li>';
