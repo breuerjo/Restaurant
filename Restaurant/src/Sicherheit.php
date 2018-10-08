@@ -21,11 +21,11 @@
 <?php 
 
 if (!isset($_SESSION['gast']) && !isset($_SESSION['mitarbeiter_benutzername'])){
-    echo '<br><br><br><br><br><br>
-            <div class="w3-row-padding w3-padding-16 w3-center w3-margin-top"><h1>Loggen Sie sich zuerst ein!</h1><br>
-          <br><button class="w3-button w3-red"><a href="Login.php">Zum Login</a></button></div>';
+//     echo '<br><br><br><br><br><br>
+//             <div class="w3-row-padding w3-padding-16 w3-center w3-margin-top"><h1>Loggen Sie sich zuerst ein!</h1><br>
+//           <br><button class="w3-button w3-red"><a href="Login.php">Zum Login</a></button></div>';
     
-    exit("");
+//     exit("");
 }
 else {
 //     session_start();

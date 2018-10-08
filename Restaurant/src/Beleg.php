@@ -17,7 +17,7 @@
 <body>
 
     <?php 
-    include 'Sicherheit.php';
+    //include 'Sicherheit.php';
     include 'Funktionen.php';
     
     //Wenn Kunde bestellt hat => ausloggen und cookie löschen

@@ -20,7 +20,7 @@
 <body id="Warenkorb" data-spy="scroll" data-target=".navbar" data-offset="50">
 
   <?php 
-  include 'Sicherheit.php';
+    include 'Sicherheit.php';
     include "Funktionen.php";
     
     header("Content-Type: text/html; charset=utf-8");
