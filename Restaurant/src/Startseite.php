@@ -3,7 +3,8 @@
 
 <head>
 <?php 
-//include 'Sicherheit.php';
+session_start();
+include 'Sicherheit.php';
 include "Funktionen.php";
 getNavbar(getKundenId());
 ?>

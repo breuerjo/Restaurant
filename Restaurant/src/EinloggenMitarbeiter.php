@@ -47,13 +47,6 @@
                 //setcookie("mitarbeiter_benutzername", $row['mitarbeiter_benutzername'], time() + (86400 * 1), "/"); // 86400 = 1 day
                 //echo '<p>Benutzername ist:  ', $_COOKIE["mitarbeiter_benutzername"],' </p>';
                 
-                
-                
-                /*setcookie("mitarbeiter_passwort", $row['mitarbeiter_passwort'], time() + (86400 * 1), "/"); // 86400 = 1 day
-                echo '<p>Passwort ist:  ',$_COOKIE["mitarbeiter_passwort"],'</p>
-                      
-                */
-                
              
             else { 
                 echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Falscher Benutzername oder Passwort <br> 

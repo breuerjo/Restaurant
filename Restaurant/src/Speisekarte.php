@@ -22,6 +22,7 @@
 
 
    <?php 
+   session_start();
    include 'Sicherheit.php';
    include "Funktionen.php";
    getNavbar();

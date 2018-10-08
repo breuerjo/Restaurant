@@ -22,6 +22,7 @@
 <body id="Bestellungen" data-spy="scroll" data-target=".navbar" data-offset="50">
 
 <?php 
+session_start();
 include 'Sicherheit.php';
 include 'Funktionen.php';
 getNavbar();

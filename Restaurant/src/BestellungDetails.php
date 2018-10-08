@@ -1,6 +1,7 @@
 <!DOCTYPE>
 <html>
 <?php 
+session_start();
 include 'Sicherheit.php';
 include 'Funktionen.php';
 ?>
@@ -204,6 +205,7 @@ function BestellungLoeschen(bestellung_id){
 		data: "bestellung_id=" + bestellung_id,
 	}); 
 }
+
 
 function zeigeSmiley(bewertung){
 	var canvas1 = document.getElementById("canvas1");
