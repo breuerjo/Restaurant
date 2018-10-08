@@ -2,118 +2,129 @@
 <html lang="en">
 <head>
 
-  <title>Beleg</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="..\css\style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>Beleg</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="..\css\style.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 
 <body>
 
-    <?php 
-    //include 'Sicherheit.php';
+    <?php
+    // include 'Sicherheit.php';
     include 'Funktionen.php';
     
-    //Wenn Kunde bestellt hat => ausloggen und cookie löschen
+    // Wenn Kunde bestellt hat => ausloggen und cookie löschen
     session_start();
-    //echo $_COOKIE['gast'];
+    // echo $_COOKIE['gast'];
     unset($_COOKIE['gast']);
-    //echo $_COOKIE['gast'];
+    // echo $_COOKIE['gast'];
     session_destroy();
 
-    
-    
-//header("Content-Type: text/html; charset=utf-8");
-
-    function printAngebote(){
-
+    // header("Content-Type: text/html; charset=utf-8");
+    function printAngebote()
+    {
         $best = urlParameter('bestellung');
         
-        //Bestellung-Infos holen
-        $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(':bestellung' => $best))[0];
-        //holen vom Namen und Tisch der Bestellung
-        $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(':kunde' => $bestellung['gast_id']))[0];
-        //$gast = $_COOKIE['gast'];
-        //dann holen wir alle gerichte
-        $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(':bestellung' => $best));  
-      
+        // Bestellung-Infos holen
+        $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(
+            ':bestellung' => $best
+        ))[0];
+        // holen vom Namen und Tisch der Bestellung
+        $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(
+            ':kunde' => $bestellung['gast_id']
+        ))[0];
+        // $gast = $_COOKIE['gast'];
+        // dann holen wir alle gerichte
+        $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(
+            ':bestellung' => $best
+        ));
+        
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
-                <h1>Name: ',$gast['name'],'</h1>
-              <h3>Raum-Nummer: ',$gast['raum_id'],'</h3>
-                <h3>Tisch-Nummer: ',$gast['tisch'],'</h3></div>';
+                <h1>Name: ', $gast['name'], '</h1>
+              <h3>Raum-Nummer: ', $gast['raum_id'], '</h3>
+                <h3>Tisch-Nummer: ', $gast['tisch'], '</h3></div>';
         
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
-
-        foreach($gerichte as $gericht) {
-            echo  '<div class="w3-quarter">
-                    <img src=',$gericht['gericht_bildadresse'],' alt="Bild" style="width:100%" height="200px">
-                    <h3>',$gericht['gericht_bezeichnung'],'</h3>
-                    <p>',$gericht['gericht_beschreibung'],'</p>
-                    <p>',$gericht['gericht_preis'],'&euro;</p>
+        
+        foreach ($gerichte as $gericht) {
+            echo '<div class="w3-quarter">
+                    <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
+                    <h3>', $gericht['gericht_bezeichnung'], '</h3>
+                    <p>', $gericht['gericht_beschreibung'], '</p>
+                    <p>', $gericht['gericht_preis'], '&euro;</p>
                     </div>';
-
-        }   
+        }
         echo '</div>';
     }
 
-    function printDauer(){
-        
+    function printDauer()
+    {
         $bestelllung = $_GET['bestellung'];
         
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
         
         $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
-        $statement->execute(array(':bestellung' => $bestelllung));
+        $statement->execute(array(
+            ':bestellung' => $bestelllung
+        ));
         $row = $statement->fetch();
         $sum = $row[0];
         echo $sum;
-        
     }
-    
-    
-    function printPreis(){
-    
-    $bestelllung = $_GET['bestellung'];
 
-    $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-         
-    $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
-    $statement->execute(array(':bestellung' => $bestelllung));   
-    $row = $statement->fetch();
-    $sum = $row[0];
-    echo $sum;
-
-}
-?>
+    function printPreis()
+    {
+        $bestelllung = $_GET['bestellung'];
+        
+        $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
+        
+        $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
+        $statement->execute(array(
+            ':bestellung' => $bestelllung
+        ));
+        $row = $statement->fetch();
+        $sum = $row[0];
+        echo $sum;
+    }
+    ?>
 
 <div class="w3-row-padding w3-padding-16 w3-center">
 	<?php printAngebote(); ?>
     <h3>Gesamtdauer: <?php printDauer();?> Miunten</h3>
-         <div class="laden">
-                  <div id="ladebalken"><div id="time">Fertig in: <?php printDauer();?> Minuten</div></div>
-         </div>
-    <h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
-</div>
-<div class="w3-row-padding w3-padding-16 w3-center">
-	
-	<canvas width="100px" height="100px" id="canvas1" ></canvas>
-	<canvas width="100px" height="100px" id="canvas2" ></canvas>
-	<canvas width="100px" height="100px" id="canvas3" ></canvas>
-</div>
+		<div class="laden">
+			<div id="ladebalken">
+				<div id="time">Fertig in: <?php printDauer();?> Minuten</div>
+			</div>
+		</div>
+		<h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
+	</div>
+	<div class="w3-row-padding w3-padding-16 w3-center">
 
-<div class="text-center">
-       <svg width="100%" height="300px">
+		<canvas width="100px" height="100px" id="canvas1"></canvas>
+		<canvas width="100px" height="100px" id="canvas2"></canvas>
+		<canvas width="100px" height="100px" id="canvas3"></canvas>
+	</div>
+
+	<div class="text-center">
+		<svg width="100%" height="300px">
     <g id="R1" transform="translate(250 250)"> 
       <ellipse rx="100" ry="0" opacity=".3">
-      <animateTransform attributeName="transform" type="rotate" dur="7s" from="0" to="360" repeatCount="indefinite" />
-      <animate attributeName="cx" dur="8s" values="-20; 220; -20" repeatCount="indefinite" />
-      <animate attributeName="ry" dur="3s" values="10; 60; 10" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="rotate" dur="7s"
+				from="0" to="360" repeatCount="indefinite" />
+      <animate attributeName="cx" dur="8s" values="-20; 220; -20"
+				repeatCount="indefinite" />
+      <animate attributeName="ry" dur="3s" values="10; 60; 10"
+				repeatCount="indefinite" />
       </ellipse>
     </g>
     <use xlink:href="#R1" transform="rotate(72 390 150)" />
@@ -121,7 +132,7 @@
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
     </svg>
-</div>
+	</div>
 
 
 </body>
@@ -250,22 +261,33 @@ function bewerten(bestellung_id, bew){
 		}
   });
 }
-</script>
-<br><br><br><br>
-<footer class="container-fluid md-12 text center navbar-fixed-bottom">
-  	<div class="col-md-2 navbar-text pull-left"><p><a href="Impressum.php"><b>Impressum</b></a></p></div>
-  	<div id="testDiv" class="col-md-7 navbar-text pull-left"><p><b></b></p></div> 
-  	<div class="col-md-2 navbar-text pull-right"><p><a href="Kontakt.php"><b>Kontakt</b></a></p></div>
-</footer>
-
-<script>
 $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	dataType: 'html',
 	success: function(response)
 	{ $('#testDiv').html(response); }
 	});
 </script>
-
+<br>
+<br>
+<br>
+<br>
+<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+	<div class="col-md-2 navbar-text pull-left">
+		<p>
+			<a href="Impressum.php"><b>Impressum</b></a>
+		</p>
+	</div>
+	<div id="testDiv" class="col-md-7 navbar-text pull-left">
+		<p>
+			<b></b>
+		</p>
+	</div>
+	<div class="col-md-2 navbar-text pull-right">
+		<p>
+			<a href="Kontakt.php"><b>Kontakt</b></a>
+		</p>
+	</div>
+</footer>
 
 
 </html>

@@ -2,8 +2,6 @@
 <html>
 
 <head>
-
-
   <title>Neues Gericht</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,10 +22,8 @@ session_start();
     include 'Sicherheit.php';
   include "Funktionen.php";
   getNavbar();
-    
        
 ?>
-
 <br>
 <br>
 <div id="NeuesGericht" class="container-fluid text-center w3-margin">
@@ -58,10 +54,6 @@ session_start();
     </form>
     
 </div>
-
-
-
-
 </div>
 </body>
 
@@ -79,7 +71,6 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	{ $('#testDiv').html(response); }
 	});
 </script>
-
 
 
 </html>

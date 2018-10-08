@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     function getRestaurantName() {
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
@@ -47,6 +47,6 @@
         }
     }
 
-    
+
 ?>
 
