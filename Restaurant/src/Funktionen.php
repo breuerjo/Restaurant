@@ -39,7 +39,6 @@
     function getNavbar(){
         include_once 'Navbar.php';
         
-        session_start();
         if(isset($_SESSION['mitarbeiter_benutzername'])) {
             getNavbarMitarbeiter();
         }
