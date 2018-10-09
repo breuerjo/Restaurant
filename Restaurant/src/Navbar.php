@@ -51,7 +51,7 @@ function getNavbarMitarbeiter(){
       <a id="restaurant-name" class="navbar-brand" href="Startseite.php"><b><?php echo getRestaurantName(); ?></b></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right white">
         <li><a href="Startseite.php">HOME</a></li>
         <li><a href="Speisekarte.php">Unsere Speisen</a></li>
         <!--  <li><a href="Buffet.php">Buffet/Preise</a></li>-->
