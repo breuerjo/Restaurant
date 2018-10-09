@@ -37,17 +37,11 @@ function SignIn()
     if (! empty($row['mitarbeiter_benutzername']) and ! empty($row['mitarbeiter_passwort'])) {
         $_SESSION['mitarbeiter_benutzername'] = $row['mitarbeiter_benutzername'];
         
-        /*
-         * echo '<p>SUCCESSFULLY LOGIN TO USER PROFILE PAGE...</p><br>';
-         * echo $_SESSION["mitarbeiter_benutzername"];
-         * echo '<button class="btn btn-default"><a href="Startseite.php">Weiter zur Startseite</a></button>';
-         */
-        
-        echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Login erfolgreich mit dem Benutzernamen: ', $_SESSION["mitarbeiter_benutzername"], '<br>
-                <br><button class="w3-button w3-blue"><a href="Startseite.php">Weiter zur Startseite</a></button></div>';
+        header('location: Speisekarte.php');
+        //echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Login erfolgreich mit dem Benutzernamen: ', $_SESSION["mitarbeiter_benutzername"], '<br>
+               // <br><button class="w3-button w3-blue"><a href="Startseite.php">Weiter zur Startseite</a></button></div>';
     }    // COOKIE SETZEN!
-    // setcookie("mitarbeiter_benutzername", $row['mitarbeiter_benutzername'], time() + (86400 * 1), "/"); // 86400 = 1 day
-    // echo '<p>Benutzername ist: ', $_COOKIE["mitarbeiter_benutzername"],' </p>';
+
     
     else {
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Falscher Benutzername oder Passwort <br> 
