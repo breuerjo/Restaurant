@@ -47,7 +47,7 @@ getNavbar(getKundenId());
 					<h2>Wir freuen uns über ihren Besuch!</h2>
 					<h2>
 						Möchten Sie etwas bestellen? Klicken Sie <a
-							href="Speisekarte.php">Hier</a>
+							href="Speisekarte.php"><b>Hier</b></a>
 					</h2>
 				</div>
 			</div>
@@ -60,7 +60,7 @@ getNavbar(getKundenId());
 					<h2>Wir freuen uns über ihren Besuch!</h2>
 					<h2>
 						Möchten Sie etwas bestellen? Klicken Sie <a
-							href="Speisekarte.php">Hier</a>
+							href="Speisekarte.php"><b>Hier</b></a>
 					</h2>
 				</div>
 			</div>
@@ -73,7 +73,7 @@ getNavbar(getKundenId());
 					<h2>Wir freuen uns über ihren Besuch!</h2>
 					<h2>
 						Möchten Sie etwas bestellen? Klicken Sie <a
-							href="Speisekarte.php">Hier</a>
+							href="Speisekarte.php"><b>Hier</b></a>
 					</h2>
 				</div>
 			</div>
@@ -104,10 +104,8 @@ getNavbar(getKundenId());
 				<h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur
 					Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen
 					Blick in die Speisekarte.</h4>
-				<br>
-				<button class="btn btn-default btn-lg">
-					<a href="Speisekarte.php">Speisekarte</a>
-				</button>
+				<br> <a href="Speisekarte.php"><button
+						class="btn btn-default btn-lg">Speisekarte</button></a>
 			</div>
 			<div class="col-sm-5">
 				<img src="..\img\essen2.jpg" width="100%" height="300"></img>
@@ -126,13 +124,14 @@ getNavbar(getKundenId());
 				<img src="..\img\cocktails.jpg" width="100%" height="300"></img>
 			</div>
 			<div class="col-sm-7 text-center">
-				<h2>UNSERE COCKTAILS</h2>
+				<h2>UNSERE GETR&AumlNKE</h2>
 				<br>
-				<h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur
-					Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen
-					Blick in die Speisekarte.</h4>
-				<br>
-				<button class="btn btn-default btn-lg">Cocktails</button>
+				<h4>W&aumlhlen Sie bei unseren Getr&aumlnken zwischen Kalt- &
+					Hei&szliggetr&aumlnken. Bei unserem Bier handelt es sich um
+					regionale Zubereitung. Sehen Sie sich selbst die vielf&aumlltige
+					Auswahl an.</h4>
+				<br> <a href="Speisekarte.php"><button
+						class="btn btn-default btn-lg">Getr&aumlnke</button></a>
 			</div>
 		</div>
 	</div>
@@ -147,13 +146,11 @@ getNavbar(getKundenId());
 			<div class="col-sm-7 text-center">
 				<h2>UNSERE DESSERTS</h2>
 				<br>
-				<h4>Bei uns werden alle Gerichte frisch für Sie zubereitet. Nur
-					Zutaten aus unserer Region. Überzeugen Sie sich selbst durch einen
-					Blick in die Speisekarte.</h4>
-				<br>
-				<button class="btn btn-default btn-lg">
-					<a href="Speisekarte.php">Speisekarte</a>
-				</button>
+				<h4>Genie&szligen Sie die frisch f&uumlr Sie zubereiteten Desserts.
+					Alle Desserts sind Spezialit&aumlten aus dem eigenen Hause. Werfen
+					Sie einen Blick auf die Speisekarte in die Dessert-Kategorie.</h4>
+				<br> <a href="Speisekarte.php"><button
+						class="btn btn-default btn-lg">Desserts</button></a>
 			</div>
 			<div class="col-sm-5">
 				<img src="..\img\dessert_Startseite.jpg" width="100%" height="300"></img>
