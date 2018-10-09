@@ -29,16 +29,20 @@ include "Funktionen.php";
 	</div>
 
 
-	<form class="form-horizontal text-left" method="POST"
-		action="EinloggenMitarbeiter.php">
+	<form class="form-horizontal text-left" method="POST" action="EinloggenMitarbeiter.php">
 
 		<div class="container">
 
-			<label><b>Benutzername</b></label> <input type="text" name="user"
-				size="40" placeholder="Geben Sie bitte Ihren Benutzername ein"> <label><b>Passwort</b></label>
-			<input type="password" name="pass" size="40"
-				placeholder="Geben Sie bitte Ihr Passwort ein"> <input id="button"
-				type="submit" name="login" value="Log-In">
+			<label><b>Benutzername</b></label> 
+			<input type="text" id="user" name="user" size="40" placeholder="Geben Sie bitte Ihren Benutzername ein"> 
+			
+			<label><b>Passwort</b></label>
+			<input type="password" id="pass" name="pass" size="40" placeholder="Geben Sie bitte Ihr Passwort ein"> 
+			
+<!-- 			<input id="button" type="submit" name="login" value="Log-In"> -->
+			
+			<button id="checkin" class="btn btn-default">Anmelden</button>
+			
 			<button class="btn btn-default">
 				<a href="Login.php">Zur&uuml;ck</a>
 			</button>
@@ -70,6 +74,24 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	success: function(response)
 	{ $('#testDiv').html(response); }
 	});
+
+
+function getUser(){
+    return document.getElementById('user').value;
+}
+function getPass(){
+    return document.getElementById('pass').value;
+}
+
+document.getElementById("checkin").addEventListener("click", function(){
+    jQuery.ajax({
+        url: "EinloggenMitarbeiter.php",
+         type: "POST",
+         data: "user=" + getUser() + "&pass=" + getPass(),
+
+     });
+    
+});
 </script>
 </body>
 </html>
