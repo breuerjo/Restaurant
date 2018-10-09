@@ -100,7 +100,7 @@ include "Funktionen.php";
                  type: "POST",
                  data: "tisch=" + getTisch() + "&name=" + getName() + "&raum=" + getRaum(),
 	                 success: function(){
-	                	 window.location.href = 'Speisekarte.php';
+	                	 window.location.href = 'Startseite.php';
                      //window.location.href = 'Speisekarte.php?kunde=' + res;
                   }
              });
