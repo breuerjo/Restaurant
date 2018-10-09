@@ -14,9 +14,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="Startseite.php">HOME</a></li>
-        <li><a href="Speisekarte.php">Unsere Speisen</a></li>
-        <li><a href="Warenkorb.php">Warenkorb</a></li>
+        <li><a id="Home" href="Startseite.php"><b>HOME</b></a></li>
+        <li><a id="Navbar_Speisen"href="Speisekarte.php"><b>Unsere Speisen</b></a></li>
+        <li><a id="Navbar_Warenkorb"href="Warenkorb.php"><b>Warenkorb</b></a></li>
        </ul>
     </div>
   </div>
@@ -52,15 +52,15 @@ function getNavbarMitarbeiter(){
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right white">
-        <li><a href="Startseite.php">HOME</a></li>
-        <li><a href="Speisekarte.php">Unsere Speisen</a></li>
+        <li><a id="Navbar_HomeM" href="Startseite.php"><b>HOME</b></a></li>
+        <li><a id="Navbar_SpeisenM"href="Speisekarte.php"><b>Unsere Speisen</b></a></li>
         <!--  <li><a href="Buffet.php">Buffet/Preise</a></li>-->
-        <li><a href="Bestellungen.php">Bestellungen</a></li>
-        <li><a href="Mitarbeiter&uuml;bersicht.php">Mitarbeiter&uuml;bersicht</a></li>
+        <li><a id="Navbar_BestellungenM" href="Bestellungen.php"><b>Bestellungen</b></a></li>
+        <li><a id="Navbar_Mitarbeiterübersicht" href="Mitarbeiter&uuml;bersicht.php"><b>Mitarbeiter&uuml;bersicht</b></a></li>
         <li>
         <?php 
         if($_SESSION['mitarbeiter_benutzername'] === "russo_f"){
-            echo '<li><a href="http://localhost/RestaurantJava/InhaberInhalt.jsp">Inhaber-Infos</a></li>';
+            echo '<li><a id="Inhaber_Infos" href="http://localhost/RestaurantJava/InhaberInhalt.jsp"><b>Inhaber-Infos</b></a></li>';
         }
         ?>
         <li><a href="Logout.php"><Button class="w3-button w3-red" onclick="logout()">Logout</Button></a></li>

@@ -4,8 +4,13 @@
   }
  
 #restaurant-name{
-	color: black;
+	color: #ffffff;
 } 
+
+#Home, #Navbar_HomeM, #Navbar_SpeisenM, #Navbar_BestellungenM, #Navbar_Mitarbeiterübersicht, #Navbar_Warenkorb, #Navbar_Speisen, #Inhaber_Infos{
+	color: #ffffff;
+	
+}
 
 form {
     border: 3px solid #FFFFFF;
