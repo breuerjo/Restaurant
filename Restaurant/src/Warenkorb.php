@@ -35,7 +35,7 @@ getNavbar(getKundenId());
 function printAngebote()
 { // also die aus dem warenkorb
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    
+
     $statement = $pdo->prepare("SELECT gericht.* FROM gericht INNER JOIN warenkorb on warenkorb.gericht_id = gericht.gericht_id AND warenkorb.gast_id = :kunde");
     $statement->execute(array(
         ':kunde' => getKundenId()
@@ -44,13 +44,13 @@ function printAngebote()
     while ($gericht = $statement->fetch()) {
         // print_r($row); //gibt vorläufig mal alles aus
         // echo '<Button onclick="deleteElement(',$row['gericht_id'],', ',getKundenId(),')">Element ausm warenkorb</Button>';
-        
+
         if ($counter % 4 == 0 && $counter != 0) {
             echo '</div><div class="w3-row-padding w3-padding-16 w3-center">';
         } else if ($counter % 4 == 0 && $counter == 0) {
             echo '<div class="w3-row-padding w3-padding-16 w3-center">';
         }
-        
+
         echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
                     <h3>', $gericht['gericht_bezeichnung'], '</h3>
@@ -69,7 +69,7 @@ function printAngebote()
 function printPreis()
 { // wieviel unser wk kostet
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    
+
     $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM gericht INNER JOIN warenkorb on gericht.gericht_id = warenkorb.gericht_id AND warenkorb.gast_id = :kunde");
     $statement->execute(array(
         ':kunde' => getKundenId()
@@ -82,7 +82,7 @@ function printPreis()
 function printDauer()
 { // wie lang dauern die gerichte zusammen
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    
+
     $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM gericht INNER JOIN warenkorb ON gericht.gericht_id = warenkorb.gericht_id WHERE warenkorb.gast_id = :kunde");
     $statement->execute(array(
         ':kunde' => getKundenId()
