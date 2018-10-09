@@ -34,9 +34,9 @@ function neuesGerichtHinzufuegen()
     $preis = $_POST['preis'];
     $kategorie = $_POST['kategorie'];
     $bild = $_POST['bild'];
-    
+
     // echo $bezeichnung, ' ', $beschreibung,' ', $preis,' ', $kategorie,' ', $bild;
-    
+
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
     $statement = $pdo->prepare("INSERT INTO `gericht`(`gericht_bezeichnung`, `gericht_preis`, `gericht_beschreibung`, `gericht_bildadresse`, `gericht_kategorie`) VALUES (:bezeichnung, :preis, :beschreibung, :bild, :kategorie)");
     $statement->execute(array(
@@ -51,14 +51,14 @@ function neuesGerichtHinzufuegen()
 function printNeuesGericht()
 {
     $bezeichnung = $_POST['bezeichnung'];
-    
+
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
     $statement = $pdo->prepare("SELECT * FROM `gericht` WHERE `gericht_bezeichnung` = :bezeichnung");
     $statement->execute(array(
         ':bezeichnung' => $bezeichnung
     ));
     $gericht = $statement->fetch();
-    
+
     echo '<div class="w3-row-padding w3-padding-16 w3-center">';
     echo '<div class="w3-center">
                             <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:40%">

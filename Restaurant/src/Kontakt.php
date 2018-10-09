@@ -33,18 +33,18 @@ function printImage()
     imagestring($my_img, 4, 30, 25, "bella.espana@example", $text_colour);
     imagesetthickness($my_img, 5);
     imageline($my_img, 30, 45, 196, 45, $line_colour);
-    
+
     imageline($my_img, 0, 5, 235, 5, $line_colour); // oben
     imageline($my_img, 5, 0, 5, 80, $line_colour); // links
     imageline($my_img, 230, 0, 230, 80, $line_colour); // unten
     imageline($my_img, 0, 75, 230, 75, $line_colour); // rechts
-                                                        
+
     // header( "Content-type: image/png" );
-                                                        // Bild ausgeben
+    // Bild ausgeben
     imagepng($my_img, "email-image.png");
-    
+
     echo "<img src='email-image.png'>";
-    
+
     // Bilddaten zurücksetzen
     imagedestroy($my_img);
 }

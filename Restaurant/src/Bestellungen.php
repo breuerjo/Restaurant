@@ -52,7 +52,7 @@ function printBestellungen($erledigt)
         ":erledigt" => $erledigt
     ));
     $counter = 0;
-    
+
     while ($bestellung = $statement->fetch()) {
         $bestellung_id = $bestellung['bestellung_id'];
         if ($counter % 4 == 0 && $counter != 0) {

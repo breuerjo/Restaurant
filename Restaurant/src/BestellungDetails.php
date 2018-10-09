@@ -55,7 +55,7 @@ function getBestellung()
 function printBestellungDetails()
 {
     $bestellung = getBestellung();
-    
+
     echo '<h3>ID: ', $bestellung['bestellung_id'], '</h3>
                     <h3>Gastname: ', $bestellung['name'], '</h3>
                     <h3>Raum-Nummer: ', $bestellung['raum_id'], '</h3>
@@ -131,15 +131,15 @@ function printBestellungGerichte()
         ":bestellung_id" => $bestellung_id
     ));
     $counter = 0;
-    
+
     while ($gericht = $statement->fetch()) {
-        
+
         if ($counter % 4 == 0 && $counter != 0) {
             echo '</div><div class="w3-row-padding w3-padding-16 w3-center">';
         } else if ($counter % 4 == 0 && $counter == 0) {
             echo '<div class="w3-row-padding w3-padding-16 w3-center">';
         }
-        
+
         echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
                     <h2>', $gericht['gericht_kategorie'], '</h2>
@@ -157,7 +157,7 @@ function printBestellungGerichte()
 function printPreis()
 { // der Bestellung
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    
+
     $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM gericht INNER JOIN bestellung_gerichte on gericht.gericht_id = bestellung_gerichte.gericht_id INNER JOIN bestellung on bestellung_gerichte.bestellung_id = bestellung.bestellung_id WHERE bestellung.bestellung_id = :id");
     $statement->execute(array(
         ':id' => getBestellungId()

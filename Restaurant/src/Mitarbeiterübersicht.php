@@ -34,9 +34,9 @@ function getMitarbeiter($restaurant = 1)
     $statement->execute(array(
         ":rst" => $restaurant
     ));
-    
+
     while ($mitarbeiter = $statement->fetch()) { // fetch gibt mir immer ein Ergebnis
-        
+
         if ($counter % 4 == 0 && $counter != 0) {
             echo '<div class="w3-container w3-padding-64 w3-center" id="Wir">';
         } else if ($counter % 4 == 0 && $counter == 0) {
@@ -50,7 +50,7 @@ function getMitarbeiter($restaurant = 1)
         $counter ++;
     }
     echo '</div>';
-    
+
     // print_r($mitarbeiter);
 }
 ?>
