@@ -115,23 +115,6 @@ include "Funktionen.php";
 	<br>
 	<br>
 	<br>
-	<footer class="container-fluid md-12 text center navbar-fixed-bottom">
-		<div class="col-md-2 navbar-text pull-left">
-			<p>
-				<a href="Impressum.php"><b>Impressum</b></a>
-			</p>
-		</div>
-		<div id="testDiv" class="col-md-7 navbar-text pull-left">
-			<p>
-				<b></b>
-			</p>
-		</div>
-		<div class="col-md-2 navbar-text pull-right">
-			<p>
-				<a href="Kontakt.php"><b>Kontakt</b></a>
-			</p>
-		</div>
-	</footer>
 
 	<script>
 $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=1',
@@ -143,6 +126,24 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=1',
 
 
 </body>
+
+	<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+		<div class="col-md-2 navbar-text pull-left">
+			<p>
+				<a id="besonders" href="Impressum.php"><b>Impressum</b></a>
+			</p>
+		</div>
+		<div id="testDiv" class="col-md-7 navbar-text pull-left">
+			<p>
+				<b></b>
+			</p>
+		</div>
+		<div class="col-md-2 navbar-text pull-right">
+			<p>
+				<a id="besonders2" href="Kontakt.php"><b>Kontakt</b></a>
+			</p>
+		</div>
+	</footer>
 </html>
 
 
