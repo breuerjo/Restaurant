@@ -9,14 +9,8 @@
 <link rel="stylesheet" href="..\css\bootstrap.min.css">
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--Diese beiden sind neu-->
-
-<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">-->
-
+<script src="..\js\bootstrap.min.js"></script>
+<script	src="..\js\jquery.min.js"></script>
 
 </head>
 

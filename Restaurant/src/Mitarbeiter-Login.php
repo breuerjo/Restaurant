@@ -8,14 +8,11 @@ include "Funktionen.php";
 <title>Mitarbeiter-Login</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="..\css\bootstrap.min.css">
 <link rel="stylesheet" href="..\css\style.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="..\css\w3.css">
+<script src="..\js\bootstrap.min.js"></script>
+<script	src="..\js\jquery.min.js"></script>
 </head>
 <body id="Login">
 	<div class="container text-center">
@@ -49,7 +46,8 @@ include "Funktionen.php";
 		</div>
 
 	</form>
-
+<br>
+<br>
 <script>
 $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	dataType: 'html',
