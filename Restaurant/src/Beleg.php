@@ -22,7 +22,7 @@
     <?php
     // include 'Sicherheit.php';
     include 'Funktionen.php';
-
+    
     // Wenn Kunde bestellt hat => ausloggen und cookie löschen
     session_start();
     // echo $_COOKIE['gast'];
@@ -34,7 +34,7 @@
     function printAngebote()
     {
         $best = urlParameter('bestellung');
-
+        
         // Bestellung-Infos holen
         $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
@@ -48,14 +48,14 @@
         $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
         ));
-
+        
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
                 <h1>Name: ', $gast['name'], '</h1>
               <h3>Raum-Nummer: ', $gast['raum_id'], '</h3>
                 <h3>Tisch-Nummer: ', $gast['tisch'], '</h3></div>';
-
+        
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
-
+        
         foreach ($gerichte as $gericht) {
             echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
@@ -70,9 +70,9 @@
     function printDauer()
     {
         $bestelllung = $_GET['bestellung'];
-
+        
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-
+        
         $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
         $statement->execute(array(
             ':bestellung' => $bestelllung
@@ -85,9 +85,9 @@
     function printPreis()
     {
         $bestelllung = $_GET['bestellung'];
-
+        
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-
+        
         $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
         $statement->execute(array(
             ':bestellung' => $bestelllung
@@ -113,10 +113,12 @@
 		<canvas width="100px" height="100px" id="canvas1"></canvas>
 		<canvas width="100px" height="100px" id="canvas2"></canvas>
 		<canvas width="100px" height="100px" id="canvas3"></canvas>
+
 	</div>
 
-	<div class="text-center">
-		<svg width="100%" height="300px">
+
+	<div class="w3-row-padding w3-padding-16 w3-center">
+		<svg width="50%" height="300px">
     <g id="R1" transform="translate(250 250)"> 
       <ellipse rx="100" ry="0" opacity=".3">
       <animateTransform attributeName="transform" type="rotate" dur="7s"
@@ -131,8 +133,9 @@
     <use xlink:href="#R1" transform="rotate(144 390 150)" />
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
-    </svg>
+    	</svg>
 	</div>
+
 
 
 </body>

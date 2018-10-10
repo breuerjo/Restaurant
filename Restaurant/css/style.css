@@ -86,6 +86,10 @@ input[type=text], input[type=password] {
 	color: white;
 }
 
+#besonders3, #besonders4{
+	color: white; 
+}
+
 footer{
 	position: fixed;
 	bottom: 0 !important;

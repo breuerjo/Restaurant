@@ -50,9 +50,6 @@ function printImage()
 }
 
 ?>
-
-<br>
-	<br>
 	<br>
 
 	<div id="Impressum-Text" class="container-fluid text-center">
@@ -73,7 +70,8 @@ function printImage()
 
 	</div>
 	<br>
-
+	<br>
+	<br>
 	<footer class="container-fluid md-12 text center navbar-fixed-bottom">
 		<div class="col-md-2 navbar-text pull-left">
 			<p>
