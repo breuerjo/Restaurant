@@ -9,7 +9,11 @@
 
 #Home, #Navbar_HomeM, #Navbar_SpeisenM, #Navbar_BestellungenM, #Navbar_Mitarbeiterübersicht, #Navbar_Warenkorb, #Navbar_Speisen, #Inhaber_Infos{
 	color: #ffffff;
-	
+}
+
+#button_Beleg{
+	background-color: #4F8A10;
+	color: #ffffff;
 }
 
 form {

@@ -132,8 +132,8 @@
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
     	</svg>
-    	<br>
-   	<a href="Login.php"><button class="btn btn-default">Zurück zum Login</button></a>
+    	<br><br>
+   	<a href="Login.php"><button id="button_Beleg" class="btn btn-default">Zurück zum Login</button></a>
 	</div>
 
 

@@ -18,6 +18,6 @@ $stmt = $pdo->query("SELECT LAST_INSERT_ID()");
 $gast_id = $stmt->fetchColumn();
 
 $_SESSION['gast'] = $gast_id;
-setcookie('gast', $gast_id, time() + (3600), "/"); // 60 Minuten
+setcookie('gast', $gast_id, time() + (3600*24), "/"); // 60 Minuten
 
 ?>
