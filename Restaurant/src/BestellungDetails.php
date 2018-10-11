@@ -261,6 +261,7 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	{ $('#testDiv').html(response); }
 	});
 </script>
+<br><br>
 </body>
 
 

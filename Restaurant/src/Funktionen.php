@@ -29,11 +29,12 @@ function postParameter($name){
 }
 
 function getKundenId(){
-    //         if( isset($_GET['kunde'])){
-    //             return $_GET['kunde'];
-    //         }
-    return $_COOKIE['gast'];
-    //return $_SESSION['gast'];
+    if(isset($_COOKIE['gast'])){
+        return $_COOKIE['gast'];
+    }
+    else{
+        return 0;
+    }
 }
 
 function getNavbar(){

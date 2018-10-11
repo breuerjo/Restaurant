@@ -87,8 +87,6 @@ getNavbar(getKundenId());
 
 	<br>
 	<br>
-	<br>
-	<br>
 
 	<div id="Essen" class="container-fluid">
 		<!--auf der Startseite für Hauptspeisen-->
@@ -102,6 +100,7 @@ getNavbar(getKundenId());
 				<br> <a href="Speisekarte.php"><button
 						class="btn btn-default btn-lg">Speisekarte</button></a>
 			</div>
+			<br>
 			<div class="col-sm-5">
 				<img src="..\img\essen2.jpg" width="100%" height="300"></img>
 			</div>
@@ -147,6 +146,7 @@ getNavbar(getKundenId());
 				<br> <a href="Speisekarte.php"><button
 						class="btn btn-default btn-lg">Desserts</button></a>
 			</div>
+			<br>
 			<div class="col-sm-5">
 				<img src="..\img\dessert_Startseite.jpg" width="100%" height="300"></img>
 			</div>

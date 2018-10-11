@@ -46,6 +46,7 @@
         ));
         
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
+                <h1><b>Vielen Dank für Ihre Bestellung!<br> Ihre Bestellungsübersicht:</b></h1>
                 <h1>Name: ', $gast['name'], '</h1>
               <h3>Raum-Nummer: ', $gast['raum_id'], '</h3>
                 <h3>Tisch-Nummer: ', $gast['tisch'], '</h3></div>';
@@ -103,6 +104,7 @@
 			</div>
 		</div>
 		<h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
+		<h3>Wir würden uns sehr über eine Bewertung freuen:</h3>
 	</div>
 	<div class="w3-row-padding w3-padding-16 w3-center">
 
@@ -130,8 +132,9 @@
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
     	</svg>
+    	<br>
+   	<a href="Login.php"><button class="btn btn-default">Zurück zum Login</button></a>
 	</div>
-
 
 
 </body>
