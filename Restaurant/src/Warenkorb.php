@@ -119,7 +119,15 @@ function printDauer()
 	<br>
 	<br>
 	<div id="warenkorb" class="container-fluid text-center">
-
+	
+		<h1 id="Warenkorb">
+			<b>Ihr Warenkorb</b>
+		</h1>
+		<br>
+		<p id="Speisen-Text">
+			Hier finden Sie Ihre gewaehlten Speisen. Zum Bestellen, drücken Sie den Button "Bezahlen oder entgültig bestellen"
+			<br> Viel Vergnügen wünscht ihnen <?php echo getRestaurantName()?>!</p>
+		
 <?php printAngebote();?>
 
 <div class="w3-row-padding w3-padding-16 w3-center">
