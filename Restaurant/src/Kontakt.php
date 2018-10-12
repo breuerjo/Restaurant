@@ -23,7 +23,7 @@ getNavbar();
 function printImage()
 {
     $my_img = imagecreate(235, 80);
-    //$background = imagecolorallocate($my_img, 161, 237, 184);
+    $background = imagecolorallocate($my_img, 161, 237, 184);
     $text_colour = imagecolorallocate($my_img, 0, 0, 0);
     $line_colour = imagecolorallocate($my_img, 235, 236, 235);
     imagestring($my_img, 4, 30, 25, "bella.espana@example", $text_colour);
@@ -91,7 +91,7 @@ function printImage()
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
 	<div class="col-md-2 navbar-text pull-left">
 		<p>
-			<a href="Impressum.php"><b>Impressum/Datenschutz</b></a>
+			<a href="Impressum.php"><b>Impressum</b></a>
 		</p>
 	</div>
 	<div id="testDiv" class="col-md-7 navbar-text pull-left">
