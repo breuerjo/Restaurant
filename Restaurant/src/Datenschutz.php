@@ -4,7 +4,7 @@
 <head>
 
 <title>Datenschutz</title>
-<meta charset="utf-8">
+<meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="..\css\bootstrap.min.css">
 <link rel="stylesheet" href="..\css\style.css">
@@ -101,7 +101,7 @@ Wir löschen Daten, die zur Erbringung unserer satzungs- und geschäftsmäßigen Zwe
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
 	<div class="col-md-2 navbar-text pull-left">
 		<p>
-			<a href="Impressum.php"><b>Impressum</b></a>
+			<a href="Impressum.php"><b>Impressum/Datenschutz</b></a>
 		</p>
 	</div>
 	<div id="testDiv" class="col-md-7 navbar-text pull-left">

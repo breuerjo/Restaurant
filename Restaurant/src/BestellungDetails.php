@@ -267,7 +267,7 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
 	<div class="col-md-2 navbar-text pull-left">
 		<p>
-			<a href="Impressum.php"><b>Impressum</b></a>
+			<a href="Impressum.php"><b>Impressum/Datenschutz</b></a>
 		</p>
 	</div>
 	<div id="testDiv" class="col-md-7 navbar-text pull-left">

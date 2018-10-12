@@ -77,7 +77,7 @@ document.getElementById("checkin").addEventListener("click", function(){
 	<footer class="container-fluid md-12 text center navbar-fixed-bottom">
 		<div class="col-md-2 navbar-text pull-left">
 			<p>
-				<a id="besonders" href="Impressum.php"><b>Impressum</b></a>
+				<a id="besonders" href="Impressum.php"><b>Impressum/Datenschutz</b></a>
 			</p>
 		</div>
 		<div id="testDiv" class="col-md-7 navbar-text pull-left">

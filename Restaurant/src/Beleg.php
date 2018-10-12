@@ -8,15 +8,18 @@
 <link rel="stylesheet" href="..\css\bootstrap.min.css">
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
-<script src="..\js\bootstrap.min.js"></script>
-<script src="..\js\jquery.min.js"></script>
+
+<!-- Spiel -->
+<script src="../js/setting.js"></script>
+<script src="../js/draw.js"></script>
+<script src="../js/app.js"></script>
+
 </head>
 
 
 <body>
 
     <?php
-    include 'Sicherheit.php';
     include 'Funktionen.php';
 
     // Wenn Kunde bestellt hat => ausloggen und cookie l�schen
@@ -32,12 +35,12 @@
         $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
         ))[0];
-        
+
         // Holen vom Namen und Tisch der Bestellung
         $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(
             ':kunde' => $bestellung['gast_id']
         ))[0];
-        
+
         // Alle Gerichte holen
         $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
@@ -128,10 +131,16 @@
     <use xlink:href="#R1" transform="rotate(144 390 150)" />
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
-    	</svg>
-		<br> <br> <a href="Login.php"><button id="button_Beleg"
-				class="btn btn-default">Zurück zum Login</button></a>
+    </svg>
+    
+    <br><br>
+	<a href="Login.php"><button id="button_Beleg" class="w3-button">Zurück zum Login</button></a>
+	<br>
+	<br>
+	<?php include 'Snake.html'?>
 	</div>
+
+	
 
 
 </body>
@@ -154,6 +163,25 @@ var p = 0;
 var intervalZaehle = window.setInterval('zaehleDauer()', sekunden );
 </script>
 
+<!-- Scrollen Ausschalten -->
+<script>
+var keys = {};
+window.addEventListener("keydown",
+    function(e){
+        keys[e.keyCode] = true;
+        switch(e.keyCode){
+            case 37: case 39: case 38:  case 40: // Arrow keys
+            case 32: e.preventDefault(); break; // Space
+            default: break; // do not block other keys
+        }
+    },
+false);
+window.addEventListener('keyup',
+    function(e){
+        keys[e.keyCode] = false;
+    },
+false);
+</script>
 
 <script type="text/javascript">
 
@@ -273,7 +301,7 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 <footer class="container-fluid md-12 text center navbar-fixed-bottom">
 	<div class="col-md-2 navbar-text pull-left">
 		<p>
-			<a href="Impressum.php"><b>Impressum</b></a>
+			<a href="Impressum.php"><b>Impressum/Datenschutz</b></a>
 		</p>
 	</div>
 	<div id="testDiv" class="col-md-7 navbar-text pull-left">
