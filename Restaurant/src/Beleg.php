@@ -51,16 +51,25 @@
                 <h1>Name: ', $gast['name'], '</h1>
               <h3>Raum-Nummer: ', $gast['raum_id'], '</h3>
                 <h3>Tisch-Nummer: ', $gast['tisch'], '</h3></div>';
-
-        echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
+        
+        $counter = 0;
+        
 
         foreach ($gerichte as $gericht) {
+            
+            if ($counter % 4 == 0 && $counter != 0) {
+                echo '</div><div class="w3-row-padding w3-padding-16 w3-center">';
+            } else if ($counter % 4 == 0 && $counter == 0) {
+                echo '<div class="w3-row-padding w3-padding-16 w3-center">';
+            }
+            
             echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
                     <h3>', $gericht['gericht_bezeichnung'], '</h3>
                     <p>', $gericht['gericht_beschreibung'], '</p>
                     <p>', $gericht['gericht_preis'], '&euro;</p>
                     </div>';
+            $counter++;
         }
         echo '</div>';
     }
