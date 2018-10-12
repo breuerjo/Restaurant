@@ -36,8 +36,6 @@ function printAngebote()
     ));
     $counter = 0;
     while ($gericht = $statement->fetch()) {
-        // print_r($row); //gibt vorläufig mal alles aus
-        // echo '<Button onclick="deleteElement(',$row['gericht_id'],', ',getKundenId(),')">Element ausm warenkorb</Button>';
 
         if ($counter % 4 == 0 && $counter != 0) {
             echo '</div><div class="w3-row-padding w3-padding-16 w3-center">';
@@ -61,7 +59,7 @@ function printAngebote()
 }
 
 function printPreis()
-{ // wieviel unser wk kostet
+{ // Gesamtpreis Warenkorb
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
 
     $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM gericht INNER JOIN warenkorb on gericht.gericht_id = warenkorb.gericht_id AND warenkorb.gast_id = :kunde");
@@ -74,7 +72,7 @@ function printPreis()
 }
 
 function printDauer()
-{ // wie lang dauern die gerichte zusammen
+{ // Gesamtdauer Warenkorb
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
 
     $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM gericht INNER JOIN warenkorb ON gericht.gericht_id = warenkorb.gericht_id WHERE warenkorb.gast_id = :kunde");

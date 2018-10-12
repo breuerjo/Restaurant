@@ -1,5 +1,5 @@
 <?php
-$gericht = $_POST['gericht']; // die gericht id
+$gericht = $_POST['gericht']; // Gericht-ID
 $kunde = $_POST['kunde'];
 
 // ich brauche ein gericht und nen kunden -> packt des zeug in den warenkorb

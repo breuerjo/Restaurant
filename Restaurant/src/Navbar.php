@@ -73,8 +73,6 @@ function getNavbarMitarbeiter()
         echo '<li><a id="Inhaber_Infos" href="http://localhost/RestaurantJava/InhaberInhalt.jsp"><b>Inhaber-Infos</b></a></li>';
     }
     ?>
-        
-				
 				<li><a href="Logout.php"><Button class="w3-button w3-red"
 							onclick="logout()">Logout</Button></a></li>
 			</ul>

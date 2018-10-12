@@ -23,11 +23,7 @@ if (! isset($_SESSION['gast']) && ! isset($_SESSION['mitarbeiter_benutzername'])
 
     exit("");
 } else {
-    // echo 'Session_Gast: ', $_SESSION['gast'];
-    // echo '<br>';
-    // echo 'Gast: ', $_COOKIE['gast'];
-    // echo '<br>';
-    // echo 'Mitarbeiter: ', $_SESSION['mitarbeiter_benutzername'];
+    //Die angrefragte Seite wird normal geladen
 }
 ?>
 

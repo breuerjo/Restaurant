@@ -9,50 +9,48 @@
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
 <script src="..\js\bootstrap.min.js"></script>
-<script	src="..\js\jquery.min.js"></script>
+<script src="..\js\jquery.min.js"></script>
 </head>
 
 
 <body>
 
     <?php
-    // include 'Sicherheit.php';
+    include 'Sicherheit.php';
     include 'Funktionen.php';
-    
+
     // Wenn Kunde bestellt hat => ausloggen und cookie l�schen
     session_start();
-    // echo $_COOKIE['gast'];
     unset($_COOKIE['gast']);
-    // echo $_COOKIE['gast'];
     session_destroy();
 
-    // header("Content-Type: text/html; charset=utf-8");
     function printAngebote()
     {
         $best = urlParameter('bestellung');
-        
+
         // Bestellung-Infos holen
         $bestellung = dbQuery("SELECT * FROM bestellung WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
         ))[0];
-        // holen vom Namen und Tisch der Bestellung
+        
+        // Holen vom Namen und Tisch der Bestellung
         $gast = dbQuery("SELECT * FROM gaeste WHERE id = :kunde", array(
             ':kunde' => $bestellung['gast_id']
         ))[0];
-        // $gast = $_COOKIE['gast'];
-        // dann holen wir alle gerichte
+        
+        // Alle Gerichte holen
         $gerichte = dbQuery("SELECT * FROM bestellung_gerichte INNER JOIN gericht on bestellung_gerichte.gericht_id = gericht.gericht_id WHERE bestellung_id = :bestellung", array(
             ':bestellung' => $best
         ));
-        
+
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">
                 <h1><b>Vielen Dank für Ihre Bestellung!<br> Ihre Bestellungsübersicht:</b></h1>
                 <h1>Name: ', $gast['name'], '</h1>
               <h3>Raum-Nummer: ', $gast['raum_id'], '</h3>
                 <h3>Tisch-Nummer: ', $gast['tisch'], '</h3></div>';
-        
+
         echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin">';
-        
+
         foreach ($gerichte as $gericht) {
             echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
@@ -67,9 +65,9 @@
     function printDauer()
     {
         $bestelllung = $_GET['bestellung'];
-        
+
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-        
+
         $statement = $pdo->prepare("SELECT SUM(gericht.gericht_dauer) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
         $statement->execute(array(
             ':bestellung' => $bestelllung
@@ -82,9 +80,9 @@
     function printPreis()
     {
         $bestelllung = $_GET['bestellung'];
-        
+
         $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-        
+
         $statement = $pdo->prepare("SELECT SUM(gericht.gericht_preis) FROM bestellung_gerichte INNER JOIN gericht ON gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung_id = :bestellung");
         $statement->execute(array(
             ':bestellung' => $bestelllung
@@ -114,7 +112,6 @@
 
 	</div>
 
-
 	<div class="w3-row-padding w3-padding-16 w3-center">
 		<svg width="50%" height="300px">
     <g id="R1" transform="translate(250 250)"> 
@@ -132,8 +129,8 @@
     <use xlink:href="#R1" transform="rotate(216 390 150)" />
     <use xlink:href="#R1" transform="rotate(288 390 150)" />
     	</svg>
-    	<br><br>
-   	<a href="Login.php"><button id="button_Beleg" class="btn btn-default">Zurück zum Login</button></a>
+		<br> <br> <a href="Login.php"><button id="button_Beleg"
+				class="btn btn-default">Zurück zum Login</button></a>
 	</div>
 
 

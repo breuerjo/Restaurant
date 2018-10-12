@@ -36,7 +36,6 @@ include "Funktionen.php";
 			<label><b>Passwort</b></label>
 			<input type="password" id="pass" name="pass" size="40" placeholder="Geben Sie bitte Ihr Passwort ein"> 
 			
-<!-- 			<input id="button" type="submit" name="login" value="Log-In"> -->
 			
 			<button id="checkin" class="btn btn-default">Anmelden</button>
 			

@@ -32,7 +32,6 @@ function getBestellungId()
     if (isset($_GET['bestellung_id'])) {
         return $_GET['bestellung_id'];
     }
-    // else keine Bestelluns-ID in der URL
     return 0;
 }
 

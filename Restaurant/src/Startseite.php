@@ -25,7 +25,6 @@ getNavbar(getKundenId());
 
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		<!-- Wie sollen sich die Slides bewegen -->
 		<ol class="carousel-indicators">
 			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#myCarousel" data-slide-to="1"></li>

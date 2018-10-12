@@ -75,7 +75,6 @@ function warenkorbHinzu(gericht_id, kunde_id){
         type: "POST",
         data: "gericht=" + gericht_id + "&kunde=" + kunde_id,
         success: function(){
-            //hier könnte man noch auf dem ui anzeigen, was wv hinzugefügt wurde
         }
     });
 }
@@ -169,7 +168,6 @@ function warenkorbHinzu(gericht_id, kunde_id){
 	<?php
 
 if (! isset($_SESSION['mitarbeiter_benutzername'])) {
-    // echo '<a href="Warenkorb.php?kunde=',getKundenId() ,' "><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
     echo '<a href="Warenkorb.php"><Button class="w3-button w3-blue">Zum Warenkorb</Button></a>';
 } else {
     echo '<a href="NeuesGericht.php"><Button class="w3-button w3-blue">Neues Gericht hinzuf&uuml;gen</Button></a>';

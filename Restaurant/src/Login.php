@@ -14,16 +14,15 @@ include "Funktionen.php";
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
 <script src="..\js\bootstrap.min.js"></script>
-<script	src="..\js\jquery.min.js"></script>
+<script src="..\js\jquery.min.js"></script>
 </head>
 
 <body id="Login">
 
 
 	<div class="container text-center">
-
-		<br> <br>
-
+		<br>
+		<br>
 
 		<h2>
 			<b> Herzlich Willkommen im Restaurant <?php echo getRestaurantName(); ?></b>
@@ -39,15 +38,10 @@ include "Funktionen.php";
 
 		<div class="container">
 
-			<!--     <label><b>Raum:</b></label> -->
-			<!--     <input id="raum" value="1" type="text" placeholder="Geben Sie Ihren Raum an"/> -->
 			<label><b>Raum:</b></label><br> <select name="raum" id="raum">
 				<option selected>1</option>
-			</select> <br>
-
-			<!--     <label><b>Tischnummer:</b></label> -->
-			<!--     <input id="tisch" type="text"  value="0" placeholder="Geben Sie Ihre Tischnummer an"/> -->
-			<label><b>Tisch:</b></label><br> <select name="tisch" id="tisch">
+			</select> <br> <label><b>Tisch:</b></label><br> <select name="tisch"
+				id="tisch">
 				<option selected>1</option>
 				<option>2</option>
 				<option>3</option>
@@ -99,19 +93,12 @@ include "Funktionen.php";
                  data: "tisch=" + getTisch() + "&name=" + getName() + "&raum=" + getRaum(),
 	                 success: function(){
 	                	 window.location.href = 'Startseite.php';
-                     //window.location.href = 'Speisekarte.php?kunde=' + res;
                   }
              });
             
         });
     </script>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br><br><br><br><br><br><br>
 
 	<script>
 $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=1',
@@ -124,23 +111,23 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=1',
 
 </body>
 
-	<footer class="container-fluid md-12 text center navbar-fixed-bottom">
-		<div class="col-md-2 navbar-text pull-left">
-			<p>
-				<a id="besonders" href="Impressum.php"><b>Impressum</b></a>
-			</p>
-		</div>
-		<div id="testDiv" class="col-md-7 navbar-text pull-left">
-			<p>
-				<b></b>
-			</p>
-		</div>
-		<div class="col-md-2 navbar-text pull-right">
-			<p>
-				<a id="besonders2" href="Kontakt.php"><b>Kontakt</b></a>
-			</p>
-		</div>
-	</footer>
+<footer class="container-fluid md-12 text center navbar-fixed-bottom">
+	<div class="col-md-2 navbar-text pull-left">
+		<p>
+			<a id="besonders" href="Impressum.php"><b>Impressum</b></a>
+		</p>
+	</div>
+	<div id="testDiv" class="col-md-7 navbar-text pull-left">
+		<p>
+			<b></b>
+		</p>
+	</div>
+	<div class="col-md-2 navbar-text pull-right">
+		<p>
+			<a id="besonders2" href="Kontakt.php"><b>Kontakt</b></a>
+		</p>
+	</div>
+</footer>
 </html>
 
 

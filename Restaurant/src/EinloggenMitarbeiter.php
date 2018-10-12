@@ -17,7 +17,7 @@
 
 <?php
 
-session_start(); // starting the session for user profile page
+session_start(); 
 $user_id = $_POST['user'];
 $user_pw = $_POST['pass'];
 
@@ -32,7 +32,7 @@ if (! empty($row['mitarbeiter_benutzername']) and ! empty($row['mitarbeiter_pass
     header('location: Speisekarte.php');
     // echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Login erfolgreich mit dem Benutzernamen: ', $_SESSION["mitarbeiter_benutzername"], '<br>
     // <br><button class="w3-button w3-blue"><a href="Startseite.php">Weiter zur Startseite</a></button></div>';
-} // COOKIE SETZEN!
+}
 
 else {
     echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Falscher Benutzername oder Passwort <br> 
