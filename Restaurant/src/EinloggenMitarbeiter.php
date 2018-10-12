@@ -22,11 +22,11 @@ $user_id = $_POST['user'];
 $user_pw = $_POST['pass'];
 
 $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-$statement = $pdo->prepare("SELECT * FROM mitarbeiter where mitarbeiter_benutzername = '$user_id' AND mitarbeiter_passwort = '$user_pw'");
-$statement->execute(array());
+$statement = $pdo->prepare('SELECT * FROM `mitarbeiter` WHERE `mitarbeiter_benutzername` = :id');
+$statement->execute(array(':id' => $user_id));
 $row = $statement->fetch();
 
-if (! empty($row['mitarbeiter_benutzername']) and ! empty($row['mitarbeiter_passwort'])) {
+if (! empty($row['mitarbeiter_benutzername']) and ! empty($row['mitarbeiter_passwort'] and password_verify($user_pw, $row['mitarbeiter_passwort']))) {
     $_SESSION['mitarbeiter_benutzername'] = $row['mitarbeiter_benutzername'];
 
     header('location: Speisekarte.php');
@@ -44,6 +44,7 @@ else {
 
 
 <body>
+
 
 </body>
 
