@@ -33,8 +33,7 @@ if (! empty($row['mitarbeiter_benutzername']) and ! empty($row['mitarbeiter_pass
     header('location: Speisekarte.php');
     // echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Login erfolgreich mit dem Benutzernamen: ', $_SESSION["mitarbeiter_benutzername"], '<br>
     // <br><button class="w3-button w3-blue"><a href="Startseite.php">Weiter zur Startseite</a></button></div>';
-} 
-else {
+} else {
     echo '<div class="w3-row-padding w3-padding-16 w3-center w3-margin-top">Falscher Benutzername oder Passwort <br> 
                 <br><button class="w3-button w3-red"><a href="Mitarbeiter-Login.php">Zur&uuml;ck zum Login</a></button></div>';
 }

@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
 <script src="..\js\bootstrap.min.js"></script>
-<script	src="..\js\jquery.min.js"></script>
+<script src="..\js\jquery.min.js"></script>
 
 </head>
 
