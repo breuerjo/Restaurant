@@ -136,9 +136,9 @@ function printBestellungGerichte()
 
         echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
-                    <h2>', $gericht['gericht_kategorie'], '</h2>
-                    <h3>', $gericht['gericht_bezeichnung'], '</h3>
-                    <h3>', $gericht['gericht_dauer'], '</h3>
+                    <h2>Kategorie: ', $gericht['gericht_kategorie'], '</h2>
+                    <h3>Gericht: ', $gericht['gericht_bezeichnung'], '</h3>
+                    <h3>Zubereitungszeit: ', $gericht['gericht_dauer'], ' Minuten</h3>
                     <p>Preis: ', $gericht['gericht_preis'], '&euro;</p>
                     </div>';
         $counter ++;

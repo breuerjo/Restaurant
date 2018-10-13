@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<title>Mitarbeiter-Übersicht</title>
+<title>Mitarbeiter-&#xDC;bersicht</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="..\css\bootstrap.min.css">
@@ -12,7 +12,7 @@
 <script	src="..\js\jquery.min.js"></script>
 </head>
 
-<body id="MitarbeiterÃ¼bersicht" data-spy="scroll" data-target=".navbar"
+<body id="Mitarbeiterübersicht" data-spy="scroll" data-target=".navbar"
 	data-offset="50">
 
 <?php
