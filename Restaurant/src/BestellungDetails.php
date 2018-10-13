@@ -192,6 +192,9 @@ function BestellungAbgeschlossen(bestellung_id){
 		url:"Bestellung_erledigt.php",
 		typ:"POST",
 		data: "bestellung_id=" + bestellung_id,
+		success: function(){
+       	 window.location.href = 'Bestellungen.php';
+     }
 	});   
 	
 }
