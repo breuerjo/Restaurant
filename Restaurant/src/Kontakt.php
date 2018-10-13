@@ -16,6 +16,7 @@
 	data-offset="50">
 
 <?php
+session_start();
 include "Funktionen.php";
 
 getNavbar();
