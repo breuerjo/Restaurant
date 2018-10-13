@@ -97,7 +97,6 @@ function warenkorbHinzu(gericht_id, kunde_id){
 
 	<div class="w3-main w3-content w3-padding"
 		style="max-width: 1200px; margin-top: 30px">
-		<!--Hier fangen die ..\img mit Text an -->
 
 		<div class="text-center">
 			<br> <br>

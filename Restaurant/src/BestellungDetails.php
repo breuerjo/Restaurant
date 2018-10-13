@@ -16,7 +16,7 @@ include 'Funktionen.php';
 <link rel="stylesheet" href="..\css\style.css">
 <link rel="stylesheet" href="..\css\w3.css">
 <script src="..\js\bootstrap.min.js"></script>
-<script	src="..\js\jquery.min.js"></script>
+<script src="..\js\jquery.min.js"></script>
 
 
 </head>
@@ -116,13 +116,14 @@ function printBestellungDetails()
                     <h1><b>Gerichte</b> </h1>';
 }
 
-function printBestellungGerichte()
+function getGerichte($kategorie)
 {
     $bestellung_id = getBestellungId();
     $pdo = new PDO('mysql:host=localhost;dbname=restaurant_db;charset=utf8', 'root', '');
-    $statement = $pdo->prepare("SELECT * FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id");
+    $statement = $pdo->prepare("SELECT * FROM bestellung INNER JOIN bestellung_gerichte on bestellung_gerichte.bestellung_id = bestellung.bestellung_id INNER JOIN gericht on gericht.gericht_id = bestellung_gerichte.gericht_id WHERE bestellung.bestellung_id = :bestellung_id AND gericht.gericht_kategorie = :k");
     $statement->execute(array(
-        ":bestellung_id" => $bestellung_id
+        ":bestellung_id" => $bestellung_id,
+        ":k" => $kategorie
     ));
     $counter = 0;
 
@@ -136,7 +137,6 @@ function printBestellungGerichte()
 
         echo '<div class="w3-quarter">
                     <img src=', $gericht['gericht_bildadresse'], ' alt="Bild" style="width:100%" height="200px">
-                    <h2>Kategorie: ', $gericht['gericht_kategorie'], '</h2>
                     <h3>Gericht: ', $gericht['gericht_bezeichnung'], '</h3>
                     <h3>Zubereitungszeit: ', $gericht['gericht_dauer'], ' Minuten</h3>
                     <p>Preis: ', $gericht['gericht_preis'], '&euro;</p>
@@ -177,13 +177,81 @@ function printPreis()
 <?php
 printBestellungDetails(0);
 
-printBestellungGerichte();
+// printBestellungGerichte();
+
 ?>
 
+<div class="w3-main w3-content w3-padding"
+			style="max-width: 1200px; margin-top: 30px">
+
+			<div class="text-center">
+				<br>
+				<h2>
+					<b>Vorspeisen</b>
+				</h2>
+			</div>
+	<?php getGerichte("Vorspeisen"); ?>
+	
+	<div class="text-center">
+				<br>
+				<h2>
+					<b>Salate</b>
+				</h2>
+			</div>
+	<?php getGerichte("Salate"); ?>
+	
+	<div class="text-center">
+				<br>
+				<h2>
+					<b>Pasta</b>
+				</h2>
+			</div>
+	<?php getGerichte("Pasta"); ?>
+	
+	<div class="text-center">
+				<br>
+				<h2>
+					<b>Pizza</b>
+				</h2>
+			</div>
+	<?php getGerichte("Pizza"); ?>
+	
+	<div class="text-center">
+				<br>
+				<h2>
+					<b>Fleisch</b>
+				</h2>
+			</div>
+	<?php getGerichte("Fleisch"); ?>
+	
+	<div class="text-center">
+				<br>
+				<h2>
+					<b>Fisch</b>
+				</h2>
+			</div>
+	<?php getGerichte("Fisch"); ?>
+	
+	<div class="text-center">
+				<br> 
+				<h2>
+					<b>Desserts</b>
+				</h2>
+			</div>
+	<?php getGerichte("Dessert"); ?>
+	
+	<div class="text-center">
+				<br> 
+				<h2>
+					<b>Getr&auml;nke</b>
+				</h2>
+			</div>
+	<?php getGerichte("Getraenk"); ?>
 
 <!--  HIER BESTELLUNGENÜBERSICHT ANZEIGEN -->
 
-		<br> <br>
+			<br> <br>
+		</div>
 	</div>
 
 	<script type="text/javascript">
@@ -263,7 +331,8 @@ $.ajax({ url: 'http://localhost/RestaurantJava/Besucherklicker?login=0',
 	{ $('#testDiv').html(response); }
 	});
 </script>
-<br><br>
+	<br>
+	<br>
 </body>
 
 
