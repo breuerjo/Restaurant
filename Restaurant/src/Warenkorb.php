@@ -131,7 +131,7 @@ function printDauer()
 <?php printAngebote();?>
 
 <div class="w3-row-padding w3-padding-16 w3-center">
-			<h3>Gesamtdauer: <?php printDauer();?> Miunten</h3>
+			<h3>Gesamtdauer: <?php printDauer();?> Minuten</h3>
 			<h3>Gesamtpreis: <?php printPreis();?>&euro;</h3>
 			<Button class="w3-button w3-blue"
 				onclick="bezahlen(<?php echo getKundenId();?>)">Bezahlen oder
