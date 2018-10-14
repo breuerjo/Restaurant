@@ -6,7 +6,7 @@
 session_start();
 include 'Sicherheit.php';
 include "Funktionen.php";
-getNavbar(getKundenId());
+getNavbar();
 ?>
   <title>HOMEPAGE <?php echo getRestaurantName();?></title>
 <meta charset="utf-8">

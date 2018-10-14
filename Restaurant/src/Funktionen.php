@@ -46,7 +46,7 @@ function getNavbar(){
         getNavbarMitarbeiter();
     }
     else{
-        getNavbarKunde(getKundenId());
+        getNavbarKunde();
     }
 }
 

@@ -24,7 +24,7 @@ include "Funktionen.php";
 
 header("Content-Type: text/html; charset=utf-8");
 
-getNavbar(getKundenId());
+getNavbar();
 
 function printAngebote()
 { // also die aus dem warenkorb
